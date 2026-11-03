@@ -1,4 +1,4 @@
-"""Common tools for the refutation-first review of RETURN-2 (thermal decay, 2 Nov 2026).
+"""Common tools for finite thermal-decay verification (2 Nov 2026).
 
 Own code. Conventions:
   * A CA on Z^2 is given by alphabet size q, neighborhood N (list of 2D offsets), local rule f (numpy-vectorised:

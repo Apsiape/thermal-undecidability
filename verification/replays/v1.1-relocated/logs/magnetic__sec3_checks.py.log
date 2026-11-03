@@ -1,0 +1,39 @@
+----------------------------------------------------------------------------------------------------
+k=1 sanity (equality expected): torus 3x2, nE=12, P=[(0, 0)], k=1, kappa=3^-(k-1)=1.0000  (setup 0.0s)
+  theta=+0.693 s=0.00 | max cond P(open H)=0.6667 (<=2/3? True) | max_U[(12) functional]=0.00e+00 | kappa*=1.0000 (>= kappa? False) | event-family min ratio=1.0000 over 327 events
+  theta=+0.693 s=0.50 | max cond P(open H)=0.5481 (<=2/3? True) | max_U[(12) functional]=0.00e+00 | kappa*=1.0000 (>= kappa? False) | event-family min ratio=1.0000 over 327 events
+  theta=+0.693 s=3.00 | max cond P(open H)=0.0906 (<=2/3? True) | max_U[(12) functional]=0.00e+00 | kappa*=1.0000 (>= kappa? False) | event-family min ratio=1.0000 over 327 events
+  negative control (kappa=1.0 at theta=log2,s=1): max_U = 0.000e+00  -> not refuted
+  (13) g=0.20: Delta=kappa*g=0.2000  max_U[nu_{log2,g}-phi_{log2-Delta}](U)=6.74e-17  (<=0? True) | best Delta*=0.2000 (ratio Delta*/g=1.000)
+  (13) g=1.00: Delta=kappa*g=1.0000  max_U[nu_{log2,g}-phi_{log2-Delta}](U)=1.02e-16  (<=0? True) | best Delta*=1.0000 (ratio Delta*/g=1.000)
+  (13) g=3.00: Delta=kappa*g=3.0000  max_U[nu_{log2,g}-phi_{log2-Delta}](U)=3.07e-16  (<=0? True) | best Delta*=3.0000 (ratio Delta*/g=1.000)
+  total 4.8s
+----------------------------------------------------------------------------------------------------
+pair in a row: torus 3x2, nE=12, P=[(0, 0), (1, 0)], k=2, kappa=3^-(k-1)=0.3333  (setup 0.0s)
+  theta=+0.693 s=0.00 | max cond P(open H)=0.6667 (<=2/3? True) | max_U[(12) functional]=1.00e-14 | kappa*=0.4308 (>= kappa? True) | event-family min ratio=0.4725 over 327 events
+  theta=+0.693 s=0.50 | max cond P(open H)=0.6667 (<=2/3? True) | max_U[(12) functional]=-1.64e-14 | kappa*=0.6519 (>= kappa? True) | event-family min ratio=0.7083 over 327 events
+  theta=+0.693 s=3.00 | max cond P(open H)=0.6667 (<=2/3? True) | max_U[(12) functional]=1.87e-16 | kappa*=0.9984 (>= kappa? True) | event-family min ratio=0.9989 over 327 events
+  theta=+0.393 s=1.00 | max cond P(open H)=0.5970 (<=2/3? True) | max_U[(12) functional]=-1.60e-14 | kappa*=0.8892 (>= kappa? True) | event-family min ratio=0.9318 over 327 events
+  theta=+0.000 s=2.00 | max cond P(open H)=0.5000 (<=2/3? True) | max_U[(12) functional]=3.19e-15 | kappa*=0.9912 (>= kappa? True) | event-family min ratio=0.9957 over 327 events
+  theta=-1.000 s=0.30 | max cond P(open H)=0.2689 (<=2/3? True) | max_U[(12) functional]=3.22e-15 | kappa*=0.9031 (>= kappa? True) | event-family min ratio=0.9400 over 327 events
+  theta=+0.693 s=8.00 | max cond P(open H)=0.6667 (<=2/3? True) | max_U[(12) functional]=-1.80e-20 | kappa*=1.0022 (>= kappa? True) | event-family min ratio=1.0000 over 327 events
+  negative control (kappa=1.0 at theta=log2,s=1): max_U = 3.742e-02  -> REFUTED (machinery has teeth)
+  (13) g=0.20: Delta=kappa*g=0.0667  max_U[nu_{log2,g}-phi_{log2-Delta}](U)=2.64e-16  (<=0? True) | best Delta*=0.0972 (ratio Delta*/g=0.486)
+  (13) g=1.00: Delta=kappa*g=0.3333  max_U[nu_{log2,g}-phi_{log2-Delta}](U)=0.00e+00  (<=0? True) | best Delta*=0.7530 (ratio Delta*/g=0.753)
+  (13) g=3.00: Delta=kappa*g=1.0000  max_U[nu_{log2,g}-phi_{log2-Delta}](U)=4.77e-15  (<=0? True) | best Delta*=2.9685 (ratio Delta*/g=0.990)
+  total 8.7s
+----------------------------------------------------------------------------------------------------
+stacked pair: torus 3x2, nE=12, P=[(0, 0), (0, 1)], k=2, kappa=3^-(k-1)=0.3333  (setup 0.0s)
+  theta=+0.693 s=0.00 | max cond P(open H)=0.6667 (<=2/3? True) | max_U[(12) functional]=4.94e-15 | kappa*=0.4111 (>= kappa? True) | event-family min ratio=0.4421 over 327 events
+  theta=+0.693 s=0.50 | max cond P(open H)=0.6667 (<=2/3? True) | max_U[(12) functional]=-1.99e-14 | kappa*=0.6896 (>= kappa? True) | event-family min ratio=0.7301 over 327 events
+  theta=+0.693 s=3.00 | max cond P(open H)=0.6667 (<=2/3? True) | max_U[(12) functional]=6.94e-18 | kappa*=0.9976 (>= kappa? True) | event-family min ratio=0.9976 over 327 events
+  theta=+0.393 s=1.00 | max cond P(open H)=0.5970 (<=2/3? True) | max_U[(12) functional]=1.89e-15 | kappa*=0.9058 (>= kappa? True) | event-family min ratio=0.9299 over 327 events
+  theta=+0.000 s=2.00 | max cond P(open H)=0.5000 (<=2/3? True) | max_U[(12) functional]=9.42e-15 | kappa*=0.9912 (>= kappa? True) | event-family min ratio=0.9913 over 327 events
+  theta=-1.000 s=0.30 | max cond P(open H)=0.2689 (<=2/3? True) | max_U[(12) functional]=-1.05e-15 | kappa*=0.9097 (>= kappa? True) | event-family min ratio=0.9269 over 327 events
+  theta=+0.693 s=8.00 | max cond P(open H)=0.6667 (<=2/3? True) | max_U[(12) functional]=-9.32e-21 | kappa*=1.0000 (>= kappa? True) | event-family min ratio=1.0000 over 327 events
+  negative control (kappa=1.0 at theta=log2,s=1): max_U = 4.582e-02  -> REFUTED (machinery has teeth)
+  (13) g=0.20: Delta=kappa*g=0.0667  max_U[nu_{log2,g}-phi_{log2-Delta}](U)=6.11e-16  (<=0? True) | best Delta*=0.0966 (ratio Delta*/g=0.483)
+  (13) g=1.00: Delta=kappa*g=0.3333  max_U[nu_{log2,g}-phi_{log2-Delta}](U)=3.44e-15  (<=0? True) | best Delta*=0.7779 (ratio Delta*/g=0.778)
+  (13) g=3.00: Delta=kappa*g=1.0000  max_U[nu_{log2,g}-phi_{log2-Delta}](U)=-1.29e-14  (<=0? True) | best Delta*=2.9563 (ratio Delta*/g=0.985)
+  total 9.5s
+Larger cases: sec3_run2.py (included in run_all.py); original extended LP grid: --full-lp

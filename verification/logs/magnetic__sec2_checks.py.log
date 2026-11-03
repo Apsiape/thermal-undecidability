@@ -47,8 +47,8 @@
    max_U [muF-nu_g](U) (networkx, LP)            (3.469446951953614e-16, -0.0)
    max_U [muF-phi_crit](U) (networkx)            -1.5265566588595902e-16
    max_U [nu_g-muF](U) (should be >0: strict)    0.05169076259399247
-   engine time s                                 4.4
-   time 4.6s
+   engine time s                                 2.7
+   time 3.0s
 ====================================================================================================
 selector CA (23), rowwise (q=4)
  eps=0.50 region |R|=7
@@ -98,8 +98,8 @@ selector CA (23), rowwise (q=4)
    max_U [muF-nu_g](U) (networkx, LP)            (5.689893001203927e-16, -0.0)
    max_U [muF-phi_crit](U) (networkx)            -2.0122792321330962e-15
    max_U [nu_g-muF](U) (should be >0: strict)    0.08706120100372722
-   engine time s                                 2.2
-   time 2.7s
+   engine time s                                 1.9
+   time 2.3s
 ====================================================================================================
 ECA 232 rowwise (q=2)
  eps=0.50 region |R|=9
@@ -149,8 +149,8 @@ ECA 232 rowwise (q=2)
    max_U [muF-nu_g](U) (networkx, LP)            (8.326672684688674e-16, -0.0)
    max_U [muF-phi_crit](U) (networkx)            -1.0269562977782698e-15
    max_U [nu_g-muF](U) (should be >0: strict)    0.09026556082381804
-   engine time s                                 2.2
-   time 2.6s
+   engine time s                                 2.1
+   time 2.3s
 ====================================================================================================
 ECA 23 rowwise (q=2)
  eps=0.50 region |R|=9
@@ -200,8 +200,8 @@ ECA 23 rowwise (q=2)
    max_U [muF-nu_g](U) (networkx, LP)            (8.326672684688674e-16, -0.0)
    max_U [muF-phi_crit](U) (networkx)            -1.0269562977782698e-15
    max_U [nu_g-muF](U) (should be >0: strict)    0.09026556082381804
-   engine time s                                 2.3
-   time 2.7s
+   engine time s                                 2.0
+   time 2.4s
 ====================================================================================================
 XOR (surjective control, q=2)
  eps=0.50 region |R|=9

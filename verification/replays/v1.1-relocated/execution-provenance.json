@@ -1,0 +1,9 @@
+{
+  "kind": "single fresh relocated invocation",
+  "invocations": 1,
+  "successful_jobs": 20,
+  "failed_jobs": 0,
+  "all_recorded_source_hashes_match_shipped_scripts": true,
+  "output_directory_was_fresh": true,
+  "raw_initial_records": "Not included in this distribution."
+}

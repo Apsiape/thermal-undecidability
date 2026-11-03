@@ -1,0 +1,260 @@
+\section{Uniqueness and full clustering at a first-order point}\label{sec:full}
+We now answer the uniqueness and all-observable questions for a larger, fixed number of Potts colours. The nine-colour construction of Section~\ref{sec:potts}, including its 2304-state bound, is unchanged. The new statement concerns the number of Gibbs phases. It does not assert undecidability of a decay rate within the disordered phase.
+
+Let $s=|A|$, $m=|N|$, and put
+\begin{equation}\label{eq:full-parameters}
+ \begin{gathered}
+ Q=257^2=66049,\quad S_r=N\cup\{0,e_r\},\quad k_*=m+2,\\
+ R=\max_{r=H,V}\diam_1 S_r,\qquad
+ \varepsilon=\min\left\{\frac1{100s(m+1)^2},
+                         \frac1{16s k_*2^R}\right\},\quad t=\varepsilon^2.
+ \end{gathered}
+\end{equation}
+In this section $\Psi_F^{\rm u}$ means \eqref{eq:potts-weight} with these parameters. Its local space is $\{1,\ldots,Q\}\times A^4$.
+
+\begin{theorem}[Gibbs uniqueness]\label{thm:full}
+The family $F\mapsto\Psi_F^{\rm u}$ is computable, translation invariant and finite range, with strictly positive rational weights at $\beta=1$.
+If $F$ is nonsurjective, its Gibbs state $\mu_F$ is unique, and for all bounded local observables $f,g$, including hidden observables, with finite nonempty site supports $A_f,A_g$,
+\begin{equation}\label{eq:full-bound}
+ |\Cov_{\mu_F}(f,g)|\le
+ 3\min\{|A_f|,|A_g|\}\|f\|_\infty\|g\|_\infty
+ 2^{-d_1(A_f,A_g)}.
+\end{equation}
+If $F$ is surjective, there are at least $Q+1$ distinct Gibbs states: $Q$ ordered states and a disordered state $\mu_F^0$. The latter also satisfies \eqref{eq:full-bound}.
+
+Consequently Gibbs uniqueness, equivalently on this family exponential clustering of all bounded local observables in every Gibbs state, is undecidable. Applying the four-symbol CA encoding of Corollary~\ref{cor:512} gives the fixed local dimension
+\[
+ Q\,4^4=16\,908\,544.
+\]
+The range depends on the input; the surjective branch is fine-tuned at coexistence.
+\end{theorem}
+The proof will establish uniqueness within the class of Gibbs states whose canonical bond marginal is dominated by free critical FK. On the nonsurjective branch this class contains every Gibbs state; on the surjective branch it contains the disordered state.
+
+\subsection{The all-state comparison at general \texorpdfstring{$Q$}{Q}}\label{sec:full-comparison}
+The input is Proposition~\ref{prop:potts-allstates}, not merely the comparison of padded finite-volume laws. It remains valid after shrinking $\varepsilon$ as in \eqref{eq:full-parameters}. Here are all the parameter dependencies.
+For $w_{\max}=1+(s-1)t$, $w_{\min}=1-t$,
+\begin{equation}\label{eq:full-hidden}
+ \ell_w=\log\frac{1+(s-1)t}{1-t}\le2st,\qquad
+ \rho\le\tfrac12\ell_w m(m-1)\le st m(m-1)<1.
+\end{equation}
+Indeed, $t<1/2$ and $\log(1+(s-1)t)-\log(1-t)\le(s-1)t+2t\le2st$.
+This uses the paired hidden-site convention and exactly the Dobrushin coefficient of \eqref{eq:dob}. Adding $\sqrt Q\delta_{\rm same}$ can only reduce the logarithmic oscillation of a hidden factor. Collision positivity, witness completion, insertion-ratio convergence and onto cancellation have no $Q$ dependence.
+
+For completeness, if $c_P>0$ and $k=|P|$, retain the constants $a_P,g$ of \eqref{eq:potts-constants}. The comparator is
+\[
+ Q^{K^{\rm w}(\omega)}(\sqrt Q)^{|\omega|}
+ \exp\left(g\sum_{u\in\mathcal T_E}I_u(\omega)\right),
+\]
+with witnesses in both orientations. It is FKG for $Q\ge1$, since $K^{\rm w}$ and every all-closed indicator are supermodular. The exact opening odds of an arbitrary Gibbs bond marginal are
+\[
+ \sqrt Q\,\alpha_\mu/R_\infty(C,e).
+\]
+In the fully wired core, disconnected endpoints include a finite full-lattice cluster, whose colour is uniform by Lemma~\ref{lem:potts-colours}; hence $\alpha_\mu=1/Q$. Otherwise $\alpha_\mu\le1$. These are the FK cluster factors. Witness completion bounds the denominator below by $e^{gn_e(C)}$. The monotone-upper-law heat-bath comparison, including its downward-support argument, therefore applies to arbitrary conditioned exterior bonds.
+
+The remaining $Q$ dependence is explicit: comparator opening odds are at most $\sqrt Q$, so conditional closing probabilities are at least $(1+\sqrt Q)^{-1}$. The anchor covariance bound uses
+$\theta_{Q,P}=(1+\sqrt Q)^{-(k-1)}$. Interpolating anchor log odds from $\log\sqrt Q-\theta_{Q,P}g$ to $\log\sqrt Q$ while turning on rewards gives ordinary FK odds $\sqrt Qe^{-\theta_{Q,P}g}<\sqrt Q$ as the upper law. Anchors cover both orientations away from a fixed-width strip. Conditioning that strip and using domain Markov with complete wiring on a smaller core yields the homogeneous subcritical upper limit. These are precisely the steps of Proposition~\ref{prop:potts-allstates}; no lower bound on $g$ uniform in $F$ is used.
+
+Beffara--Duminil-Copin give the critical point, subcritical sharpness and equality of free and wired subcritical limits~\cite{BDC}. Monotonicity in $p$~\cite[Chapter 3]{Grimmett} then gives, for every nonsurjective input and every Gibbs state,
+\begin{equation}\label{eq:full-domination}
+ \mu_{\rm bond}\preceq\phi_{p_F,Q}^1
+ =\phi_{p_F,Q}^0\preceq\phi_{p_c(Q),Q}^0,
+ \qquad p_F<p_c(Q)=\frac{257}{258}.
+\end{equation}
+This last reference law is independent of the witness.
+
+\subsection{Selectors and their Gibbs extension}\label{sec:full-selectors}
+Write $\xi_i=(\sigma_i,\mathbf X_i)$. The exact three-term decomposition is
+\begin{equation}\label{eq:selector}
+ b_e=(1-t)+\sqrt Q\one_{\{\sigma_i=\sigma_{i+e_r}\}}
+             +st\one_{\{F(X^r)_i=F(X^{\prime r})_i\}}.
+\end{equation}
+Let $M_e\in\{0,{\rm v},{\rm h}\}$ select one of these terms and denote the selected factor by $\widetilde b_e(M_e,\xi)$. Store both outgoing selectors at their anchor $i$. Given $\xi$, use independent kernels
+$K_e(M_e\mid\xi)=\widetilde b_e(M_e,\xi)/b_e(\xi)$.
+
+\begin{lemma}[Marked DLR law]\label{lem:marked}
+For every $\mu\in\G(\Psi_F^{\rm u})$, its extension $\widehat\mu=\mu K$ is Gibbs for the finite-range marked specification with counting measure and factors $\widetilde b_e$. The canonical bond is $\omega_e=\one_{\{M_e={\rm v}\}}$.
+\end{lemma}
+\begin{proof}
+Fix a finite set $V$ of original site coordinates and let $E(V)$ contain every factor depending on one of them. Resample $\xi_V$ together with all selectors in $E(V)$. Conditional on $\xi_{V^c}$, the original DLR weight is $\prod_{e\in E(V)}b_e$. Selectors outside $E(V)$ depend only on $\xi_{V^c}$ and convey no further information about $\xi_V$. Multiplying by the kernels on $E(V)$ cancels every denominator $b_e$, leaving exactly $\prod_{e\in E(V)}\widetilde b_e$, with exterior values fixed. Additional resampled selectors whose factors miss $V$ have their individual kernels and the same cancellation of their constant-in-$\xi_V$ normalizers. This proves the joint conditional formula on these finite blocks.
+
+Any finite set of marked coordinates is contained in such a block. Conditioning the block formula on the other coordinates of that block gives its conditional density as the product of precisely the marked factors meeting the resampled coordinates. Terms disjoint from those coordinates cancel. This proves all finite DLR equations, including resampling sites while holding incident exterior selectors fixed. Zeros of a selected factor simply restrict the finite conditional support; the exterior sampled from $\widehat\mu$ has a positive normalizer almost surely. Finally
+$K_e({\rm v}\mid\xi)=\sqrt Q\delta_{\rm same}/b_e$, which is the canonical bond kernel of Section~\ref{sec:potts}.
+\end{proof}
+
+Conditional on $\omega$ and \emph{all} original site variables $\xi$, the remaining selectors are independent; on closed edges
+\begin{equation}\label{eq:hidden-selector}
+ \Pp(M_e={\rm h}\mid\omega,\xi)
+ =\frac{st\one_{\rm collision}}{1-t+st\one_{\rm collision}}
+ \le p_{\rm h}:=\frac{st}{1+(s-1)t}\le st.
+\end{equation}
+On open edges this probability is zero. Couple $\omega\le\Omega$, with $\Omega\sim\phi^0_{p_c,Q}$, by Strassen's theorem~\cite{Strassen} whenever the marginal domination holds. Then sample $\xi$ conditional on $\omega$ and generate the closed selectors with fresh iid uniforms $U_e$. Setting $\eta_e=\one_{\{U_e\le p_{\rm h}\}}$ gives
+$\one_{\{M_e={\rm h}\}}\le\eta_e$, where $\eta$ is iid and independent of $\Omega$. The domination is used before the hidden variables are sampled; no conditional FK domination is asserted.
+
+Use the selected supports
+\begin{equation}\label{eq:selected-supports}
+ T_e(0)=\varnothing,\quad T_e({\rm v})=\{i,i+e_r\},\quad
+ T_e({\rm h})=i+S_r.
+\end{equation}
+Each active support is a hyperedge. Including the anchor in the hidden support is essential for swaps between different selector types; the visible endpoint is also retained in that support, although the hidden term need not depend on either site. For two independent marked states, their union active graph $\mathcal D$ is contained in a reference union
+\begin{equation}\label{eq:four-layers}
+ \mathcal U=\Omega_1\cup\Omega_2
+       \cup\{T_e({\rm h}):\eta_e^1=1\text{ or }\eta_e^2=1\},
+\end{equation}
+with four mutually independent layers: two free critical FK fields and two iid Bernoulli fields.
+
+\subsection{A prefactor-one critical connection bound}\label{sec:full-mass}
+Put $\tau_Q(x)=\phi^0_{p_c,Q}(0\conn x)$. Theorem~1.2(3) of Duminil-Copin--Gagnebin--Harel--Manolescu--Tassion~\cite{DGHMT} states, with
+\[
+ x_n=(\lfloor n/2\rfloor,\lfloor n/2\rfloor),\qquad
+ \cosh\lambda=\sqrt Q/2,
+\]
+that
+\begin{equation}\label{eq:diagonal-mass}
+ c_Q:=\lim_{n\to\infty}-\frac1n\log\tau_Q(x_n)
+ =\lambda+2\sum_{j\ge1}\frac{(-1)^j}{j}\tanh(j\lambda)>0.
+\end{equation}
+The normalization is per asymptotic unit of $\ell^1$ distance, since $\|x_{2n}\|_1=2n$.
+
+FKG and translation invariance give
+$\tau_Q(x+y)\ge\tau_Q(x)\tau_Q(y)$: intersect the increasing connection events from $0$ to $x$ and from $x$ to $x+y$. Reflect coordinates so that $x=(u,v)$ has $u,v\ge0$, and let $L=u+v>0$. Coordinate exchange and $2n$ concatenations imply
+$\tau_Q(nL,nL)\ge\tau_Q(x)^{2n}$.
+Apply \eqref{eq:diagonal-mass} along $x_{2nL}$ and divide logarithms by $2nL$ to obtain
+\begin{equation}\label{eq:pointwise-mass}
+ \tau_Q(x)\le e^{-c_Q\|x\|_1}\quad(x\in\Z^2).
+\end{equation}
+There is no unspecified prefactor or onset length.
+
+An absolutely convergent rewrite is
+\begin{equation}\label{eq:mass-rewrite}
+ c_Q=\lambda-\log4+
+ 4\sum_{j\ge1}\frac{(-1)^{j+1}}{j(e^{2j\lambda}+1)}
+ >\lambda-\log4.
+\end{equation}
+The correction is strictly positive by the alternating-series criterion. For $\sqrt Q=257$,
+\[
+ e^\lambda=\frac{257+\sqrt{66045}}2>256,
+ \qquad 66045>255^2=65025.
+\]
+Thus $c_Q>\log64$ and $\tau_Q(x)\le64^{-\|x\|_1}$. This convenient integer bound has ample exploration slack: at $a=\log2$ only
+$8r/(1-r)^2+1/64<1$, $r=e^{a-c_Q}$, is needed. Already $c_Q>\log21$ suffices, since $r<2/21$ gives $8r/(1-r)^2+1/64<1$. The proof does not rely on the small numerical difference between $c_Q$ and $\log64$.
+
+Define the weighted susceptibility and hidden incidence by
+\begin{align}
+ \mathcal S_Q(a)&=\sum_{x\ne0}e^{a\|x\|_1}\tau_Q(x),\label{eq:weighted-S}\\
+ J_N(a)&=\sum_{e:\,0\in T_e({\rm h})}
+             \sum_{y\in T_e({\rm h})\setminus\{0\}}e^{a\|y\|_1}.
+ \label{eq:weighted-J}
+\end{align}
+There are $4n$ sites at $\ell^1$ distance $n$, and at most $k_*$ translates per orientation containing a site. Hence
+\begin{equation}\label{eq:exploration-constants}
+ \begin{gathered}
+ \mathcal S_Q(\log2)\le\sum_{n\ge1}4n32^{-n}=\frac{128}{961},\\
+ J_N(\log2)\le2k_*(k_*-1)2^R,\qquad
+ 2p_{\rm h}J_N(\log2)\le\frac1{64},\\
+ \chi:=2\mathcal S_Q(\log2)+2p_{\rm h}J_N(\log2)
+ \le\frac{17345}{61504}<\frac13,\qquad
+ \frac2{1-\chi}\le\frac{123008}{44159}<3.
+ \end{gathered}
+\end{equation}
+For the hidden bound, \eqref{eq:full-parameters} gives
+$4st k_*(k_*-1)2^R\le(k_*-1)/(64s k_*2^R)\le1/64$.
+All inequalities are uniform in the witness and in the neighbourhood.
+
+\subsection{Exploring the four reference layers}\label{sec:full-exploration}
+We prove a general estimate at any $a>0$ for which
+$\chi=2\mathcal S_Q(a)+2p_{\rm h}J_N(a)<1$.
+First take finite free FK boxes in each reference layer and retain hidden hyperedges within the box. Starting from a finite site set $A_f$, process a queue of discovered sites. At a processed site $x$, reveal its entire as-yet-unrevealed FK cluster in each layer and every previously unexamined incident Bernoulli hyperedge. Add genuinely new sites to the queue.
+
+Revealing a complete FK cluster also reveals its closed edge boundary. By the domain Markov property, the unrevealed law in that layer is free FK on the remaining graph~\cite[Lemmas 4.13--4.14]{Grimmett}. It is dominated by full-lattice free critical FK, by monotonicity in domain and boundary condition. A complete transcript of the exploration specifies all queries and their outcomes in each layer. Since each next query is a function of that transcript, it conveys no extra information about unrevealed variables. The independent reference layers retain these conditional laws even for adaptive roots. Previously inspected Bernoulli variables are fixed; uninspected ones remain independent with parameter $p_{\rm h}$. No domain Markov assertion about the original collision bond marginal is used.
+
+Give a site weight $w(x)=e^{a d_1(x,A_f)}$. The expected total weight of new sites found when processing $x$, conditional on the transcript, is at most $\chi w(x)$. For one FK layer this is the triangle inequality and $\mathcal S_Q(a)$; for one hidden layer it is $p_{\rm h}J_N(a)$. Revealed clusters and hyperedges add no new sites. If $\mathsf P_n$ is pending weight and $\mathsf D_n$ processed weight after $n$ steps, induction gives
+\[
+ \E \mathsf P_n+(1-\chi)\E \mathsf D_n\le |A_f|.
+\]
+At completion in a finite box, and then by monotone convergence,
+\begin{equation}\label{eq:union-moment}
+ \E\sum_{x\in C_{\mathcal U}(A_f)}e^{a d_1(x,A_f)}
+ \le\frac{|A_f|}{1-\chi}.
+\end{equation}
+For the limit, couple increasing free boxes monotonically in each FK layer and use the same global Bernoulli fields. Every finite connection appears eventually. The increasing union has the infinite free FK law, and the displayed bound passes to it. In particular all components are finite almost surely (apply it to each singleton and take a countable intersection). If a component meets both $A_f$ and $A_g$, the sum contains a term at least $e^{a d_1(A_f,A_g)}$. Interchanging the two seed sets gives
+\begin{equation}\label{eq:union-connect}
+ \Pp(A_f\conn A_g\text{ in }\mathcal U)
+ \le\frac{\min\{|A_f|,|A_g|\}}{1-\chi}
+        e^{-a d_1(A_f,A_g)}.
+\end{equation}
+Only a spatial exponential moment is required, not an exponential moment of cluster volume.
+
+\subsection{The component-swap lemma, with DLR justification}\label{sec:full-swap}
+Two-copy active-hyperbond methods have a precedent in Gandolfi~\cite{Gandolfi}; disagreement percolation is developed by van den Berg--Maes~\cite{vdBM}. The following direct argument supplies the precise invariance needed here.
+
+\begin{lemma}[Finite swaps]\label{lem:swap}
+Take independent marked extensions of any two Gibbs states $\mu,\nu$ with the same parameters. If their union active graph $\mathcal D$ has only finite components, the two site laws agree. If the two states coincide and $\mathcal D$ is dominated by \eqref{eq:four-layers} with $\chi<1$, then
+\begin{equation}\label{eq:swap-bound}
+ |\Cov_\mu(f,g)|\le\frac2{1-\chi}
+ \min\{|A_f|,|A_g|\}\|f\|_\infty\|g\|_\infty
+ e^{-a d_1(A_f,A_g)}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For a fixed finite vertex set $D$, let $S_D$ exchange all original site variables in $D$ and both selectors anchored in $D$, between the two copies. It is an involution. Restrict for the moment to configurations where $D$ is a union of components of $\mathcal D$. Every active selected support with anchor in $D$ lies wholly in $D$; an active support with anchor outside $D$ misses $D$. This holds for either selector type because both active supports include the anchor. For an anchor in $D$, each selected factor after the swap is the value of the corresponding factor in the other copy: all its actual arguments have been exchanged. An inactive factor is the constant $1-t$. For an anchor outside $D$, active factors have no arguments in $D$, and inactive ones are constant. Thus every pair of local factors preserves its product, including when the two copies have different selector types. The union active graph itself is unchanged: for anchors in $D$ the two supports are exchanged, and all other supports are fixed.
+
+Here is the infinite-volume step. The product $\widehat\mu\otimes\widehat\nu$ is Gibbs for the product marked specification: apply the two DLR equations and Fubini on cylinder tests, then extend to bounded measurable tests. Condition on the exterior of the finite marked block consisting of sites in $D$ and selectors anchored in $D$, in both copies. Its conditional law is a finite sum with weight the product of all factors meeting this block, by Lemma~\ref{lem:marked}. On any invariant event where $D$ is a component union, $S_D$ is a bijection of the allowed conditional configurations, fixes the conditioned exterior, and preserves that product. Summing the finite conditional weights and integrating the exterior proves
+\[
+ \E[\one_E H]=\E[\one_E(H\circ S_D)]
+\]
+for every bounded measurable $H$ and every such invariant event $E$. Factors crossing the block boundary are included in this calculation; they are not dropped.
+
+For a local support $A_f$, let $D(A_f)$ be the union of all components meeting $A_f$. For each fixed finite $D$, the event $E_D=\{D(A_f)=D\}$ is determined in a finite collar: inspect all active supports touching $D$, their absence across its boundary, and the internal connections of every site of $D$ to $A_f$. All possible incident supports have bounded diameter. This event is invariant under $S_D$, since the union graph is unchanged. There are countably many finite $D$, and these events partition a set of probability one. Apply the preceding conditional identity on each $E_D$ and sum; bounded convergence proves invariance of the random swap $S_{D(A_f)}$. It exchanges $f$ between the copies, so $\mu(f)=\nu(f)$. Local functions determine the measure, proving equality.
+
+For the covariance take two independent copies of the same state. With $f_j,g_j$ evaluated in copy $j$,
+\[
+ \Cov_\mu(f,g)=\tfrac12\E[(f_1-f_2)(g_1-g_2)].
+\]
+On $\{A_f\not\conn A_g\text{ in }\mathcal D\}$, the random swap just constructed reverses $f_1-f_2$ and leaves $g_1-g_2$ fixed. This event is invariant, and the same countable-partition argument makes its contribution zero. On the complementary event the absolute product is at most $4\|f\|_\infty\|g\|_\infty$. Domination by $\mathcal U$ and \eqref{eq:union-connect} give \eqref{eq:swap-bound}.
+\end{proof}
+
+\subsection{Completion and the state quantifier}\label{sec:full-completion}
+\begin{proof}[Proof of Theorem~\ref{thm:full}]
+All weights are rational because $\sqrt Q=257$ and $\varepsilon$ is rational; $b_e\ge1-t>0$. The finite-range specification has a Gibbs state by compactness. In the nonsurjective branch \eqref{eq:full-domination} holds for every Gibbs state. Equations~\eqref{eq:four-layers} and~\eqref{eq:union-moment} therefore put any two marked states in the finite-component class. Lemma~\ref{lem:swap} gives uniqueness. Taking $a=\log2$ and using \eqref{eq:exploration-constants} gives \eqref{eq:full-bound} for arbitrary joint local observables.
+
+If $F$ is onto, every finite $W(C)$ is one. The padded free-visible construction has bond marginal exactly free critical FK; any limit is a Gibbs state $\mu_F^0$, by the same interior-DLR argument as Proposition~\ref{prop:potts-branches}. Its marginal remains $\phi^0_{p_c,Q}$. The two-copy argument applies to this state itself and gives \eqref{eq:full-bound}. The $Q$ monochromatic constructions give $Q$ ordered Gibbs states, by Theorems~1.1(2) and~1.2(2) of~\cite{DGHMT}. Their positive excess colour densities distinguish them from one another and from the colour-symmetric free state. Thus there are at least $Q+1$ states; no exhaustion of all phases is asserted.
+
+It remains to justify failure of all-state clustering under nonuniqueness, rather than assuming that an ordered extremal state fails to cluster. The following proposition does this. Kari's theorem then makes uniqueness and all-state full clustering undecidable, with the local dimension obtained by the unchanged CA-only encoding.
+\end{proof}
+
+\begin{proposition}[All-state full clustering forces uniqueness]\label{prop:clustering-unique}
+For any finite-alphabet finite-range specification on $\Z^d$, suppose each Gibbs state $\mu$ has constants $C_\mu,a_\mu>0$ such that, for every pair of bounded local observables on finite supports $A_f,A_g$,
+\[
+ |\Cov_\mu(f,g)|\le C_\mu |A_f||A_g|\|f\|_\infty\|g\|_\infty
+ e^{-a_\mu d_1(A_f,A_g)}.
+\]
+Then the Gibbs state is unique.
+\end{proposition}
+\begin{proof}
+If $\nu,\rho$ differ, choose local $f$ with $\nu(f)\ne\rho(f)$ and let $\mu=(\nu+\rho)/2$. For a large box $\Lambda_L$ containing $\supp f$, set $h_L=\gamma_{\Lambda_L}f$. DLR gives
+$\mu(fh_L)=\mu(h_L^2)$ and $\mu(f)=\mu(h_L)$, hence
+\begin{align*}
+ \Cov_\mu(f,h_L)&=\operatorname{Var}_\mu(h_L)\\
+ &=\tfrac12\operatorname{Var}_\nu(h_L)
+   +\tfrac12\operatorname{Var}_\rho(h_L)
+   +\tfrac14\bigl(\nu(f)-\rho(f)\bigr)^2.
+\end{align*}
+Here $\nu(h_L)=\nu(f)$ and $\rho(h_L)=\rho(f)$ by their own DLR equations. The lower bound is strictly positive uniformly in $L$. But $h_L$ has norm at most $\|f\|_\infty$ and is supported in the exterior interaction collar of $\Lambda_L$, whose size is $O(L^{d-1})$ and whose distance from $\supp f$ is $L-O(1)$. Clustering in the mixture makes the covariance tend to zero, a contradiction. The constants may depend on the mixture; they need not be uniform over states.
+\end{proof}
+
+\begin{remark}[What is, and is not, decided]
+On this family the undecidable bit is survival of the ordered phases. The disordered state has the same uniform quantitative bound on both branches. No undecidability of ``every extremal Gibbs state clusters'' follows. The specified-correlation decay result remains Theorem~\ref{thm:main}; the new result is Gibbs uniqueness with full clustering of the unique nonsurjective state. The local numerical inequality $\chi<1$ holds on both branches and is not a decidable mixing certificate: its all-state domination hypothesis is obtained only after a witness is found. Uniqueness implies convergence of finite-volume local expectations uniformly over boundary conditions for each fixed model, by compactness, but this proof supplies no computable a priori boundary-forgetting scale.
+\end{remark}
+
+\begin{remark}[Why the hidden-dimer example is excluded]
+For the 45-dimer example in Section~\ref{sec:open}, the closed factor ranges from $1/404$ to $4/101$. Splitting off its constant minimum gives worst-case hidden activation $1-(1/404)/(4/101)=15/16$, before counting the 45 factors. Here the entire incidence-weighted contribution is at most $1/64$. Conditional contraction and finite visible clusters alone do not imply the four-layer criterion. The rare active hidden hyperedges, together with the visible edges, isolate all factors across the random component boundary.
+\end{remark}
+
+
+\begin{remark}[A smaller fixed alphabet, with weaker constants]\label{rem:q1681}
+The same parameter choice works at $Q=41^2=1681$, with $430\,336$ local states after the four-symbol CA encoding. One may take $a=23/1000$; the largest admissible rate at this $Q$ is about $0.0238$. Exact rational interval arithmetic in \texttt{check\_q1681.py} certifies
+\[
+ \chi<\frac{999092}{10^6}<1,\qquad \frac2{1-\chi}<2203.
+\]
+Thus replace $3\,2^{-d_1}$ in \eqref{eq:full-bound} by $2203e^{-23d_1/1000}$. The rate here is exactly $23/1000$. The certificate bounds $E=e^\lambda=(41+\sqrt{1677})/2$ by rationals, uses the first two alternating terms in \eqref{eq:mass-rewrite} for a rigorous lower bound on $c_Q$, and bounds $e^{a-c_Q}$ by a rational exponential-series upper bound. Then $\mathcal S_Q(a)\le4r/(1-r)^2$ and the same hidden budget $1/64$ imply the displayed inequality. The four-layer exploration, swap and undecidability proof are unchanged. We retain $257^2$ in the main theorem for its simpler constants.
+\end{remark}

@@ -1,0 +1,10 @@
+Independent exact certificates and 36,000-case rational parameter grid passed.
+violations of l_w <= 2 s t (80-digit arithmetic): 0  max l_w/(2st) = 0.5000000000004069
+sqrt(Q)=40 Q=1600: c_Q=2.30446, max admissible mass a = -0.00085
+sqrt(Q)=41 Q=1681: c_Q=2.32906, max admissible mass a = 0.02376
+sqrt(Q)=45 Q=2025: c_Q=2.42185, max admissible mass a = 0.11654
+sqrt(Q)=50 Q=2500: c_Q=2.52693, max admissible mass a = 0.22162
+sqrt(Q)=64 Q=4096: c_Q=2.77332, max admissible mass a = 0.46801
+sqrt(Q)=100 Q=10000: c_Q=3.21918, max admissible mass a = 0.91387
+sqrt(Q)=257 Q=66049: c_Q=4.16283, max admissible mass a = 1.85752
+Independent smaller-Q rational certificate passed: mass 23/1000, kappa<0.999092, prefactor<2203.

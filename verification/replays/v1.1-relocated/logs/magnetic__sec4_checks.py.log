@@ -1,0 +1,30 @@
+====================================================================================================
+selector CA (q=4), eps=0.90: witness offsets [0, 1], c_P=0.2500, |D(P)|=4, 1+a_P=1.001185
+  sup_{C, xi} |R_window - R_inf| by half-window: h=2: 3.83e-02, h=4: 6.11e-04, h=8: 1.51e-07, h=16: 6.88e-15, h=32: 2.44e-15
+  min R_inf over all trials = 1.000000 (>= 1? True)
+  min R_inf over 265 witness-completing trials = 1.140912  (>= 1+a_P=1.001185? True)
+  min ratio with half-window 2 and adversarial fixed hidden boundary = 1.000000 (can be < 1: boundary layer)
+====================================================================================================
+selector CA (q=4), eps=0.50: witness offsets [0, 1], c_P=0.2500, |D(P)|=4, 1+a_P=1.001666
+  sup_{C, xi} |R_window - R_inf| by half-window: h=2: 5.45e-04, h=4: 1.25e-07, h=8: 6.88e-15, h=16: 1.33e-15, h=32: 1.78e-15
+  min R_inf over all trials = 1.000000 (>= 1? True)
+  min R_inf over 264 witness-completing trials = 1.015385  (>= 1+a_P=1.001666? True)
+  min ratio with half-window 2 and adversarial fixed hidden boundary = 1.000000 (can be < 1: boundary layer)
+====================================================================================================
+AND rule (q=2), eps=0.90: witness offsets [0], c_P=0.2500, |D(P)|=3, 1+a_P=1.034150
+  sup_{C, xi} |R_window - R_inf| by half-window: h=2: 4.07e-02, h=4: 2.01e-03, h=8: 4.44e-06, h=16: 2.35e-11, h=32: 3.11e-15
+  min R_inf over all trials = 1.202500 (>= 1? True)
+  min R_inf over 300 witness-completing trials = 1.202500  (>= 1+a_P=1.034150? True)
+  min ratio with half-window 2 and adversarial fixed hidden boundary = 1.202500 (can be < 1: boundary layer)
+====================================================================================================
+  Dobrushin (q=4, eps=0.500): exact row sum = 3.637e-01 ; L m(m-1)/2 = 8.473e-01 ; claimed 4 L m(m-1) = 6.778e+00
+  Dobrushin (q=4, eps=0.100): exact row sum = 1.737e-02 ; L m(m-1)/2 = 3.961e-02 ; claimed 4 L m(m-1) = 3.169e-01
+  Dobrushin (q=4, eps=0.010): exact row sum = 1.750e-04 ; L m(m-1)/2 = 4.000e-04 ; claimed 4 L m(m-1) = 3.200e-03
+  Dobrushin (q=2, eps=0.500): exact row sum = 2.665e-01 ; L m(m-1)/2 = 5.108e-01 ; claimed 4 L m(m-1) = 4.087e+00
+  Dobrushin (q=2, eps=0.100): exact row sum = 1.005e-02 ; L m(m-1)/2 = 2.000e-02 ; claimed 4 L m(m-1) = 1.600e-01
+  Dobrushin (q=2, eps=0.010): exact row sum = 1.000e-04 ; L m(m-1)/2 = 2.000e-04 ; claimed 4 L m(m-1) = 1.600e-03
+====================================================================================================
+  (19) brute force, n=2 visible interior sites, hidden bc=(7,8), visible bc (+,+),(+,-): max rel error = 1.52e-14
+  (19) brute force, n=2 visible interior sites, hidden bc=(13,4), visible bc (+,+),(+,-): max rel error = 9.49e-15
+  (19) brute force, n=3 visible interior sites, hidden bc=(3,0), visible bc (+,+),(+,-): max rel error = 4.85e-15
+  (19) brute force, n=3 visible interior sites, hidden bc=(2,3), visible bc (+,+),(+,-): max rel error = 3.89e-15

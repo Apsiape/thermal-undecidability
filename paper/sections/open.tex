@@ -1,11 +1,13 @@
 \section{Open problems}\label{sec:open}
-\begin{question}[Uniqueness]
-Does every nonsurjective member of the collision family have a unique Gibbs state?
-\end{question}
-The magnetic estimate controls cluster signs. It does not control the response of closed-pattern energies or hidden observables to an exterior condition. A closed FK cut does not isolate the hidden factors that cross it.
+Questions 12.1 and 12.2 of version 1.0.0 have analogues answered, for a new larger Potts family, by Theorem~\ref{thm:full}. They remain open for the original nine-colour and Ising families. We retain their subject matter below with this restricted scope.
 
-\begin{question}[All local observables]
-Can a collision-specific boundary comparison prove exponential clustering for arbitrary bounded local observables in the nonsurjective branch?
+\begin{question}[Uniqueness in the remaining families]
+Does every nonsurjective member of the original Ising family, or of the $Q=9$ Potts family, have a unique Gibbs state?
+\end{question}
+The magnetic estimate controls cluster signs. It does not control the response of closed-pattern energies or hidden observables to an exterior condition. A closed FK cut does not isolate the hidden factors that cross it. Theorem~\ref{thm:full} repairs this at large $Q$ by representing crossing hidden factors as rare active hyperedges in a selector expansion. At $Q=9$, $c_9\approx0.04745$, whereas the present weighted-susceptibility estimate needs a mass of about $3$ to retain $a=\log2$. For any $a>0$ the method needs $c_Q>2.30$ (first met at $\sqrt Q=41$). At a continuous Ising transition there is no witness-free positive critical mass for the same argument.
+
+\begin{question}[All local observables in the remaining families]
+Can a collision-specific boundary comparison prove exponential clustering for arbitrary bounded local observables in the nonsurjective Ising or nine-colour branch?
 \end{question}
 For finite supports $S,T$, the usual target bounds $|\Cov_\mu(f,g)|$ by a constant times $|S||T|\|f\|_\infty\|g\|_\infty e^{-a\dist(S,T)}$. Odd observables are covered by Corollary~\ref{cor:odd}. Even and hidden observables require another argument.
 
@@ -65,3 +67,62 @@ Consequently a sufficient route to uniqueness is a signed massive \emph{annealed
 \]
 and a boundary error tending to zero, including rewards induced by fixed hidden boundary variables. Such rewards can be $O(\varepsilon^2)$ even when all bulk activities vanish (a surjective shift with pinned equal replicas gives $w_e=1+(q-1)\varepsilon^2$). A bulk quadratic remainder estimate cannot simply absorb that boundary layer. A weaker row bound of order $\Delta^{-7/4}$ could suffice after a suitably small parameter choice and certified constants, but neither bound is established here. This is a constructive-renormalization-scale open estimate, not a theorem supplied by the odd-sector comparison or Proposition~\ref{prop:Lunique}.
 \end{remark}
+
+
+\begin{remark}[The all-state quantifier]
+Proposition~\ref{prop:clustering-unique} shows that full clustering in every Gibbs state forces uniqueness, even when the constants depend on the state. Thus an affirmative answer to the all-observable question also answers the uniqueness question. Conversely uniqueness alone does not imply exponential clustering in general, as the critical Ising example shows. The two predicates are equivalent on the large-$Q$ family by Theorem~\ref{thm:full}. Clustering only in extremal states is a different question.
+\end{remark}
+
+\begin{remark}[The hidden sector reduces to even visible clustering]\label{rem:hidden-reduction}
+For the nonsurjective Ising collision family, suppose all bounded even visible local observables satisfy exponential clustering in the norm/support form, in every visible marginal. Then all bounded joint local observables cluster, and the full Gibbs state is unique. Here is the reduction. Lemma~\ref{lem:hidden}, conditional on any visible configuration $\sigma$, gives a unique hidden law $K_\sigma$ with uniform contraction. Disintegration of the hidden DLR equations gives $\mu(d\sigma,d\mathbf X)=\nu(d\sigma)K_\sigma(d\mathbf X)$. For local $f,g$, write $F(\sigma)=K_\sigma f$, $G(\sigma)=K_\sigma g$. Then
+\[
+ \Cov_\mu(f,g)=\nu\bigl[\Cov_{K_\sigma}(f,g)\bigr]+\Cov_\nu(F,G).
+\]
+The first term decays exponentially by the hidden influence resolvent. The same finite-range resolvent gives approximants supported on the $\ell$-neighbourhood of $A_f$ with
+\[
+ \|F-F_\ell\|_\infty\le C_h|A_f|\|f\|_\infty e^{-a_h\ell},
+ \qquad \|F_\ell\|_\infty\le\|f\|_\infty,
+\]
+and similarly for $G$. One obtains them by fixing the distant visible configuration; changes of those factors have exponentially small influence on $A_f$. If $f,g$ are even, $K_{-\sigma}=K_\sigma$ makes $F,G$ even. Symmetrize the approximants to preserve this. Set $\ell=\lfloor d_1(A_f,A_g)/3\rfloor$ and apply the assumed visible bound to $F_\ell,G_\ell$. Polynomial growth of the enlarged supports is absorbed in a smaller exponential rate. The approximation errors are bounded by a constant times $|A_f||A_g|\|f\|_\infty\|g\|_\infty e^{-a d_1(A_f,A_g)}$. Thus even joint observables cluster. Decompose arbitrary observables into even and odd parts. Spin-flip invariance kills mixed covariances; Corollary~\ref{cor:odd} controls the odd parts. Proposition~\ref{prop:clustering-unique} completes the claim.
+
+The premise must cover all bounded even local functions. Pair covariances of selected energy variables do not suffice: two bits $u_x,v_x$ with $\tau_x=u_xv_x$ can have all individual cross-site covariances zero while the products $\tau_x$ form a low-temperature Ising phase mixture. For example give a neighbouring pair weight $4$ when $\tau_x=\tau_y$ and $1$ otherwise; conditional on $\tau$, take the $u_x$ iid fair and $v_x=\tau_xu_x$.
+\end{remark}
+
+\begin{remark}[No computably bounded local mixing certificate]\label{rem:certificate}
+No rational-weight construction separating these undecidable branches can have ``nonsurjective if and only if the ordinary single-site Dobrushin sum is less than one.'' Each conditional probability is a rational function of finitely many positive rational weights. For a neighbour $y$, the coefficient is
+\[
+ c_{0y}=\frac12\max_{\eta=\eta'\ {\rm off}\ y}
+        \sum_a|\gamma_0(a\mid\eta)-\gamma_0(a\mid\eta')|.
+\]
+It is the maximum of finitely many computable rationals. Hence the sum and the strict test, including the equality case, are decidable. If that test characterized nonsurjectivity, it would decide Kari's problem. A sufficient contraction test cannot hold on the nonunique branch either.
+
+More generally, let $\mathsf{Cert}(F,n)$ be a decidable sufficient mixing certificate, with a certificate for every nonsurjective input and none on the other branch. There is no total computable bound $b(F)$ such that every nonsurjective input has a certificate with $n\le b(F)$. A finite search up to that bound would decide the branch. This includes fixed-block contraction tests, whose finite rational transport linear programs are decidable. An unbounded search after finding a collision witness is compatible with the theorem. The all-state domination in \eqref{eq:full-domination} is not certified merely by checking $\chi<1$.
+\end{remark}
+
+\begin{proposition}[Arithmetic upper bound for full clustering]\label{prop:full-arith}
+For finite-alphabet finite-range positive rational-weight models, exponential clustering for all bounded local observables in every Gibbs state belongs to $\Sigma^0_3$. The constants may initially depend on the state.
+\end{proposition}
+\begin{proof}
+By Proposition~\ref{prop:clustering-unique}, the property forces a single Gibbs state, so state-dependent constants are equivalent to uniform constants for this predicate. For fixed combined support $S$, let
+\[
+ P_{L,S}=\operatorname{conv}\{(\gamma_{\Lambda_L}^{\eta})_S:
+                         \eta\text{ an exterior collar configuration}\},
+ \qquad S\subseteq\Lambda_L.
+\]
+These are computable rational polytopes and are nested by the specification's tower identity. Their intersection is exactly $\{\mu_S:\mu\in\G(\Phi)\}$. One inclusion is DLR; for the other, express a point in every polytope as a mixture of finite-volume laws, extend outside their collars, take a compact subsequential limit, and pass each fixed local DLR equation to the limit. This is the polytope version of the finite-volume extrema argument in Section~\ref{sec:corollaries}.
+
+For local rational-valued $f,g$ define
+\[
+ q_L(f,g)=\max_{p\in P_{L,S}}|p(fg)-p(f)p(g)|.
+\]
+Compact nestedness gives $q_L\downarrow\sup_{\mu\in\G(\Phi)}|\Cov_\mu(f,g)|$. Comparing $q_L$ to a rational threshold is decidable by real quantifier elimination: this is a quadratic polynomial over a finite rational polytope. The convex hull is essential because mixtures may have covariances absent from the individual boundary limits.
+
+For fixed supports the unit balls of real observables are cubes. Bilinearity shows that it suffices to test their finitely many $\{-1,1\}$-valued vertices. Enumerate all such local tests as $(f_j,g_j)$ with supports $A_j,B_j$. Choosing a rational $r\in(0,1)$ slightly above the exponential base and enlarging $C$ supplies strict slack. The full property is equivalent to
+\[
+ \exists C\in\mathbb N_{>0}\ \exists r\in\mathbb Q\cap(0,1)\
+ \forall j\ \exists L:\quad
+ S_j\subseteq\Lambda_L,\quad
+ q_L(f_j,g_j)<C|A_j||B_j|r^{d_1(A_j,B_j)}.
+\]
+The matrix is decidable, giving $\exists\forall\exists$ and hence $\Sigma^0_3$. Uniform finite-volume clustering over all exterior conditions is a different predicate; no identification with it is used.
+\end{proof}

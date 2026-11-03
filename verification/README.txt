@@ -1,6 +1,6 @@
 Finite verification for
 Spontaneous magnetization and thermal decay are undecidable at positive temperature
-Seth Douglas and Nidhal Mghirbi, Version 1.0.0, November 2026
+Seth Douglas and Nidhal Mghirbi, Version 1.1.0, November 2026
 
 Run every command below from this verification/ directory.
 
@@ -23,17 +23,18 @@ Environment used for this release:
   SciPy 1.17.1
   SymPy 1.14.0
   NetworkX 3.6.1
+  mpmath 1.3.0
 Install matching versions:
-  python -m pip install numpy==2.4.3 scipy==1.17.1 sympy==1.14.0 networkx==3.6.1
+  python -m pip install numpy==2.4.3 scipy==1.17.1 sympy==1.14.0 networkx==3.6.1 mpmath==1.3.0
 
 Provenance
 ----------
 fk_route/ contains all six scripts from the earlier FK-route review. magnetic/
 contains the later magnetic review's common module, seven standalone check
 scripts and its original text outputs. The two reviews were separate checks of
-the derivations. Their own comments and terminology are retained; this README
-clarifies their numerical scope. originals.zip preserves every received review
-file byte-for-byte. Only sec3_checks.py has a replay-selection adaptation: its
+the derivations. Their mathematical code and terminology are retained; this README
+clarifies their numerical scope. originals.zip preserves the received check
+files with LF text and neutral descriptions in process comments. Only sec3_checks.py has a replay-selection adaptation: its
 mathematical functions are unchanged; the original large LP grid is optional
 because sec3_run2.py covers larger cases with the independent flow engine.
 
@@ -117,8 +118,10 @@ conclusions depend on the written proofs and cited external theorems.
 
 Hash verification
 -----------------
-SHA256SUMS identifies every public file in the release tree apart from itself
-and generated __pycache__; paths are relative to this verification/ directory.
+SHA256SUMS identifies every public file apart from the two checksum files
+and generated build/, runs/ and __pycache__ content; paths are relative to this
+verification/ directory. The root ../SHA256SUMS also covers this checksum file
+and omits only itself from the public files; its paths are relative to the root.
   python check_hashes.py
 Rerunning run_all.py leaves shipped records and hashes unchanged. New outputs
 are under runs/ by default; these local replay directories are not release files.
@@ -163,3 +166,42 @@ Earlier 17-job replay: replays/potts-pass/. Its exact-q9 interior-coverage
 message referred only to index bounds; the release checker now enumerates actual
 oriented edges and retained translates as described above.
 Earlier shipped numerical records are preserved unchanged.
+
+
+Version 1.1.0 uniqueness extension (20-job replay)
+------------------------------------------------
+python uniqueness/check_constants.py
+  Port of the first review script. Adds exact rational intervals for the mass,
+  exact exploration constants, assertions for printed inequalities and stable
+  log1p arithmetic for the diagnostic grid. The correlation-length resummations
+  and direct conditionally convergent sums are numerical diagnostics only.
+python uniqueness/check_lw.py
+  Port of the second review script. Adds an independent exact rational mass
+  enclosure, exact exploration constants and a 36,000-case rational grid.
+  Retains the original 80-digit grid and smaller-Q numerical diagnostics.
+  Both scripts also justify the universal inequalities algebraically; a finite
+  grid alone is not a proof for all neighbourhoods.
+python uniqueness/check_q1681.py
+  Standalone standard-library exact rational certificate: mass 0.023,
+  kappa < 0.999092, covariance prefactor < 2203, local dimension 430336.
+The checked ports are included; their internal source archive is not distributed.
+Ports align the Dobrushin row sum with the paired-site coefficient in the paper.
+Extra 4*l_w bounds in historical diagnostics are only weaker screening bounds.
+Dependency added: mpmath 1.3.0 (arbitrary-precision diagnostics).
+Fresh version 1.1.0 replay: replays/v1.1-relocated/.
+
+Replay audit note for version 1.1.0
+---------------------------------
+The initial relocated 20-job invocation ran the 17 unchanged jobs successfully.
+Two new scripts first rejected an illustrative log(20) threshold, which is
+insufficient; the manuscript uses the valid log(21) threshold.
+The final corrected scripts use exact rational denominator rounding to keep
+certificates efficient. All 20 jobs were then rerun in ONE invocation from a
+relocated copy into a fresh directory. replays/v1.1-relocated/ contains that
+complete final replay, not an aggregation. Its manifest identifies all 20
+successful jobs and their current source hashes; the three uniqueness jobs
+were rerun along with every other standalone job.
+The manuscript build and source archive have also been checked separately.
+Regenerate archive, source manifest and all public checksums after a build:
+  python -B package_release.py
+This excludes local build/, runs/ and __pycache__ directories from public hashes.

@@ -1,0 +1,40 @@
+Exact rational certificates: Q, dimensions, masses, susceptibility, kappa, prefactor, activation passed.
+== transcription check of DC-GHMT (1.2)/(1.3): two expressions should agree ==
+q=5: lam=0.4812118251  formula=2.814638976548e-04  q->4 series=2.814638976548e-04  direct=2.814651475298e-04
+q=6: lam=0.6584789485  formula=4.450216692576e-03  q->4 series=4.450216692576e-03  direct=4.450217942451e-03
+q=9: lam=0.9624236501  formula=4.745442495316e-02  q->4 series=4.745442495316e-02  direct=4.745442620303e-02
+q=16: lam=1.3169578969  formula=1.888241951573e-01  q->4 series=1.888241951573e-01  direct=1.888241964072e-01
+q=25: lam=1.5667992370  formula=3.437934278567e-01  q->4 series=3.437934278567e-01  direct=3.437934291066e-01
+
+== sqrt(Q) = 257 ==
+lambda = 5.5490609442767217727905246471150761889849782992895
+c_Q    = 4.1628271447138699422777107313158134778671049103795
+log 64 = 4.1588830833596718565033927287490594084530008061615  margin c_Q - log64 = 0.0039440613541980857743180025667540694141041042179386
+lambda - log4 = 4.162766583156831153956060404198723052833978030569
+exact: 257^2-4 = 66045 > 255^2 = 65025 : True
+
+== S_Q(log 2) bound ==
+sum 4n 32^-n = 128/961  == 128/961 ? True
+with exact c_Q: S <= 0.13263661014639418305366353862437059069755007420655
+kappa bound = 17345/61504  == 17345/61504 ? True  <1/3 ? True
+2/(1-kappa) = 123008/44159 = 2.7855703254149775  <=3 ? True
+
+== epsilon bounds (2),(3) and 2 p_h J_N <= 1/64 over a grid ==
+violations: [] count 0
+max 2 p_h J_N over grid = 0.0005999990625014649 (<= 1/64 = 0.015625 )
+max historical 4*l_w screening sum = 4.938271604938428e-06 ; max paper Dobrushin sum = 6.172839506173035e-07
+
+== smallest perfect square Q for which the same union-bound method gives kappa<1 (hidden term -> 0) ==
+r* = 0.10102051443364380360543185058821721606810503868666  need c_Q > 2.2924316695611776878007873113480154316218682400157
+first sqrt(Q) = 40  Q = 1600  c_Q = 2.30446028781708
+sqrt(Q)=3: c_Q=0.047454
+sqrt(Q)=10: c_Q=0.946339
+sqrt(Q)=20: c_Q=1.616941
+sqrt(Q)=30: c_Q=2.018237
+sqrt(Q)=40: c_Q=2.304460
+sqrt(Q)=50: c_Q=2.526929
+sqrt(Q)=100: c_Q=3.219176
+sqrt(Q)=257: c_Q=4.162827
+
+Local state count at Q=66049 with 4-letter CA alphabet: 16908544
+Independent smaller-Q rational certificate passed: mass 23/1000, kappa<0.999092, prefactor<2203.

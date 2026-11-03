@@ -2,18 +2,20 @@ cff-version: 1.2.0
 message: Please cite the paper; this distribution supplies its source and finite checks.
 type: software
 title: "Spontaneous magnetization and thermal decay are undecidable at positive temperature"
-version: 1.0.0
-doi: '10.5281/zenodo.23924358'
+version: 1.1.0
 date-released: '2026-11-03'
 license: [CC-BY-4.0, MIT, Apache-2.0]
 authors: [{"family-names": "Douglas", "given-names": "Seth", "orcid": "https://orcid.org/0009-0007-4708-3252"}, {"family-names": "Mghirbi", "given-names": "Nidhal", "orcid": "https://orcid.org/0009-0005-6534-1118"}]
 keywords: ["statistical mechanics", "undecidability", "Gibbs measures", "Potts model", "phase transitions", "cellular automata"]
-abstract: "Spontaneous magnetization is undecidable at a fixed positive temperature for translation-invariant finite-range classical lattice models with strictly positive rational Boltzmann weights. A computable family on 2304 local states has maximal visible nine-colour Potts magnetization exactly zero or a fixed positive constant, attained in a translation-invariant Gibbs state. Its pressure in a uniform field is uniformly computable, but differentiability at zero field is undecidable with a fixed derivative-jump gap. Rational weights are asserted at zero field.\n\nWe also prove undecidability of exponential decay of one specified thermal spin correlation, in every Gibbs state, on 512 local states. Both constructions couple critical visible spins to cellular-automaton replicas. Surjectivity cancels the collision corrections; nonsurjectivity gives strict subcritical bond domination and exponential decay of the specified correlation uniformly over states. The interaction range depends on the input, and the branches are fine-tuned at their critical or coexistence points. The results transfer to diagonal quantum interactions and survive a prescribed output-reset noise family, the same construction with reduced retention. Nonsurjective full-state uniqueness and exponential clustering of arbitrary local observables remain open."
+abstract: "Spontaneous magnetization is undecidable at a fixed positive temperature for translation-invariant finite-range classical lattice models with strictly positive rational Boltzmann weights. A computable family on 2304 local states has maximal visible nine-colour Potts magnetization exactly zero or a fixed positive constant, attained in a translation-invariant Gibbs state. Its pressure in a uniform field is uniformly computable, but differentiability at zero field is undecidable with a fixed derivative-jump gap. Rational weights are asserted at zero field.\n\nWe also prove undecidability of exponential decay of one specified thermal spin correlation, in every Gibbs state, on 512 local states. Both constructions couple critical visible spins to cellular-automaton replicas. Surjectivity cancels the collision corrections; nonsurjectivity gives strict subcritical bond domination and exponential decay of the specified correlation uniformly over states. The interaction range depends on the input, and the branches are fine-tuned at their critical or coexistence points. The results transfer to diagonal quantum interactions and survive a prescribed output-reset noise family, the same construction with reduced retention. A larger Potts family on 16,908,544 local states makes Gibbs uniqueness undecidable: nonsurjective inputs have a unique state with uniform exponential clustering of all local observables; surjective inputs have at least 66,050 states, including a disordered state with the same bound. Uniqueness for the 512- and 2304-state families remains open."
 preferred-citation:
   type: generic
   title: "Spontaneous magnetization and thermal decay are undecidable at positive temperature"
   authors: [{"family-names": "Douglas", "given-names": "Seth", "orcid": "https://orcid.org/0009-0007-4708-3252"}, {"family-names": "Mghirbi", "given-names": "Nidhal", "orcid": "https://orcid.org/0009-0005-6534-1118"}]
   year: 2026
-  version: 1.0.0
-  doi: '10.5281/zenodo.23924358'
+  version: 1.1.0
   notes: 'Preprint. It has not been peer reviewed. Text: CC BY 4.0. Scripts: MIT or Apache 2.0; see RIGHTS.md.'
+references:
+  - type: generic
+    title: 'Version 1.0.0 of this preprint'
+    doi: '10.5281/zenodo.23924358'

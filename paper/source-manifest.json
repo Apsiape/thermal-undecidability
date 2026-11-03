@@ -1,23 +1,23 @@
 {
   "abstract.txt": {
-    "sha256": "2195477a833c94af8cb54aaeb021036c79a7ded794950a41f953e455dc33ba4e",
-    "bytes": 1333
+    "sha256": "6703ed98ca8074c14f9ae6e85fa214fd4e775a77d1967197112592debe7ce7b1",
+    "bytes": 1573
   },
   "build.py": {
-    "sha256": "88aea248032e82d745a2ce0192e8711cab715cfa9445e11afcfd730e8f6fd6f3",
-    "bytes": 1232
+    "sha256": "e3a2de4a6db8e75377649aedc463661a6e8972b59e2f8f0462b2dae94d322006",
+    "bytes": 1295
   },
   "main.tex": {
-    "sha256": "b8b0f0bbd1e187a257c34de28d326c90eb2d92abf355c50865bf6bb43c960c35",
-    "bytes": 4349
+    "sha256": "c9b2c56d6ffbf0b071173aa5b226ea17ba4f85f4e2f15fd514482b33407bdd0f",
+    "bytes": 5169
   },
   "README.txt": {
-    "sha256": "a185811efc9740edcc1ae06f101ff7a5f17943c9c4d22456e7941d0716ad0504",
-    "bytes": 785
+    "sha256": "740ad73ec69713e487aec6a8c3c90e71daefb367068123758d1b7c7e52b7b9f7",
+    "bytes": 792
   },
   "references.bib": {
-    "sha256": "b37e94f62d965289e6207c7d82945a73912dccdd2b87195b5887ae2da3a9013f",
-    "bytes": 12175
+    "sha256": "734918ecf023ece1a2c4c0de13ee805cadeb2276032064606d994f16f958057e",
+    "bytes": 13227
   },
   "sections/allstates.tex": {
     "sha256": "23ad69297d86825975b6d656c2582947d4ddc2f7d60f8bd6630da374a232343a",
@@ -48,24 +48,24 @@
     "bytes": 5166
   },
   "sections/discussion.tex": {
-    "sha256": "f6856da2c8f4676f71bf7f60c1cf5a9d89a72fb8ffe8e2bb5dbcbcb8e8b6cc8a",
-    "bytes": 9235
+    "sha256": "14a8000263e606210ccb1f6a1c30442f99a1f6cdbffad08906b03b991f17f504",
+    "bytes": 10194
   },
   "sections/estimates.tex": {
-    "sha256": "673697a2288a067c2b4c021fbba5648ddcda6fad08ac33c0b44861f39e47a57e",
-    "bytes": 993
+    "sha256": "c74ce1a859680c6c8e9542c593ddb9992e8ec70ea633849bbb8246cae81b3ea4",
+    "bytes": 1002
   },
   "sections/intro.tex": {
-    "sha256": "bc26092788c4884b8bee94b2b40048d21ef39e921c3907087e6787e9d620dccb",
-    "bytes": 12428
+    "sha256": "e8cf4d98388f1c95954ca08b8300925fa5b2dff920905238d844bdd07ee0601b",
+    "bytes": 14373
   },
   "sections/methods.tex": {
-    "sha256": "2459541ae10f0909eda9edc4f84b50487dedbcd2f2d3529b1073659c23a88bdb",
-    "bytes": 1696
+    "sha256": "b56fd669a57c026530e932ec50e7b39b9625ff1cb508173455bfc8174134cb0e",
+    "bytes": 2785
   },
   "sections/open.tex": {
-    "sha256": "2e1f1523cb4610d8c006d29e403a6d923e334970ac4ae7aa9f82db564d28eaaa",
-    "bytes": 6015
+    "sha256": "5edeab65b4daa643b588362c2af52c4d54b57a7a8628634f8b4b3763d4e4fb4e",
+    "bytes": 13532
   },
   "sections/potts.tex": {
     "sha256": "e1174ee6fb59403c468899285a628480d203b3d817d099dee6024fecf5176e29",
@@ -76,11 +76,15 @@
     "bytes": 3781
   },
   "sections/reproducibility.tex": {
-    "sha256": "aa094582430e264052302a22b7da6786dc389f4bf189e28530d843b493a35bb9",
-    "bytes": 3090
+    "sha256": "8c81e947c2f563a93336f2333fa4d94ae0fae2e364b9e916c02cd802ec0ff8a7",
+    "bytes": 3919
   },
   "sections/routeA.tex": {
     "sha256": "dcb7cf2a4e0f0e1f52c5b2bbd9fe2036c49a827f19095ffc6391866fd14b4c53",
     "bytes": 5983
+  },
+  "sections/uniqueness.tex": {
+    "sha256": "d4fc876bc21e169c5ff8055ba1de8f987b1d420bce130861a5769465ecab9663",
+    "bytes": 24278
   }
 }

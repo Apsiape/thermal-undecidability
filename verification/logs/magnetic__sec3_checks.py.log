@@ -7,7 +7,7 @@ k=1 sanity (equality expected): torus 3x2, nE=12, P=[(0, 0)], k=1, kappa=3^-(k-1
   (13) g=0.20: Delta=kappa*g=0.2000  max_U[nu_{log2,g}-phi_{log2-Delta}](U)=6.74e-17  (<=0? True) | best Delta*=0.2000 (ratio Delta*/g=1.000)
   (13) g=1.00: Delta=kappa*g=1.0000  max_U[nu_{log2,g}-phi_{log2-Delta}](U)=1.02e-16  (<=0? True) | best Delta*=1.0000 (ratio Delta*/g=1.000)
   (13) g=3.00: Delta=kappa*g=3.0000  max_U[nu_{log2,g}-phi_{log2-Delta}](U)=3.07e-16  (<=0? True) | best Delta*=3.0000 (ratio Delta*/g=1.000)
-  total 5.3s
+  total 4.8s
 ----------------------------------------------------------------------------------------------------
 pair in a row: torus 3x2, nE=12, P=[(0, 0), (1, 0)], k=2, kappa=3^-(k-1)=0.3333  (setup 0.0s)
   theta=+0.693 s=0.00 | max cond P(open H)=0.6667 (<=2/3? True) | max_U[(12) functional]=1.00e-14 | kappa*=0.4308 (>= kappa? True) | event-family min ratio=0.4725 over 327 events
@@ -21,7 +21,7 @@ pair in a row: torus 3x2, nE=12, P=[(0, 0), (1, 0)], k=2, kappa=3^-(k-1)=0.3333 
   (13) g=0.20: Delta=kappa*g=0.0667  max_U[nu_{log2,g}-phi_{log2-Delta}](U)=2.64e-16  (<=0? True) | best Delta*=0.0972 (ratio Delta*/g=0.486)
   (13) g=1.00: Delta=kappa*g=0.3333  max_U[nu_{log2,g}-phi_{log2-Delta}](U)=0.00e+00  (<=0? True) | best Delta*=0.7530 (ratio Delta*/g=0.753)
   (13) g=3.00: Delta=kappa*g=1.0000  max_U[nu_{log2,g}-phi_{log2-Delta}](U)=4.77e-15  (<=0? True) | best Delta*=2.9685 (ratio Delta*/g=0.990)
-  total 10.8s
+  total 8.7s
 ----------------------------------------------------------------------------------------------------
 stacked pair: torus 3x2, nE=12, P=[(0, 0), (0, 1)], k=2, kappa=3^-(k-1)=0.3333  (setup 0.0s)
   theta=+0.693 s=0.00 | max cond P(open H)=0.6667 (<=2/3? True) | max_U[(12) functional]=4.94e-15 | kappa*=0.4111 (>= kappa? True) | event-family min ratio=0.4421 over 327 events
@@ -35,5 +35,5 @@ stacked pair: torus 3x2, nE=12, P=[(0, 0), (0, 1)], k=2, kappa=3^-(k-1)=0.3333  
   (13) g=0.20: Delta=kappa*g=0.0667  max_U[nu_{log2,g}-phi_{log2-Delta}](U)=6.11e-16  (<=0? True) | best Delta*=0.0966 (ratio Delta*/g=0.483)
   (13) g=1.00: Delta=kappa*g=0.3333  max_U[nu_{log2,g}-phi_{log2-Delta}](U)=3.44e-15  (<=0? True) | best Delta*=0.7779 (ratio Delta*/g=0.778)
   (13) g=3.00: Delta=kappa*g=1.0000  max_U[nu_{log2,g}-phi_{log2-Delta}](U)=-1.29e-14  (<=0? True) | best Delta*=2.9563 (ratio Delta*/g=0.985)
-  total 11.0s
+  total 9.5s
 Larger cases: sec3_run2.py (included in run_all.py); original extended LP grid: --full-lp

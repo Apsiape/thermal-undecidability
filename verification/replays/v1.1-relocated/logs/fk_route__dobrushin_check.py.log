@@ -1,0 +1,2 @@
+q=2: sum_y n_xy = 90 (claim: 90); 2J*90 = 0.180; Georgii J*90/2 = 0.0450; max sampled TV / tanh(J n_xy/2) = 1.000; sampled lower estimate of sum_y c_xy = 0.0332
+q=3: sum_y n_xy = 90 (claim: 90); 2J*90 = 0.180; Georgii J*90/2 = 0.0450; max sampled TV / tanh(J n_xy/2) = 0.890; sampled lower estimate of sum_y c_xy = 0.0274
