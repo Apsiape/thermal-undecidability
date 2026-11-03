@@ -1,6 +1,6 @@
 # Spontaneous magnetization and thermal decay are undecidable at positive temperature
 
-Seth Douglas and Nidhal Mghirbi. Version 1.1.0, 3 November 2026. Prior version DOI: [10.5281/zenodo.23924358](https://doi.org/10.5281/zenodo.23924358).
+Seth Douglas and Nidhal Mghirbi. Version 1.1.0, 3 November 2026. Concept DOI (all versions): [10.5281/zenodo.23924357](https://doi.org/10.5281/zenodo.23924357). Version 1.0.0: [10.5281/zenodo.23924358](https://doi.org/10.5281/zenodo.23924358). Version 1.1.0: [10.5281/zenodo.23933148](https://doi.org/10.5281/zenodo.23933148).
 
 **This is a preprint. It has not been peer reviewed.**
 
