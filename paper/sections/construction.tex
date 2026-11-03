@@ -1,0 +1,102 @@
+\section{The local positive-weight model}\label{sec:model}
+
+Let \(F:A^{\Z^2}\to A^{\Z^2}\) be a cellular automaton, specified by a local rule \(f:A^N\to A\), where \(N\subset\Z^2\) is finite and nonempty. Put
+\begin{equation}
+ q=|A|\ge2,\qquad m=|N|,\qquad
+ \varepsilon=\frac{1}{100q(m+1)^2}.
+ \label{eq:epsilon}
+\end{equation}
+At each site place a visible spin \(\sigma_i\in\{-1,+1\}\) and four hidden variables
+\begin{equation}
+ X_i^H,\ X_i^{\prime H},\ X_i^V,\ X_i^{\prime V}\in A.
+\end{equation}
+The two orientations use distinct replica pairs. Set \(e_H=(1,0)\), \(e_V=(0,1)\), and
+\begin{equation}
+ p_H=\frac23,\qquad p_V=\frac12,\qquad
+ h(a,b)=q\one_{\{a=b\}}-1.
+\end{equation}
+For \(r\in\{H,V\}\), define
+\begin{equation}
+ w_i^r=1+\varepsilon^2
+ h\bigl(F(X^r)_i,F(X^{\prime r})_i\bigr).\label{eq:w}
+\end{equation}
+Equivalently, if $\widetilde Y_i,\widetilde Y'_i$ are the two deterministic outputs independently passed through uniform-replacement channels of retention $\varepsilon$, then
+\[
+ w_i^r=q\,\Pr[\widetilde Y_i=\widetilde Y'_i].
+\]
+Two independent channels explain $\varepsilon^2$; uniform replacement makes the collision probability strictly positive. Composing each channel with retention $\eta$ gives $\varepsilon\mapsto\eta\varepsilon$, precisely Theorem~\ref{thm:noise-main}, and locates the noisy-CA ingredient of \cite{MT}. Now set
+\begin{align}
+ B_{i,r}&=p_r\one_{\{\sigma_i=\sigma_{i+e_r}\}}+(1-p_r)w_i^r,\label{eq:B}\\
+ \Phi_{i,r}&=-\log B_{i,r}.\label{eq:Phi}
+\end{align}
+These are finite-support functions, translated identically at every lattice site.
+
+\begin{lemma}[positivity and effective description]\label{lem:positive}
+The interaction \(\Phi_F\) defined above is translation invariant and finite range. Every local Boltzmann weight is a strictly positive rational. Moreover,
+\begin{equation}
+ w_{\min}=1-\varepsilon^2\le w_i^r\le
+ 1+(q-1)\varepsilon^2=w_{\max},
+ \label{eq:w-bounds}
+\end{equation}
+and \(\G(\Phi_F)\) is nonempty.
+\end{lemma}
+\begin{proof}
+The kernel \(h\) takes the integer values \(-1\) and \(q-1\), and \(0<\varepsilon<1\). Thus \(w_i^r>0\), and
+\(B_{i,r}\ge(1-p_r)w_{\min}>0\).
+All entries are rational. The support is contained in
+\(\{i,i+e_r\}\cup(i+N)\), with the relevant hidden components at \(i+N\).
+The finite rule table, the two rational probabilities, and \(\varepsilon\) determine every entry by finite arithmetic. Existence of a Gibbs state follows by taking a weakly convergent subsequence of finite-volume Gibbs measures; the configuration space is compact and the finite-range, positive specification is continuous.
+\end{proof}
+
+With counting a-priori measure on every copy of $S=\{-1,+1\}\times A^4$, the full finite-volume Hamiltonian is
+\[
+ H_\Lambda(\xi\mid\bar\xi)=
+ -\!\!\sum_{\substack{i\in\Z^2,\ r\in\{H,V\}\\
+           (\{i,i+e_r\}\cup(i+N))\cap\Lambda\ne\varnothing}}
+ \log\!\left[p_r\one_{\{\sigma_i=\sigma_{i+e_r}\}}
+                    +(1-p_r)w_i^r\right].
+\]
+Each factor uses $\xi$ on $\Lambda$ and $\bar\xi$ outside. There are no hidden one-site energy terms. Normalizing counting measure to uniform measure only changes normalization constants.
+
+\subsection{The auxiliary bonds}
+
+Introduce a bond \(\omega_{i,r}\in\{0,1\}\) for each nearest-neighbor edge \(e=(i,i+e_r)\). Its joint local factor is
+\begin{equation}
+ \widetilde B_e=
+ \begin{cases}
+ p_r\one_{\{\sigma_i=\sigma_{i+e_r}\}},&\omega_e=1,\\
+ (1-p_r)w_i^r,&\omega_e=0.
+ \end{cases}
+ \label{eq:ESfactor}
+\end{equation}
+For a finite set of affected factors $\mathcal E$, this defines the joint conditional weight
+\[
+ \widetilde\gamma(\sigma,\mathbf X,\omega\mid\text{exterior})
+ \ \propto\ \prod_{e\in\mathcal E}
+ \bigl[p_e\one_{\{\sigma_u=\sigma_v\}}\bigr]^{\omega_e}
+ \bigl[(1-p_e)w_e\bigr]^{1-\omega_e}.
+\]
+An exponent zero means that the corresponding factor is omitted. Counting measure is used also for bonds. The canonical extension $\widetilde\mu$ below is defined by these weights. For $r=H,V$, put
+\[
+ C_r(\omega)=\{i\in\Z^2:\omega_{i,r}=0\}.
+\]
+The center of $(i,i+e_r)$ means its lower-left endpoint $i$; this identifies horizontal witness centers with horizontal edges.
+
+Summing over \(\omega_e\) gives \(B_{i,r}\). Given the original variables, these auxiliary bonds are conditionally independent with the probabilities prescribed by \eqref{eq:ESfactor}/\(B_{i,r}\).
+
+Every original Gibbs state has a canonical extension $\widetilde\mu$. For a finite collection of site and bond coordinates, condition on all exterior coordinates. Its conditional density is the product of the factors \eqref{eq:ESfactor} that meet the resampled coordinates, with exterior values fixed. Factors disjoint from them cancel. Indeed, the original DLR density is multiplied by the conditional bond kernels; their denominators $B_e$ cancel the original factors on every affected edge. This is the joint DLR specification. Its site projection is the original specification. Open bonds impose visible equality; closed bonds have no visible-spin dependence.
+
+\begin{center}\small
+\begin{tabular}{@{}ll@{}}\toprule
+Symbol & Meaning\\\midrule
+$q,m,N$ & CA alphabet size, neighborhood size, neighborhood\\
+$r\in\{H,V\},\ \eta$ & orientation; output-reset retention\\
+$h(a,b),\ w_i^r$ & collision kernel; positive local collision weight\\
+$c_T,\ z(T)$ & collision coefficient; $\varepsilon^{2|T|}c_T$\\
+$C_r(\omega),\ K(\omega)$ & closed centers; FK cluster count\\
+$P,\ D(P),\ g$ & witness; overlap neighborhood; comparator reward\\
+$\kappa,\ \Delta$ & $3^{-(|P|-1)}$; strict comparison displacement\\
+$\lambda^C,\ \mathsf D$ & conditional hidden measure; Dobrushin matrix\\
+$\rho,\ R_\infty(C,e)$ & contraction bound; hidden insertion ratio\\\bottomrule
+\end{tabular}
+\end{center}

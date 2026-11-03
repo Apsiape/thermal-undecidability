@@ -1,0 +1,21 @@
+torus 3x3, P=[(0, 0), (1, 0)], k=2, kappa=0.3333 (setup 0.9s)
+  theta=+0.693 s=0.0: maxP(open H)=0.6667 | (12) screened max_U=-5.18e-15 (rounding bound 2.0e-04) | false kappa=1: 2.82e-01 | event-family min ratio 0.4279 (254 events)
+  theta=+0.693 s=1.0: maxP(open H)=0.6667 | (12) screened max_U=0.00e+00 (rounding bound 3.5e-04) | false kappa=1: 5.17e-02 | event-family min ratio 0.8447 (254 events)
+  theta=+0.193 s=2.0: maxP(open H)=0.5481 | (12) screened max_U=3.29e-14 (rounding bound 8.2e-05) | false kappa=1: 6.82e-05 | event-family min ratio 0.9882 (254 events)
+  (13) g=0.3: screened max_U[nu_{log2,g} - phi_{log2-kappa g}] = -5.90e-17 (bound 7.5e-05); with Delta=g (too strong): 7.25e-02
+  (13) g=2.0: screened max_U[nu_{log2,g} - phi_{log2-kappa g}] = 6.59e-16 (bound 4.2e-04); with Delta=g (too strong): 2.85e-03
+  time 23.8s
+torus 3x3, P=[(0, 0), (1, 1)], k=2, kappa=0.3333 (setup 1.3s)
+  theta=+0.693 s=0.0: maxP(open H)=0.6667 | (12) screened max_U=0.00e+00 (rounding bound 1.9e-04) | false kappa=1: 2.87e-01 | event-family min ratio 0.3943 (254 events)
+  theta=+0.693 s=1.0: maxP(open H)=0.6667 | (12) screened max_U=0.00e+00 (rounding bound 3.6e-04) | false kappa=1: 2.60e-02 | event-family min ratio 0.8401 (254 events)
+  theta=+0.193 s=2.0: maxP(open H)=0.5481 | (12) screened max_U=1.22e-14 (rounding bound 8.1e-05) | false kappa=1: 1.57e-05 | event-family min ratio 0.9882 (254 events)
+  (13) g=0.3: screened max_U[nu_{log2,g} - phi_{log2-kappa g}] = -1.34e-16 (bound 7.3e-05); with Delta=g (too strong): 6.80e-02
+  (13) g=2.0: screened max_U[nu_{log2,g} - phi_{log2-kappa g}] = 0.00e+00 (bound 4.3e-04); with Delta=g (too strong): 8.72e-04
+  time 21.6s
+torus 3x3, P=[(0, 0), (1, 0), (0, 1)], k=3, kappa=0.1111 (setup 1.0s)
+  theta=+0.693 s=0.0: maxP(open H)=0.6667 | (12) screened max_U=0.00e+00 (rounding bound 1.6e-04) | false kappa=1: 3.91e-01 | event-family min ratio 0.1736 (254 events)
+  theta=+0.693 s=1.0: maxP(open H)=0.6667 | (12) screened max_U=0.00e+00 (rounding bound 5.9e-04) | false kappa=1: 4.45e-03 | event-family min ratio 0.8247 (254 events)
+  theta=+0.193 s=2.0: maxP(open H)=0.5481 | (12) screened max_U=2.37e-14 (rounding bound 2.0e-05) | false kappa=1: -2.37e-15 | event-family min ratio 0.9968 (254 events)
+  (13) g=0.3: screened max_U[nu_{log2,g} - phi_{log2-kappa g}] = 0.00e+00 (bound 5.9e-05); with Delta=g (too strong): 8.99e-02
+  (13) g=2.0: screened max_U[nu_{log2,g} - phi_{log2-kappa g}] = 0.00e+00 (bound 4.8e-04); with Delta=g (too strong): -6.59e-17
+  time 23.8s

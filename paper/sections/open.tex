@@ -1,0 +1,67 @@
+\section{Open problems}\label{sec:open}
+\begin{question}[Uniqueness]
+Does every nonsurjective member of the collision family have a unique Gibbs state?
+\end{question}
+The magnetic estimate controls cluster signs. It does not control the response of closed-pattern energies or hidden observables to an exterior condition. A closed FK cut does not isolate the hidden factors that cross it.
+
+\begin{question}[All local observables]
+Can a collision-specific boundary comparison prove exponential clustering for arbitrary bounded local observables in the nonsurjective branch?
+\end{question}
+For finite supports $S,T$, the usual target bounds $|\Cov_\mu(f,g)|$ by a constant times $|S||T|\|f\|_\infty\|g\|_\infty e^{-a\dist(S,T)}$. Odd observables are covered by Corollary~\ref{cor:odd}. Even and hidden observables require another argument.
+
+\begin{question}[Dimension and range]
+Can the local dimension and interaction range both be fixed while retaining positive rational weight tables?
+\end{question}
+Fixing a CA alphabet and its neighborhood leaves only finitely many rules. Rational physical couplings can still carry unbounded input data, so that observation does not rule out a different construction.
+
+\begin{question}[Perturbations]
+Can an undecidability construction for connected correlations, or for the raw observable $D_x=\sigma_x-\sigma_{x+e_1}$, be stable under sufficiently small translation-invariant perturbations of its local weights?
+\end{question}
+The output-reset theorem concerns its prescribed noise family. Lowering the horizontal base odds makes every member here magnetically subcritical, as Section~\ref{sec:corollaries} shows.
+
+\begin{remark}[Conditional contraction and bounded magnetic clusters do not force uniqueness]
+Place hidden spins $\tau_x=\pm1$ on $\Z^2$. For each nearest-neighbor edge $e=\{x,y\}$ introduce $45$ disjoint visible dimers $(s_{e,j},t_{e,j})$ with factor
+\[
+ B_{e,j}=\frac{100}{101}\one_{\{s_{e,j}=t_{e,j}\}}
+              +\frac1{101}2^{\tau_x+\tau_y},
+ \qquad e^{h\tau_x}=(67/72)^{45\tau_x}.
+\]
+These are strictly positive rational weights. Given bonds, the hidden law is product. Given visible spins, the maximum hidden coupling contributed by an equal dimer is
+\[
+ j=\tfrac14\log\frac{10426}{10201},\qquad
+ 4\tanh(45j)<45\log\left(1+\frac{225}{10201}\right)
+ <\frac{10125}{10201}<1.
+\]
+Thus hidden contraction holds under both conditionings, and every visible open cluster has at most two vertices. Summing one dimer gives a factor proportional to $50+2^{\tau_x+\tau_y}$. The chosen field cancels its accumulated field, leaving zero-field hidden Ising coupling
+\[
+ J=\frac{45}{4}\log\frac{603}{578}>K_c.
+\]
+The strict inequality follows from $603^{45}>6\,578^{45}$ and $6>3+2\sqrt2=e^{4K_c}$. Hence there are distinct hidden phases. They also change visible dimer energies, since $\E(st\mid\tau)=50/(50+2^{\tau_x+\tau_y})$ is strictly decreasing in each endpoint. The closed-factor integral is log-supermodular: it is a product over sites of $\cosh(h+(\log2)n_x(C))/\cosh h$. This example invalidates the generic uniqueness inference, not the small collision construction.
+\end{remark}
+
+\begin{remark}[An FKG counterexample with no signed remainder]
+Take isolated visible dimers indexed by $i\in\Z^2$, with closed indicators $c_i=1-\omega_i$. Add the positive reward
+\[
+ L(c)=\lambda\sum_{\langle i,j\rangle}c_ic_j,\qquad
+ \lambda=\log16.
+\]
+Choose ordinary dimer FK parameter $p=512/513$. Its effective open odds are $p/[2(1-p)]=256=e^{2\lambda}$. The bond density is proportional to $\exp(2\lambda\sum_i\omega_i+L(c))$. Substituting $\tau_i=2c_i-1$ cancels the field and gives hidden-index Ising coupling $\lambda/4=\log2>K_c$. There are two bond Gibbs states. The density is FKG and is dominated by the underlying product dimer law, whose clusters are bounded. All added weights $16^{c_ic_j}$ are rational. Thus FKG, bounded open clusters and $R=0$ still do not establish uniqueness.
+\end{remark}
+
+\begin{remark}[Energy-sector reduction; the remaining estimate is open]\label{rem:energy}
+For an edge put $\tau_e=\sigma_u\sigma_v$. Conditional on visible spins, summing the ordinary ES bond gives a closed-pattern energy
+\[
+ v_P(\sigma)=\prod_{e\in P}\left(1-\frac{p_e}{2}
+                                      -\frac{p_e}{2}\tau_e\right).
+\]
+Each factor is the conditional closed probability; the sum of absolute polynomial coefficients of this product is at most one. Singleton rewards can be absorbed into the corresponding pair coupling. Since the all-state odd sector already clusters, only even visible information can distinguish states. On a connected lattice every even spin monomial is a product of edge variables $\tau_e$ (join its even number of vertices by finite paths). Odd monomials have expectation zero. Thus all finite products of edge energies determine the entire visible law. Given that law, conditional hidden uniqueness from Lemma~\ref{lem:hidden} determines the full law as well.
+
+Consequently a sufficient route to uniqueness is a signed massive \emph{annealed} energy-response estimate for these edge products, uniform over the original visible and hidden boundaries. The desired scale has mass at least $c\Delta$, a kernel bounded by
+\[
+ K_\Delta(e,f)\le
+ \frac{C e^{-c\Delta\,\dist(e,f)}}{(1+\dist(e,f))^2},
+ \qquad
+ \sup_e\sum_f K_\Delta(e,f)\le C[1+\log(1/\Delta)],
+\]
+and a boundary error tending to zero, including rewards induced by fixed hidden boundary variables. Such rewards can be $O(\varepsilon^2)$ even when all bulk activities vanish (a surjective shift with pinned equal replicas gives $w_e=1+(q-1)\varepsilon^2$). A bulk quadratic remainder estimate cannot simply absorb that boundary layer. A weaker row bound of order $\Delta^{-7/4}$ could suffice after a suitably small parameter choice and certified constants, but neither bound is established here. This is a constructive-renormalization-scale open estimate, not a theorem supplied by the odd-sector comparison or Proposition~\ref{prop:Lunique}.
+\end{remark}

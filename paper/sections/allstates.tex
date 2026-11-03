@@ -1,0 +1,132 @@
+\section{The comparison in every Gibbs state}\label{sec:allstates}
+
+This section is needed because integrating an iid hidden prior in finite volume does not by itself control all Gibbs states.
+
+\subsection{Uniform conditional contraction of the hidden layer}
+
+For one orientation, regard \((X_i,X_i')\) as a single hidden variable with alphabet \(A^2\). For a possibly infinite set \(C\) of closed centers, the hidden interaction consists of \(-\log w_i\) for \(i\in C\). Let
+\begin{equation}
+ \ell_w=\log(w_{\max}/w_{\min}).
+\end{equation}
+For \eqref{eq:epsilon},
+\begin{equation}
+ \ell_w\le2q\varepsilon^2.
+ \label{eq:logosc}
+\end{equation}
+
+\begin{lemma}[hidden uniqueness uniformly in the bonds]\label{lem:hidden}
+For every \(C\subseteq\Z^2\), the hidden specification has a unique Gibbs measure \(\lambda^C\). The Dobrushin row sums are bounded, uniformly in \(C\), by
+\begin{equation}
+ \rho\le\tfrac12\ell_w\,m(m-1)<1.
+ \label{eq:dob}
+\end{equation}
+Its local distributions are insensitive, exponentially in the separation, to hidden boundary conditions and to changes of closed centers outside a distant region. The corresponding statement also holds conditional on any visible configuration.
+\end{lemma}
+\begin{proof}
+For distinct hidden sites $i,j$, let $n_{ij}$ count factors whose input supports contain both. Changing the variable at $j$ changes the single-site log weight at $i$ by a function of oscillation at most $2n_{ij}\ell_w$. The likelihood-ratio estimate \cite[Proposition 8.8]{Georgii} gives
+\[
+ \mathsf D_{ij}\le\tanh(n_{ij}\ell_w/2)\le n_{ij}\ell_w/2.
+\]
+Each site belongs to at most $m$ factors, each involving at most $m-1$ other sites. Thus $\sum_jn_{ij}\le m(m-1)$, proving \eqref{eq:dob}.
+
+The estimate applies separately to both independent orientation layers. Given visible spins, the factors are \(p_r\delta_{\rm same}+(1-p_r)w_i^r\). Their logarithmic oscillations are no larger than \(\ell_w\), so the same estimate holds.
+
+The Dobrushin uniqueness and comparison theorem~\cite{Dobrushin,Rebeschini} now applies. One may see exponential locality directly from its influence matrix $\mathsf D$: it has row sum at most \(\rho<1\), and each nonzero entry joins sites at separation at most \(\diam N\). The resolvent \(\sum_{n\ge0}\mathsf D^n\) therefore has exponentially small tails in physical distance, with constants allowed to depend on \(N\). It also controls inhomogeneous changes of factors confined outside a distant region.
+\end{proof}
+
+If \(e\notin C\), define the infinite-volume insertion ratio
+\begin{equation}
+ R_\infty(C,e)=\lambda^C(w_e).
+ \label{eq:Rinfty}
+\end{equation}
+For a finite exhaustion \(E_n\), the measure obtained by retaining only factors centered in \(C\cap E_n\) has product reference outside their input support. Lemma~\ref{lem:hidden} gives, uniformly in the ambient \(C\),
+\begin{equation}
+ \frac{W((C\cap E_n)\cup\{e\})}{W(C\cap E_n)}
+ \longrightarrow R_\infty(C,e).
+ \label{eq:finite-infinite-ratio}
+\end{equation}
+
+\begin{lemma}[insertion bounds and local reweighting]\label{lem:insertion}
+For every infinite pattern \(C\), with \(e\notin C\),
+\begin{equation}
+ R_\infty(C,e)\ge1.
+\end{equation}
+For the horizontal witness rewards of Section~\ref{sec:comparison},
+\begin{equation}
+ R_\infty(C,e)\ge e^{g n_e(C)}
+ \label{eq:infinite-completion}
+\end{equation}
+when \(n_e(C)\) counts any collection of completed witness translates. Moreover,
+\begin{equation}
+ \lambda^{C\cup\{e\}}
+ =\frac{w_e}{R_\infty(C,e)}\,\lambda^C,\qquad
+ \lambda^{C\cup\{e\}}(w_e^{-1})=R_\infty(C,e)^{-1}.
+ \label{eq:reweight}
+\end{equation}
+If \(F\) is onto, \(R_\infty(C,e)=1\) for every \(C,e\).
+\end{lemma}
+\begin{proof}
+The finite insertion inequalities pass to the uniform limit \eqref{eq:finite-infinite-ratio}. Only finitely many translates contain a given edge, so their completions are all seen in a sufficiently large truncation. Multiplication of a Gibbs measure by the positive local factor \(w_e\), followed by normalization, changes its specification by precisely that factor. Uniqueness in Lemma~\ref{lem:hidden} identifies the result with \(\lambda^{C\cup\{e\}}\), proving \eqref{eq:reweight}. In the onto case all finite \(W\)'s equal one, by Lemma~\ref{lem:collision}, and so do their insertion ratios.
+\end{proof}
+
+\subsection{Conditional signs and marginal bond odds}
+
+Let \(\widetilde\mu\) be the canonical bond extension of an arbitrary \(\mu\in\G(\Phi_F)\).
+
+\begin{lemma}[conditional independence and fair finite clusters]\label{lem:signs}
+Given \((\sigma,\omega)\), the hidden variables have the unique conditional law
+\(\lambda^{C_H(\omega)}\otimes\lambda^{C_V(\omega)}\).
+Consequently hidden variables and visible cluster signs are independent conditional on \(\omega\). Conditional on the bonds, every finite open cluster has an independent fair sign, also independent of all infinite-cluster signs. No absence-of-infinite-clusters assumption is needed.
+\end{lemma}
+\begin{proof}
+There are countably many finite-volume DLR equations (test cylinder indicators). A regular conditional distribution therefore satisfies all of their hidden-coordinate versions simultaneously outside one null set. Disintegrating these joint DLR equations gives $\mathcal L(\mathbf X\mid\sigma,\omega)\in\G(\gamma^{C(\omega)})$ almost surely, where $\gamma^{C(\omega)}$ is the product of the two hidden closed-factor specifications. It is independent of \(\sigma\); Lemma~\ref{lem:hidden} gives its unique law. This proves the conditional independence.
+
+For a fixed finite open cluster, flip every visible spin in that cluster. All open equality constraints are preserved, and closed factors do not depend on visible spins. This finite transformation preserves the joint conditional Gibbs weights. Its two cluster signs are therefore equiprobable, conditional on all remaining information. Applying the argument to any finite collection of finite clusters gives independent fair signs. Conditioning on the event that a specified finite vertex set is a cluster makes this a direct finite-support DLR argument; countably many such events cover all finite clusters.
+\end{proof}
+
+\begin{lemma}[exact marginal opening odds]\label{lem:odds}
+Fix an edge \(e=\{u,v\}\), condition on all other bonds, and let \(C\) denote the other closed edges in its orientation, \emph{excluding \(e\)}. Put
+\begin{equation}
+ \alpha_\mu=\widetilde\mu(\sigma_u=\sigma_v\mid
+                   \omega_{e^c},\,\omega_e=0).
+\end{equation}
+Then, almost surely,
+\begin{equation}
+ \frac{\widetilde\mu(\omega_e=1\mid\omega_{e^c})}
+      {\widetilde\mu(\omega_e=0\mid\omega_{e^c})}
+ =\frac{p_e}{1-p_e}\frac{\alpha_\mu}{R_\infty(C,e)}.
+ \label{eq:odds}
+\end{equation}
+The closed conditional probability is bounded away from zero.
+\end{lemma}
+\begin{proof}
+Changing a closed bond to open multiplies the local weight by
+\begin{equation}
+ \frac{p_e}{1-p_e}\frac{\one_{\{\sigma_u=\sigma_v\}}}{w_e}.
+\end{equation}
+On the closed branch, the hidden law is \(\lambda^{C\cup\{e\}}\), not \(\lambda^C\). Lemmas~\ref{lem:signs} and \ref{lem:insertion} factor its conditional expectation into
+\(\alpha_\mu/R_\infty(C,e)\). This proves the odds formula. Its right-hand side is at most \(p_e/(1-p_e)\), because \(\alpha_\mu\le1\) and \(R_\infty\ge1\). Thus the closed probability is at least \(1-p_e\).
+\end{proof}
+
+\subsection{Wired cores and arbitrary exterior conditions}
+
+\begin{proposition}[all-state FK domination]\label{prop:allstates}
+For every \(\mu\in\G(\Phi_F)\), its bond marginal is stochastically dominated by the wired critical anisotropic FK-Ising measure $\phi^1_{\crit}$. If \(c_P>0\), it is dominated by the homogeneous strictly subcritical FK-Ising state with parameters \eqref{eq:subcrit-params}.
+\end{proposition}
+\begin{proof}
+Let \(V_n\) be a square core, \(E_n\) its internal nearest-neighbor edges, and identify all boundary vertices of \(V_n\) in the reference FK measure. Condition the target bond law on its exterior bonds.
+
+Fix an internal edge \(e\). If its endpoints are disconnected after deleting \(e\) in this \emph{fully wired} core, at most one of their components can meet the core boundary. At least one component is therefore contained in the interior of \(V_n\), and is a finite cluster in the full bond configuration. On the closed branch, Lemma~\ref{lem:signs} implies \(\alpha_\mu=1/2\). If the endpoints are wired-connected, use simply \(\alpha_\mu\le1\). Thus, with connectivity in the fully wired core with $e$ deleted,
+\[
+ \alpha_\mu\ \le\ \text{wired cluster factor}
+ =\begin{cases}1,&u\conn_{\mathrm w}v,\\[1mm]1/2,&u\not\conn_{\mathrm w}v.\end{cases}
+\]
+
+Retain only witness translates wholly inside \(E_n\), and let $n_e^{V_n}(C)$ count just those completed by closing $e$. Name the wired-core comparator $\nu_g^{V_n,\mathrm w}$: it is \eqref{eq:comparator-density} on $E_n$, with complete wiring and only these retained translates. By \eqref{eq:infinite-completion}, the target's horizontal opening odds are at most the ordinary fully wired FK opening odds multiplied by \(e^{-g n_e^{V_n}(C)}\). On vertical edges use \(R_\infty\ge1\). Thus every target single-edge opening probability is at most that of the fully wired comparator \(\nu_g^{V_n,\mathrm w}\) at the same internal configuration.
+
+For clarity, this comparison does not require target FKG. The comparator's single-edge probabilities are increasing in the other edges, by its lattice condition. Couple single-edge heat-bath updates with the same uniform random variable, starting both chains in the all-closed configuration. The pointwise probability comparison and comparator monotonicity preserve the order. The target has downward-closed support because closing any edge has positive conditional probability. Its finite heat-bath chain is irreducible on that support: one can close to the all-closed state and reverse a closing path to any supported configuration. Passing to stationary distributions proves target domination by \(\nu_g^{V_n,\mathrm w}\). This is the single-edge Holley coupling criterion with a monotone upper law \cite[Theorems 2.3 and 2.27]{Grimmett}; the support argument covers the target's possible zeros. It holds for almost every conditioned exterior, so also after averaging it.
+
+Apply Proposition~\ref{prop:strict}. It reduces the horizontal odds on the anchors of complete witness translates; it leaves an unshifted strip near the boundary. This strip is not ignored. Since \(P\) is fixed, there is a fixed width such that every horizontal edge of a smaller concentric core is an eligible anchor. Condition the resulting ordinary FK law on all edges outside this smaller core. By the domain Markov property its induced boundary partition is dominated by complete wiring \cite[Lemmas 4.13--4.14]{Grimmett}. Therefore its marginal on any fixed still smaller region is dominated by the ordinary homogeneous subcritical FK law in the smaller core with wired boundary. Let \(n\to\infty\). The wired measures decrease to their infinite-volume limit \cite[Theorem 4.19]{Grimmett}; here that is the unique subcritical FK state. This proves the comparison for local increasing events. Finally $\{x\conn y\}$ is the increasing union of events that an open path inside a finite box joins $x$ to $y$, so continuity from below gives the same connection bound.
+
+For the critical comparison omit witness rewards entirely and use only \(R_\infty\ge1\) in the same wired-core argument. The upper limit is critical wired FK-Ising.
+\end{proof}

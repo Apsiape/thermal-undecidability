@@ -1,0 +1,35 @@
+(1) FK identity q=9 on 3x2 grid, max relative error 5.75e-16
+(2) colour-1 boundary: (9mu(s0=1)-1)/8 = 0.946102173688, phi^1(0<->bdry) = 0.946102173688, diff 0.00e+00
+(3,4) 3x3 free  P=[(0, 0), (1, 0)] g=0.3: max[Cov(f,I)+a Cov(f,w_e)]=0.00e+00 (<=0 required), min nu(I|e closed)=0.7033 >= a=0.2500: True, max[nu_g(f)-nu_0(f)]=0.00e+00
+(3,4) 3x3 free  P=[(0, 0), (1, 0)] g=2.0: max[Cov(f,I)+a Cov(f,w_e)]=0.00e+00 (<=0 required), min nu(I|e closed)=0.7035 >= a=0.2500: True, max[nu_g(f)-nu_0(f)]=0.00e+00
+(3,4) 3x3 free  P=[(0, 0), (0, 1)] g=0.3: max[Cov(f,I)+a Cov(f,w_e)]=0.00e+00 (<=0 required), min nu(I|e closed)=0.7388 >= a=0.2500: True, max[nu_g(f)-nu_0(f)]=0.00e+00
+(3,4) 3x3 free  P=[(0, 0), (0, 1)] g=2.0: max[Cov(f,I)+a Cov(f,w_e)]=0.00e+00 (<=0 required), min nu(I|e closed)=0.7488 >= a=0.2500: True, max[nu_g(f)-nu_0(f)]=0.00e+00
+(3,4) 3x3 free  P=[(0, 0), (1, 0), (0, 1)] g=0.3: max[Cov(f,I)+a Cov(f,w_e)]=0.00e+00 (<=0 required), min nu(I|e closed)=0.5263 >= a=0.0625: True, max[nu_g(f)-nu_0(f)]=0.00e+00
+(3,4) 3x3 free  P=[(0, 0), (1, 0), (0, 1)] g=2.0: max[Cov(f,I)+a Cov(f,w_e)]=0.00e+00 (<=0 required), min nu(I|e closed)=0.5264 >= a=0.0625: True, max[nu_g(f)-nu_0(f)]=0.00e+00
+(3,4) 3x3 wired P=[(0, 0), (1, 0)] g=0.3: max[Cov(f,I)+a Cov(f,w_e)]=9.71e-17 (<=0 required), min nu(I|e closed)=0.2500 >= a=0.2500: True, max[nu_g(f)-nu_0(f)]=0.00e+00
+(3,4) 3x3 wired P=[(0, 0), (1, 0)] g=2.0: max[Cov(f,I)+a Cov(f,w_e)]=8.33e-17 (<=0 required), min nu(I|e closed)=0.2500 >= a=0.2500: True, max[nu_g(f)-nu_0(f)]=0.00e+00
+(3,4) 3x3 wired P=[(0, 0), (0, 1)] g=0.3: max[Cov(f,I)+a Cov(f,w_e)]=6.94e-17 (<=0 required), min nu(I|e closed)=0.2500 >= a=0.2500: True, max[nu_g(f)-nu_0(f)]=1.11e-16
+(3,4) 3x3 wired P=[(0, 0), (0, 1)] g=2.0: max[Cov(f,I)+a Cov(f,w_e)]=4.16e-17 (<=0 required), min nu(I|e closed)=0.2500 >= a=0.2500: True, max[nu_g(f)-nu_0(f)]=0.00e+00
+(3,4) 3x3 wired P=[(0, 0), (1, 0), (0, 1)] g=0.3: max[Cov(f,I)+a Cov(f,w_e)]=1.04e-17 (<=0 required), min nu(I|e closed)=0.0691 >= a=0.0625: True, max[nu_g(f)-nu_0(f)]=2.22e-16
+(3,4) 3x3 wired P=[(0, 0), (1, 0), (0, 1)] g=2.0: max[Cov(f,I)+a Cov(f,w_e)]=0.00e+00 (<=0 required), min nu(I|e closed)=0.0746 >= a=0.0625: True, max[nu_g(f)-nu_0(f)]=0.00e+00
+(3,4) 4x3 free  P=[(0, 0), (1, 0)] g=0.3: max[Cov(f,I)+a Cov(f,w_e)]=0.00e+00 (<=0 required), min nu(I|e closed)=0.7031 >= a=0.2500: True, max[nu_g(f)-nu_0(f)]=0.00e+00
+(3,4) 4x3 free  P=[(0, 0), (1, 0)] g=2.0: max[Cov(f,I)+a Cov(f,w_e)]=0.00e+00 (<=0 required), min nu(I|e closed)=0.7034 >= a=0.2500: True, max[nu_g(f)-nu_0(f)]=0.00e+00
+(3,4) 4x3 free  P=[(0, 0), (0, 1)] g=0.3: max[Cov(f,I)+a Cov(f,w_e)]=0.00e+00 (<=0 required), min nu(I|e closed)=0.7353 >= a=0.2500: True, max[nu_g(f)-nu_0(f)]=0.00e+00
+(3,4) 4x3 free  P=[(0, 0), (0, 1)] g=2.0: max[Cov(f,I)+a Cov(f,w_e)]=0.00e+00 (<=0 required), min nu(I|e closed)=0.7485 >= a=0.2500: True, max[nu_g(f)-nu_0(f)]=0.00e+00
+(3,4) 4x3 free  P=[(0, 0), (1, 0), (0, 1)] g=0.3: max[Cov(f,I)+a Cov(f,w_e)]=0.00e+00 (<=0 required), min nu(I|e closed)=0.5241 >= a=0.0625: True, max[nu_g(f)-nu_0(f)]=0.00e+00
+(3,4) 4x3 free  P=[(0, 0), (1, 0), (0, 1)] g=2.0: max[Cov(f,I)+a Cov(f,w_e)]=0.00e+00 (<=0 required), min nu(I|e closed)=0.5259 >= a=0.0625: True, max[nu_g(f)-nu_0(f)]=0.00e+00
+(3,4) 4x3 wired P=[(0, 0), (1, 0)] g=0.3: max[Cov(f,I)+a Cov(f,w_e)]=8.33e-17 (<=0 required), min nu(I|e closed)=0.2500 >= a=0.2500: True, max[nu_g(f)-nu_0(f)]=-2.22e-16
+(3,4) 4x3 wired P=[(0, 0), (1, 0)] g=2.0: max[Cov(f,I)+a Cov(f,w_e)]=8.33e-17 (<=0 required), min nu(I|e closed)=0.2500 >= a=0.2500: True, max[nu_g(f)-nu_0(f)]=1.11e-16
+(3,4) 4x3 wired P=[(0, 0), (0, 1)] g=0.3: max[Cov(f,I)+a Cov(f,w_e)]=6.25e-17 (<=0 required), min nu(I|e closed)=0.2500 >= a=0.2500: True, max[nu_g(f)-nu_0(f)]=0.00e+00
+(3,4) 4x3 wired P=[(0, 0), (0, 1)] g=2.0: max[Cov(f,I)+a Cov(f,w_e)]=1.39e-16 (<=0 required), min nu(I|e closed)=0.2500 >= a=0.2500: True, max[nu_g(f)-nu_0(f)]=-1.11e-16
+(3,4) 4x3 wired P=[(0, 0), (1, 0), (0, 1)] g=0.3: max[Cov(f,I)+a Cov(f,w_e)]=1.39e-17 (<=0 required), min nu(I|e closed)=0.0709 >= a=0.0625: True, max[nu_g(f)-nu_0(f)]=0.00e+00
+(3,4) 4x3 wired P=[(0, 0), (1, 0), (0, 1)] g=2.0: max[Cov(f,I)+a Cov(f,w_e)]=0.00e+00 (<=0 required), min nu(I|e closed)=0.0813 >= a=0.0625: True, max[nu_g(f)-nu_0(f)]=0.00e+00
+(6) stress kappa=1 (factor dropped): max[nu_g(f)-nu_0(f)] over cases = 4.253e-01 (VIOLATION found: the 4^-(k-1) factor is load-bearing)
+(5) target AND2 lam=1/2 3x3 free : witness P=[(0, 0)] translates(H+V)=12 g=3.637e-02 max[mu(f)-nu_g(f)]=0.00e+00, max[nu_g(f)-nu_0(f)]=2.78e-17 (both <=0 required)
+(5) target AND2 lam=1/2 3x3 wired: witness P=[(0, 0)] translates(H+V)=12 g=3.637e-02 max[mu(f)-nu_g(f)]=-2.22e-16, max[nu_g(f)-nu_0(f)]=3.33e-16 (both <=0 required)
+(5) target AND2 lam=1/2 4x2 free : witness P=[(0, 0)] translates(H+V)=10 g=3.637e-02 max[mu(f)-nu_g(f)]=0.00e+00, max[nu_g(f)-nu_0(f)]=2.78e-17 (both <=0 required)
+(5) target AND2 lam=1/2 4x2 wired: witness P=[(0, 0)] translates(H+V)=10 g=3.637e-02 max[mu(f)-nu_g(f)]=-2.22e-16, max[nu_g(f)-nu_0(f)]=3.33e-16 (both <=0 required)
+(5) target MAJ3 lam=1/2 3x3 free : witness P=[(0, 0), (1, 0)] translates(H+V)=7 g=1.355e-04 max[mu(f)-nu_g(f)]=0.00e+00, max[nu_g(f)-nu_0(f)]=0.00e+00 (both <=0 required)
+(5) target MAJ3 lam=1/2 3x3 wired: witness P=[(0, 0), (1, 0)] translates(H+V)=7 g=1.355e-04 max[mu(f)-nu_g(f)]=-2.22e-16, max[nu_g(f)-nu_0(f)]=2.22e-16 (both <=0 required)
+(5) target MAJ3 lam=1/2 4x2 free : witness P=[(0, 0), (1, 0)] translates(H+V)=7 g=1.355e-04 max[mu(f)-nu_g(f)]=0.00e+00, max[nu_g(f)-nu_0(f)]=0.00e+00 (both <=0 required)
+(5) target MAJ3 lam=1/2 4x2 wired: witness P=[(0, 0), (1, 0)] translates(H+V)=7 g=1.355e-04 max[mu(f)-nu_g(f)]=1.11e-16, max[nu_g(f)-nu_0(f)]=0.00e+00 (both <=0 required)

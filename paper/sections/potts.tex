@@ -1,0 +1,209 @@
+\section{Potts order with a fixed gap and a computable pressure}\label{sec:potts}
+The collision machinery also detects a standard order parameter with a fixed gap. We distinguish the CA alphabet size $s=|A|$ from the number $Q$ of visible colours. In this section $Q=9$ in the theorem; the intermediate comparison statements hold for every integer $Q\ge2$.
+
+\subsection{The local model and the unchanged ingredients}\label{sec:potts-model}
+At each site use $S_Q=\{1,\ldots,Q\}\times A^4$ with the same two independent replica pairs as in Section~\ref{sec:model}. Use $\varepsilon$ from \eqref{eq:epsilon}, evaluated with $q=s$, and define
+\begin{equation}\label{eq:potts-weight}
+ b_{i,r}=w_i^r+\sqrt Q\,\one_{\{\sigma_i=\sigma_{i+e_r}\}},\qquad
+ w_i^r=1+\varepsilon^2\bigl(s\one_{\{F(X^r)_i=F(X^{\prime r})_i\}}-1\bigr).
+\end{equation}
+Write $\Psi_F$ for this interaction. Its Hamiltonian is the sum of $-\log b_{i,r}$ over the affected factors, exactly as in Section~\ref{sec:model}, with counting a-priori measure and no hidden one-site terms. For $Q=9$ the odds $\sqrt Q=3$ and all entries are strictly positive rationals. Translation invariance, finite range and effective description follow by the proof of Lemma~\ref{lem:positive}.
+
+The multiplier in the collision kernel is \emph{exactly} $s=|A|$. Indeed an onto CA with a different multiplier $s'$ would give
+\[
+ W(C)=\bigl(1+\varepsilon^2(s'/|A|-1)\bigr)^{|C|},
+\]
+which moves the onto branch away from the coexistence point. No such detuning is allowed here.
+
+Use the same $c_T$, $D(P)$ and hidden insertion ratios as before. Lemmas~\ref{lem:collision}, \ref{lem:completion}, \ref{lem:hidden} and~\ref{lem:insertion} transfer verbatim, with witness translates allowed in either orientation. The proof of Lemma~\ref{lem:odds} also transfers verbatim, with Lemma~\ref{lem:potts-colours} in place of Lemma~\ref{lem:signs}: only its base odds $p_e/(1-p_e)$ become $\sqrt Q$. These arguments use the CA collision layer, positivity and conditional hidden uniqueness, not the visible alphabet size. In particular, given visible colours, the oscillation of $\log(\sqrt Q\delta_{\rm same}+w)$ is at most $\log(w_{\max}/w_{\min})$, so the hidden Dobrushin bound is unchanged. We do not repeat these proofs.
+
+With a free padded hidden input region and free or monochromatic visible boundary, the integrated bond density is
+\begin{equation}\label{eq:potts-fk}
+ \widetilde\mu_F(\omega)\ \propto\
+ Q^{K(\omega)}(\sqrt Q)^{|\omega|}
+ W(C_H(\omega))W(C_V(\omega)).
+\end{equation}
+Here $K$ counts free clusters; with monochromatic boundary the wired cluster has weight one. This follows by expanding \eqref{eq:potts-weight}: open edges contribute $\sqrt Q\delta_{\rm same}$ and closed edges contribute $w_e$. Conditional on bonds in finite volume, visible cluster colours and hidden variables are independent.
+
+\subsection{The changed comparison statements}\label{sec:potts-lemmas}
+Let $c_P>0$, $k=|P|$, $w_{\max}=1+\varepsilon^2(s-1)$, and
+\begin{equation}\label{eq:potts-constants}
+ a_P=\frac{\varepsilon^{2k} c_P}{w_{\max}^{|D(P)|}},\qquad
+ g=\frac1k\log(1+a_P),\qquad
+ \kappa_Q=(1+\sqrt Q)^{-(k-1)},\qquad \Delta_Q=\kappa_Q g.
+\end{equation}
+For each $r=H,V$, retain every translate of the $r$-oriented edge pattern with centers $P$ that lies in a finite edge set $E$. Let $\mathcal T_E$ be the union of these \emph{two} collections. Put $I_t=\one_{\{P+t\text{ closed in its orientation}\}}$ and $N_E=\sum_{t\in\mathcal T_E}I_t$. Fix $p_*\in P$ and anchor a translate at its edge centered at $p_*+t$, in the same orientation. The anchors are distinct, also between the two layers. Every edge sufficiently far from the boundary is an anchor.
+
+\begin{lemma}[$Q$-version of Lemma~\ref{lem:comparator}]\label{lem:potts-comparator}
+For $Q\ge2$, any free or wired FK boundary condition and real edge log-odds $\theta_e$, the law
+\[
+ \nu_{\theta,g}(\omega)\propto
+ Q^{K(\omega)}\exp\bigl(\sum_e\theta_e\omega_e+gN_E(\omega)\bigr)
+\]
+is FKG for $g\ge0$. At $\theta_e=\log\sqrt Q$, the finite law \eqref{eq:potts-fk} is stochastically dominated by $\nu_{\theta,g}$.
+\end{lemma}
+\begin{proof}
+The proof of Lemma~\ref{lem:comparator} changes $2^K$ to $Q^K$; $K$ and each $I_t$ remain supermodular. For an edge in either orientation, at most $k$ retained translates are completed by closing it. The completion bound gives an insertion ratio at least $e^{gn_e}$, since $e^{gk}=1+a_P$. Thus
+$W(C_H)W(C_V)e^{-gN_E}$ is increasing in closed edges. Its density relative to the FKG comparator is decreasing in open edges, proving domination by the same covariance argument. The factor $1/k$ in \eqref{eq:potts-constants} is essential when several translates are completed at once.
+\end{proof}
+
+\begin{lemma}[$Q$-version of Lemma~\ref{lem:covariance}]\label{lem:potts-covariance}
+For $\nu_{\theta,u}\propto Q^K\exp(\sum_e\theta_e\omega_e+uN_E)$ with $u\ge0$ and every $\theta_e\le\log\sqrt Q$, every increasing $f$ and retained translate $t$ satisfy
+\begin{equation}\label{eq:potts-cov}
+ \Cov(f,I_t)\le-\kappa_Q\Cov(f,\omega_{e_t}).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The FK cluster factor in the conditional opening odds is in $\{1,1/Q\}$. Opening can only remove rewards, so the odds are at most $\sqrt Q$. The conditional closure probability is at least $(1+\sqrt Q)^{-1}$, also under partial conditioning by averaging. Sequentially closing the other $k-1$ edges gives
+$\nu(I_t\mid\omega_{e_t}=0)\ge\kappa_Q$.
+Conditional FKG, as in Lemma~\ref{lem:covariance}, gives
+\[
+ \Cov(f,I_t)\le
+ -\frac{\nu(I_t)}{\nu(\omega_{e_t}=0)}\Cov(f,\omega_{e_t}),
+\]
+and the last covariance is nonnegative. This proves \eqref{eq:potts-cov}. At $Q=9$, the odds bound is $3$ and $\kappa_9=4^{-(k-1)}$.
+\end{proof}
+
+\begin{proposition}[$Q$-version of Proposition~\ref{prop:strict}]\label{prop:potts-strict}
+The comparator at critical odds $\sqrt Q$ and reward $g$ is dominated by ordinary FK with odds $\sqrt Qe^{-\Delta_Q}$ on all retained anchors and $\sqrt Q$ on the remaining edges, with the same boundary condition.
+\end{proposition}
+\begin{proof}
+Use $0\le u\le g$, with $\theta_e(u)=\log\sqrt Q-\kappa_Qg+\kappa_Qu$ on anchors and $\theta_e(u)=\log\sqrt Q$ otherwise. All odds stay at most $\sqrt Q$. Differentiation gives the sum of $\kappa_Q\Cov(f,\omega_e)$ over anchors and $\Cov(f,I_t)$ over translates; distinct anchors and \eqref{eq:potts-cov} make it nonpositive. The two endpoints are exactly the asserted laws. This is the proof of Proposition~\ref{prop:strict}, now shifting both orientations.
+\end{proof}
+
+\begin{lemma}[$Q$-version of Lemma~\ref{lem:signs}]\label{lem:potts-colours}
+For the canonical bond extension of every $\mu\in\G(\Psi_F)$, the hidden conditional law given $(\sigma,\omega)$ is
+$\lambda^{C_H(\omega)}\otimes\lambda^{C_V(\omega)}$ and is independent of the colours. Conditional on bonds, all finite clusters have independent uniform colours in $\{1,\ldots,Q\}$, independent also of the colours on infinite clusters.
+\end{lemma}
+\begin{proof}
+The common-null-set disintegration argument in Lemma~\ref{lem:signs} is unchanged. Replace its finite-cluster spin flip by a permutation of the colours of a finite cluster. This preserves open equality constraints and all closed factors. Conditional on everything outside that cluster, the $Q$ colours are equiprobable. Apply this finite-support DLR argument to any finite collection of clusters. Countably many finite-cluster events give the stated conditional law.
+\end{proof}
+
+\begin{proposition}[$Q$-version of Proposition~\ref{prop:allstates}]\label{prop:potts-allstates}
+Every bond marginal of every $\mu\in\G(\Psi_F)$ is dominated by critical wired FK, $\phi^1_{p_c(Q),Q}$, where $p_c(Q)=\sqrt Q/(1+\sqrt Q)$. If $c_P>0$, it is dominated by the homogeneous wired FK limit at
+\begin{equation}\label{eq:potts-pF}
+ p_F=\frac{\sqrt Q e^{-\Delta_Q}}{1+\sqrt Q e^{-\Delta_Q}}<p_c(Q).
+\end{equation}
+\end{proposition}
+\begin{proof}
+The exact odds identity of Lemma~\ref{lem:odds} is
+$\sqrt Q\,\alpha_\mu/R_\infty(C,e)$.
+In a fully wired finite core, if the endpoints are disconnected after deleting $e$, at least one component is a finite interior cluster. Lemma~\ref{lem:potts-colours} gives $\alpha_\mu=1/Q$. If the endpoints are wired-connected, $\alpha_\mu\le1$. Thus $\alpha_\mu$ is bounded by the wired cluster factor, respectively $1/Q$ or $1$. The insertion bounds apply in both orientations. Consequently the target's opening probabilities are at most those of the fully wired comparator at the same internal configuration.
+
+Use the monotone-upper-law heat-bath coupling in Proposition~\ref{prop:allstates}; its downward-support and irreducibility argument applies without target FKG. Apply Proposition~\ref{prop:potts-strict}. Keep the fixed-width unshifted boundary strip: every edge in a smaller concentric core is an eligible anchor in its own orientation. Conditional on the strip and exterior edges, the induced ordinary FK boundary partition is bounded by full wiring. The smaller core therefore has a homogeneous upper law with parameter \eqref{eq:potts-pF}. Let the cores increase. Wired FK limits and increasing finite-path unions give the comparison, including infinite-cluster events, exactly as in Proposition~\ref{prop:allstates}. Omitting rewards proves the critical upper bound. Below $p_c(Q)$ the wired limit is unique and has exponential connectivity decay \cite{BDC}.
+\end{proof}
+
+\subsection{The two Potts branches}\label{sec:potts-branches}
+The external inputs are distinct. Beffara--Duminil-Copin \cite{BDC} prove $p_c(Q)=\sqrt Q/(1+\sqrt Q)$ and exponential decay below this value. Discontinuity at $Q>4$ is due to Duminil-Copin, Gagnebin, Harel, Manolescu and Tassion \cite{DGHMT}. Their Theorem~1.2(2) states
+\[
+ \phi^1_{\Z^2,p_c(Q),Q}
+ [\text{there exists an infinite cluster}]=1,
+\]
+and their Theorem~1.1(2) states, for each $i\in\{1,\ldots,Q\}$,
+\[
+ \mu^i_c[\sigma_0=i]>1/Q.
+\]
+These are the statements used here; criticality alone does not imply them. In particular, with $Q=9$,
+\begin{equation}\label{eq:m9}
+ m_9=\phi^1_{3/4,9}(0\conn\infty)>0.
+\end{equation}
+Positivity also follows directly from the first statement and translation invariance: if the probability at each site were zero, a countable union could contain no infinite-cluster vertex.
+
+\begin{proposition}[Potts branch expectations]\label{prop:potts-branches}
+If $F$ is nonsurjective, every Gibbs state of $\Psi_F$ has only finite visible bond clusters, is invariant under $S_9$ acting on all visible colours, and satisfies
+\begin{equation}\label{eq:potts-decay}
+ \begin{aligned}
+ \mu(X_x)&=0,\qquad X_x=\frac{9\one_{\{\sigma_x=1\}}-1}{8},\\
+ 0\le\mu(\one_{\{\sigma_x=\sigma_y\}})-\tfrac19
+ &=\tfrac89\widetilde\mu(x\conn y)
+ \le C_F e^{-a_F\|x-y\|_1},
+ \end{aligned}
+\end{equation}
+with $C_F<\infty,a_F>0$ uniform over states and positions. If $F$ is surjective, there are translation-invariant Gibbs states $\mu_F^i$, $1\le i\le9$, with
+\[
+ \mu_F^1(X_0)=m_9,\qquad
+ \mu_F^i(X_0)=-m_9/8\quad(i\ne1).
+\]
+Over all Gibbs states, in the surjective branch,
+\begin{equation}\label{eq:potts-extrema}
+ \sup_\mu\mu(X_0)=m_9,\qquad
+ \inf_\mu\mu(X_0)=-m_9/8.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Nonsurjectivity supplies a witness by Lemma~\ref{lem:collision}. Proposition~\ref{prop:potts-allstates} and subcritical sharpness make every cluster finite, with a uniform exponential connection bound. Independent uniform colours, also independent of the hidden layer given bonds, give $S_9$ invariance of the full state, zero magnetization and \eqref{eq:potts-decay}.
+
+If $F$ is onto, $W(C)=1$ for every finite $C$. In padded finite volumes with colour-$i$ visible boundary, \eqref{eq:potts-fk} is exactly wired critical FK. The visible-bond marginal is its Edwards--Sokal coupling: the wired cluster has colour $i$, other clusters have independent uniform colours. The hidden buffer is free and includes all input variables for retained factors. Every fixed interior specification is consequently exact for sufficiently large volumes, so limits are Gibbs for $\Psi_F$.
+
+The wired bond limit and its colour-$i$ coupling are translation invariant. The conditional hidden law is unique by Lemma~\ref{lem:hidden} and covariant under shifts; hence this marginal has a unique full hidden extension and the resulting $\mu_F^i$ is translation invariant. The usual wired Edwards--Sokal limit colours the infinite cluster $i$ and finite clusters uniformly \cite[Theorem 4.91 and Chapter 5]{Grimmett}. In finite volume already,
+\[
+ \mu_F^1(X_0)=\phi^1(0\conn\partial\Lambda),
+\]
+with the appropriate finite-volume notation. Passing to the wired limit gives $m_9$. For $i\ne1$ the contribution of the wired infinite cluster is $-1/8$, giving $-m_9/8$.
+
+For an arbitrary Gibbs state let $\vartheta=\widetilde\mu(0\conn\infty)$ and
+$b=\widetilde\mu(0\conn\infty,\sigma_0=1)$. Finite-cluster colours give
+\[
+ \mu(X_0)=\frac{9b-\vartheta}{8},\qquad
+ 0\le b\le\vartheta\le m_9,
+\]
+where the last bound is the critical wired domination. Thus
+$-m_9/8\le\mu(X_0)\le m_9$. The ordered states attain both endpoints. This argument requires no classification of all critical Gibbs states.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:potts-main}]
+Apply the CA-only encoding of Corollary~\ref{cor:512} to the hard inputs and use \eqref{eq:potts-weight} with $Q=9$. The CA alphabet is four, independently of the visible alphabet. Therefore the local dimension is $9\cdot4^4=2304$. Proposition~\ref{prop:potts-branches} gives the exact alternative $\sup_\mu\mu(X_0)\in\{0,m_9\}$, also when the supremum is restricted to translation-invariant states. Every fixed rational $m_*\in(0,m_9]$ supplies a promise gap; such a rational exists and can be fixed in the decision problem. No explicit numerical lower bound for $m_9$ is needed or asserted. A decision algorithm under this promise would decide CA surjectivity, contradicting Kari's theorem.
+\end{proof}
+
+\subsection{Computable pressure, undecidable differentiability}\label{sec:potts-pressure}
+Add the uniform field $h\sum_xX_x$ in the log weight, so the energy acquires $-h\sum_xX_x$. Use counting a-priori measure and write
+\[
+ P_F(h)=\lim_{L\to\infty}|\Lambda_L|^{-1}\log Z_{F,\Lambda_L}(h),
+ \qquad \Lambda_L=\{0,\ldots,L-1\}^2.
+\]
+The boundary convention does not affect this limit. Rational weights are asserted at $h=0$ only; the factors $e^{hX_x}$ need not be rational.
+
+\begin{corollary}[computable pressure and an undecidable kink]\label{cor:potts-pressure}
+The real function $P_F(h)$ is uniformly computable from $F$ and a computable-real name for $h$. Nevertheless differentiability at $h=0$ is undecidable on this family. Exactly,
+\begin{equation}\label{eq:potts-derivatives}
+ \begin{array}{c|cc}
+ &P_F'(0+)&P_F'(0-)\\\hline
+ F\text{ surjective}&m_9&-m_9/8\\
+ F\text{ nonsurjective}&0&0
+ \end{array}
+\end{equation}
+Thus the derivative jump is either $0$ or the fixed positive constant $9m_9/8$.
+\end{corollary}
+\begin{proof}
+Pressure computability follows from Gayral--Sablik--Taati \cite[Proposition 14]{GST}; their proof is uniform in a computable potential. Here there is also a direct modulus. Choose an integer $R$ containing each factor support in $[-R,R]^2$, and a computable rational upper bound $M$ for $\sum_{r=H,V}\|\log b_{0,r}\|_\infty$. Tile a large square by $L$-squares and omit the factors crossing tile boundaries. At most $4R/L$ of the centers per orientation are affected in the density estimate, so the safe bound $K_F=16(R+1)M$ gives
+\[
+ \left|P_F(h)-L^{-2}\log Z^{\rm free}_{F,\Lambda_L}(h)\right|
+ \le K_F/L\qquad(L>2R).
+\]
+The field has no crossing terms. Finite sums of computable exponentials and logarithms compute the middle term. Also $|P_F(h)-P_F(h')|\le|h-h'|$ since $|X_x|\le1$, making this uniform for real input names as well as rational fields.
+
+For completeness, the derivative identification is a variational argument. Let $\mathcal I$ be the compact set of translation-invariant probability measures on $S_{\rm P}^{\Z^2}$, $\mathfrak s(\nu)$ their entropy density, and
+$u_F(\nu)=\sum_{r=H,V}\nu(-\log b_{0,r})$ the energy density. The Gibbs variational principle gives
+\begin{equation}\label{eq:potts-variational}
+ P_F(h)=\max_{\nu\in\mathcal I}
+ \{A_F(\nu)+h\nu(X_0)\},\qquad
+ A_F(\nu)=\mathfrak s(\nu)-u_F(\nu).
+\end{equation}
+The maximizers are exactly the translation-invariant DLR states for the field interaction. These facts are the Lanford--Ruelle principle: see Georgii \cite[Theorems 15.30 and 15.39, with the converse in Theorem 15.37]{Georgii}. Upper semicontinuity of entropy on a finite-alphabet full shift follows from its finite-window infimum representation \cite[Theorem 15.12 and Proposition 15.14]{Georgii}; the energy is continuous. Thus $A_F$ is upper semicontinuous and maximizers exist.
+
+Let $\mathcal E_0$ be the maximizers at zero. Substituting any $\nu\in\mathcal E_0$ at $h>0$ gives
+$(P_F(h)-P_F(0))/h\ge\nu(X_0)$.
+Conversely choose a maximizer $\nu_h$ at $h$. Since $A_F(\nu_h)\le P_F(0)$,
+\[
+ \frac{P_F(h)-P_F(0)}h\le\nu_h(X_0).
+\]
+As $h\downarrow0$, compactness supplies limit points. The Lipschitz pressure bound and bounded $X_0$ give $A_F(\nu_h)\to P_F(0)$; upper semicontinuity puts every such limit point in $\mathcal E_0$. Therefore
+\[
+ P_F'(0+)=\max_{\nu\in\mathcal E_0}\nu(X_0).
+\]
+Apply the same argument to $-X_0$ for negative fields to obtain
+$P_F'(0-)=\min_{\nu\in\mathcal E_0}\nu(X_0)$.
+Lanford--Ruelle is needed here to identify the limiting variational states with Gibbs states; finite-volume formal differentiation alone would not suffice. Proposition~\ref{prop:potts-branches} bounds all Gibbs states and attains the extremes in translation-invariant ones, yielding \eqref{eq:potts-derivatives}. The hard family from Corollary~\ref{cor:512} proves undecidability, even under any fixed rational positive lower promise smaller than the nonzero jump.
+\end{proof}
+
+The diagonal Gibbs--KMS correspondence of Section~\ref{sec:quantum} transfers Theorem~\ref{thm:potts-main} to on-site dimension $2304$, with the diagonal observable $X_0$ and the same equilibrium pressure. The output-reset calculation of Section~\ref{sec:corollaries}, first subsection, transfers verbatim: $\varepsilon^2\mapsto\eta^2\varepsilon^2$ for fixed rational $\eta\in(0,1]$ preserves the witness zero set and hence both Potts branches, the fixed gap and the pressure kink.

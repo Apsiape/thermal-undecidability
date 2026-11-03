@@ -1,0 +1,139 @@
+\Needspace{14\baselineskip}
+\section{Noise and effective impossibility corollaries}\label{sec:corollaries}
+
+\subsection{A prescribed output-reset noise family}
+
+\begin{proposition}[structured reset noise]\label{prop:reset}
+Fix a rational retention parameter \(\eta\in(0,1]\). Independently reset each CA output, in each replica and at each site, to a uniform symbol with probability \(1-\eta\), before applying the collision kernel and averaging the resets. The resulting local weight is
+\begin{equation}
+ w_{i,\eta}=1+(\eta\varepsilon)^2
+    h(F(X)_i,F(X')_i).
+ \label{eq:reset}
+\end{equation}
+Theorem~\ref{thm:main}, including its every-Gibbs-state conclusion and diagonal quantum transfer, holds for this family at every such fixed \(\eta>0\). At \(\eta=0\) all inputs have the same critical visible marginal.
+\end{proposition}
+\begin{proof}
+The reset kernel is \(T_\eta(a,b)=\eta\one_{\{a=b\}}+(1-\eta)/q\). It multiplies each mean-zero function on \(A\) by \(\eta\). By the kernel expansion used in \eqref{eq:squares}, averaging two independent resets multiplies \(h\) by \(\eta^2\). The collision activities become \(\eta^{2|T|}z(T)\), so their zero/nonzero pattern is unchanged for \(\eta>0\). All completion and covariance estimates apply with \(\varepsilon\) replaced by \(\eta\varepsilon\); the hidden contraction improves. Rational \(\eta\) preserves rationality of the weights. If \(\eta=0\), every \(w\) equals one.
+\end{proof}
+
+This proves Theorem~\ref{thm:noise-main}.
+
+\begin{proposition}[fragility under detuning and persistence under readout noise]\label{prop:fragile}
+The surjective branch is not robust to arbitrary sufficiently small changes of the weights. In contrast, independent sign noise on the visible readout preserves the correlation-decay dichotomy for every nonzero retention.
+\end{proposition}
+\begin{proof}
+Decrease the base horizontal log-odds from \(\log2\) to \(\log2-t\), \(t>0\), leaving the collision factors unchanged. The proof using \(R_\infty\ge1\) now dominates every input model by the strictly subcritical ordinary FK model with odds product \(2e^{-t}<2\). Thus all inputs have exponential magnetic decay, however small \(t\) is. Rational changes of \(p_H\) can be chosen arbitrarily close to \(2/3\).
+
+For independent visible flips with mean multiplier \(s\ne0\), distinct-site connected correlations become
+\begin{equation}
+ \Cov(\widetilde\sigma_x,\widetilde\sigma_y)
+   =s^2\Cov(\sigma_x,\sigma_y),\qquad x\ne y.
+\end{equation}
+The same identity holds for a product quantum channel satisfying \(Z\mapsto sZ\). Multiplication by a fixed positive constant preserves existence or nonexistence of an exponential envelope. The postprocessed state is not asserted to be a Gibbs state of another finite-range interaction.
+\end{proof}
+
+\subsection{Effective compactness and no total positive decay modulus}
+
+\begin{remark}[Finite-volume extrema; standard compactness \cite{Simon,FFS}]\label{lem:extrema}
+For any finite-range interaction with positive rational local weights, and any rational-valued local observable \(O\), let \(\Lambda_n\) exhaust the lattice and contain \(\supp O\). Define
+\begin{equation}
+ m_n=\min_\eta\gamma_{\Lambda_n}^{\eta}(O),
+ \qquad
+ M_n=\max_\eta\gamma_{\Lambda_n}^{\eta}(O),
+\end{equation}
+where only the finite interaction collar of \(\Lambda_n\) must be enumerated. These numbers are exactly computable rationals, and
+\begin{equation}
+ m_n\longrightarrow\inf_{\mu\in\G(\Phi)}\mu(O),\qquad
+ M_n\longrightarrow\sup_{\mu\in\G(\Phi)}\mu(O).
+\end{equation}
+No monotonicity or uniqueness assumption is required.
+\end{remark}
+\begin{proof}
+Finite-volume weights are products of positive rationals. Enumerating finitely many interior configurations and exterior collars computes every conditional expectation and both extrema exactly. The DLR equations place every Gibbs expectation between \(m_n\) and \(M_n\).
+
+For any subsequence of maximizing boundary conditions, extend each finite-volume measure by any configuration matching its chosen collar outside. Compactness gives a further weakly convergent subsequence. Every fixed local DLR equation holds for all sufficiently large volumes, and continuity passes it to the limit. Thus the limit is Gibbs. Its \(O\)-expectation is the corresponding limit of the \(M_n\)'s, so no subsequential upper limit can exceed the supremum over Gibbs states. Together with the outward bound this proves convergence. The argument for minima is identical.
+\end{proof}
+
+\begin{proposition}[no total algorithm for positive decay moduli]\label{prop:modulus}
+There is no total algorithm which, on every input in the constructed family, returns strictly positive rational numbers \(C_F,a_F\), with the guarantee that on every nonsurjective input
+\begin{equation}
+ \forall\mu\in\G(\Phi_F)\ \forall x:\quad
+ \mu(\sigma_0\sigma_x)\le C_F e^{-a_F\|x\|_1}.
+\end{equation}
+The same impossibility holds if the outputs are computable positive real numbers with effective descriptions.
+\end{proposition}
+\begin{proof}
+Suppose such an algorithm exists. The fixed critical Ising state has a computable expectation for each local observable: apply the finite-volume extrema remark to the rational-weight critical Ising specification, and use its uniqueness to make the lower and upper extrema converge to the same value.
+
+Run the proposed algorithm on \(F\). Since critical magnetic correlations have no exponential envelope, an effective search over \(x\), rational \(b\), and approximation accuracies terminates with
+\begin{equation}
+ C_F e^{-a_F\|x\|_1}<b<
+ \langle\sigma_0\sigma_x\rangle_{\crit}.
+\end{equation}
+The exponential is a computable real, so the strict inequalities can be certified once true.
+
+For the input interaction \(\Phi_F\), compute the finite-collar extrema in the finite-volume extrema remark for \(O=\sigma_0\sigma_x\). If \(F\) is nonsurjective, all Gibbs expectations lie strictly below \(b\), and eventually \(M_n<b\). If \(F\) is onto, its unique Gibbs expectation is the critical value strictly above \(b\), and eventually \(m_n>b\). Running these tests decides surjectivity, contradicting Kari's theorem and Section~\ref{sec:fixed}. Computable-real outputs can either be used in the same strict-inequality search or relaxed to rational \(C\) above and \(a\) below them.
+\end{proof}
+
+This proves Theorem~\ref{thm:modulus-main}. Positivity and totality on \emph{every} input are essential. It does not rule out an algorithm which first searches for a collision witness and returns moduli only after finding one; nor does it rule out a total rate description allowed to be zero on surjective inputs.
+
+\begin{corollary}[semidecidability and explicit witnesses]
+The positive answer to \eqref{eq:decision}, on this constructed family, is computably enumerable. Given a witness, a strictly positive comparison displacement is explicitly computable.
+\end{corollary}
+\begin{proof}
+Enumerate finite sets \(T\) and compute the rational \(c_T\) exactly. The search finds a positive one precisely in the nonsurjective branch. Equations \eqref{eq:g}--\eqref{eq:Delta} give a computable positive \(\Delta\). If decay constants are desired, enumerate finite-set sharpness certificates for the resulting ordinary subcritical Ising model. Their strict inequalities are semidecidable for computable couplings, one exists by~\cite{DCT}, and its iterative proof gives exponential constants. No computable a priori bound on the witness search is asserted.
+\end{proof}
+
+\subsection{A general arithmetic upper bound}
+Here a positive rational finite-range model has a finite spin alphabet and a finite translation-invariant list of strictly positive rational weight tables; the specified on-site observable $f$ has rational values. Put $f_x=f\circ\tau_x$. The following is an upper bound, not a completeness statement.
+
+\begin{proposition}[arithmetic upper bounds]\label{prop:arith}
+The raw-decay property
+\[
+ \forall\mu\in\G(\Phi)\ \exists C_\mu,a_\mu>0\
+ \forall x:\ |\mu(f_0f_x)|\le C_\mu e^{-a_\mu\|x\|_1}
+\]
+belongs to $\Sigma^0_3$. Under the promise that $\G(\Phi)$ is a singleton, it belongs to $\Sigma^0_2$.
+\end{proposition}
+\begin{proof}
+First the statewise bounds can be made uniform. The nonempty compact metrizable convex set $K=\G(\Phi)$ is covered by the closed sets
+\[
+ A_{C,m}=\{\mu:\ |\mu(f_0f_x)|\le C\,2^{-\lceil\|x\|_1/m\rceil}
+                     \text{ for every }x\},\qquad C,m\in\mathbb N_{>0}.
+\]
+This is equivalent to exponential decay after enlarging $C,m$. Baire's theorem gives one $A_{C,m}$ with nonempty relative interior, containing a neighborhood of some $\mu_0$. There is a single $\lambda>0$ so small that
+$(1-\lambda)\mu_0+\lambda\nu$ lies in this neighborhood for every $\nu\in K$. Indeed a basic weak neighborhood imposes finitely many expectation constraints on bounded local functions; their changes under this mixture are uniformly $O(\lambda)$. Since also $\mu_0\in A_{C,m}$, affine linearity gives, for every $\nu$ and $x$,
+\[
+ |\nu(f_0f_x)|\le\lambda^{-1}(2-\lambda)C\,
+                      2^{-\lceil\|x\|_1/m\rceil}.
+\]
+Rounding the new constant up proves uniformity, without requiring that Gibbs states themselves be translation invariant.
+
+Choose nested boxes $\Lambda_L\uparrow\Z^d$ and, once they contain $0,x$, define the computable rational
+\[
+ U_L(x)=\max_\tau|\gamma_{\Lambda_L}^\tau(f_0f_x)|.
+\]
+The tower identity for specifications gives $U_{L+1}(x)\le U_L(x)$: each larger-volume expectation is an average of smaller-volume conditional expectations. Every Gibbs expectation is bounded by $U_L(x)$. Conversely maximizing collars have a subsequential Gibbs limit by the compactness argument above, so
+\[
+ U_L(x)\downarrow\sup_{\mu\in K}|\mu(f_0f_x)|.
+\]
+With slack obtained by enlarging $C,m$, the property is exactly
+\[
+ \exists C,m\in\mathbb N_{>0}\ \forall x\in\Z^d\ \exists L:
+ \quad \{0,x\}\subseteq\Lambda_L,\qquad
+ U_L(x)<C\,2^{-\lceil\|x\|_1/m\rceil}.
+\]
+The matrix predicate is decidable rational arithmetic; this is $\Sigma^0_3$.
+
+Under uniqueness, the finite-collar minimum and maximum converge to the same expectation. Search until their gap is at most $2^{-k}$ to compute a rational $v_{x,k}$ with
+$|v_{x,k}-\mu(f_0f_x)|\le2^{-k}$. This search is uniform and total on the uniqueness promise. The decay property is then equivalent to
+\[
+ \exists C,m\ \forall x,k:\quad
+ |v_{x,k}|\le C\,2^{-\lceil\|x\|_1/m\rceil}+2^{-k}.
+\]
+For a literal arithmetic formula on input codes, let the universal variable also encode any finite transcript of this deterministic approximation algorithm. Check the displayed inequality only if the transcript is a completed run for $(x,k)$, otherwise accept it. This is a decidable predicate; totality on the promise ensures a completed transcript for each $(x,k)$. Letting $k\to\infty$ proves the converse. Thus the promise restriction has a $\Sigma^0_2$ definition.
+\end{proof}
+
+\begin{remark}[Decidable special cases]
+In one dimension, positive finite-range weights yield a primitive block transfer matrix \cite[Corollary 6.41]{FV}. All connected correlations decay exponentially; raw decay of a real on-site $f$ is equivalent to zero Gibbs mean. With rational weights this mean is algebraic, so equality to zero is decidable by real algebraic arithmetic. For square-lattice nearest-neighbor zero-field ferromagnetic Ising and the spin observable, with rational $u=e^{2K_H}>1$, $v=e^{2K_V}>1$, raw all-state exponential decay holds exactly when $(u-1)(v-1)<2$, by (I1)--(I3) and positive magnetization above criticality \cite{CDC,DCT}. Equality is critical and fails. This is a rational comparison. These remarks do not assert decidability for general higher-dimensional models.
+\end{remark}

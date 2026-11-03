@@ -1,0 +1,56 @@
+\section{Exact diagonal quantum transfer}\label{sec:quantum}
+
+Let \(d=|S|\) and let
+\begin{equation}
+ \mathcal A=\overline{\bigcup_{\Lambda\Subset\Z^2}
+                \bigotimes_{x\in\Lambda}M_d(\mathbb C)}
+\end{equation}
+be the full quasilocal matrix algebra. Diagonalize each classical interaction term in the product basis indexed by \(S\), obtaining \(\widehat\Phi\). Let \(E_{\diag}\) be the local dephasing conditional expectation, extended consistently to \(\mathcal A\).
+
+\begin{remark}[The standard diagonal correspondence \cite{BR,Simon,FFS}]\label{thm:KMS}
+For every \(\beta>0\), there is an affine bijection
+\begin{equation}
+ \G_\beta(\Phi)\longleftrightarrow\mathrm{KMS}_\beta(\widehat\Phi),
+ \qquad \mu\longmapsto\omega_\mu=\mu\circ E_{\diag}.
+ \label{eq:KMSbijection}
+\end{equation}
+For disjointly supported local quantum observables \(A,B\),
+\begin{equation}
+ \Cov_{\omega_\mu}(A,B)
+ =\Cov_\mu(E_{\diag}A,E_{\diag}B).
+ \label{eq:quantumcov}
+\end{equation}
+In particular, \(Z_x=\sigma_x^z\otimes I\) has exactly the classical magnetic correlations, in every KMS state.
+\end{remark}
+\begin{proof}
+Every local diagonal observable \(D\) is fixed by the dynamics. The KMS identity implies \(\omega(AD)=\omega(DA)\) for all local \(A\). Hence \(\omega\) is invariant under conjugation by every local diagonal unitary. Averaging those unitaries dephases each finite matrix algebra, so
+\(\omega=\omega\circ E_{\diag}\).
+This argument also removes coherences inside energy-degenerate subspaces.
+
+Let \(\Lambda\) contain the support of a local matrix unit \(|a\rangle\langle b|\), and write \(E(a,\eta)\) for the sum of interaction energies meeting \(\Lambda\), with interior configuration \(a\) and exterior configuration \(\eta\). Diagonality and finite range give
+\begin{equation}
+ \alpha_{i\beta}(|a\rangle\langle b|)
+ =e^{-\beta(E(a,\eta)-E(b,\eta))}|a\rangle\langle b|.
+\end{equation}
+Only finitely many interaction terms meeting the support enter; all other terms commute with it. Thus every local observable is entire analytic.
+
+Use the KMS identity with opposite matrix units, multiplied by arbitrary exterior cylinder functions. It gives the conditional ratio
+\begin{equation}
+ \mu(a\mid\eta)
+ =e^{-\beta(E(a,\eta)-E(b,\eta))}\mu(b\mid\eta).
+\end{equation}
+These strictly positive ratios, together with normalization, are exactly the DLR conditional probabilities.
+
+Conversely, if \(\mu\) is DLR, condition on the classical exterior of a finite region containing the supports of two local operators. The conditional interior density matrix is the finite-volume diagonal Gibbs matrix. Cyclicity of its trace gives the KMS identity for the two operators and their local analytic dynamics. Integrating the exterior proves KMS on the local algebra, and hence the full algebra. This establishes the bijection. The same local commuting-Hamiltonian KMS reduction is discussed in~\cite[Section 3.5]{FFS}.
+
+For disjoint supports, dephasing factorizes:
+\(E_{\diag}(AB)=(E_{\diag}A)(E_{\diag}B)\).
+Applying \(\mu\) and subtracting the means proves \eqref{eq:quantumcov}.
+\end{proof}
+
+Taking the diagonal algebra alone would be incorrect for this assertion: its dynamics is trivial and every probability measure is KMS. The full matrix algebra is essential. The input energies remain log-rational; the theorem makes no claim for the narrower class of rational or algebraic Hamiltonian matrix entries at a fixed temperature.
+
+
+\begin{proof}[Proof of Theorem~\ref{thm:quantum-main}]
+Apply the correspondence to Theorem~\ref{thm:main}. The diagonal observable $Z_x$ has precisely the visible classical spin values. The affine bijection preserves translation invariance and all stated spin expectations. It therefore transfers both branches and each state quantifier.
+\end{proof}

@@ -1,0 +1,5 @@
+PASS exact wired magnetization: 5785/6328 Z = 1537704
+PASS exact BOTH-layer anchor chain (all increasing events), free k=2, kappa=1/4, translates=4
+PASS exact BOTH-layer anchor chain (all increasing events), wired k=2, kappa=1/4, translates=4
+PASS rational-path closure/anchor bounds and interior coverage in both orientations
+ALL EXACT q=9 CHECKS PASSED

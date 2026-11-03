@@ -1,0 +1,5 @@
+(a) eps=0.95: min Cov = -4.080e-05 between edge (1, (0, 0)) and edge (1, (2, 0))  [(orientation, start site)]
+(a) eps=0.98: min Cov = -1.726e-04 between edge (1, (0, 2)) and edge (1, (2, 2))  [(orientation, start site)]
+(a) eps=0.999: min Cov = -2.698e-04 between edge (1, (0, 0)) and edge (1, (2, 0))  [(orientation, start site)]
+(b) max [W(C) - q^{|C^Y|} W(C\Y)] (<=0 expected): 0.0
+(b) max |W(Cue)-W(C) - sum_P z_P W(C\Pdot)| : 1.2156942119645464e-14

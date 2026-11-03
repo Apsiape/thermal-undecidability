@@ -1,0 +1,30 @@
+{
+  "title": "Spontaneous magnetization and thermal decay are undecidable at positive temperature",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "version": "1.0.0",
+  "publication_date": "2026-11-03",
+  "creators": [
+    {
+      "name": "Douglas, Seth",
+      "orcid": "0009-0007-4708-3252"
+    },
+    {
+      "name": "Mghirbi, Nidhal",
+      "orcid": "0009-0005-6534-1118"
+    }
+  ],
+  "description": "Spontaneous magnetization is undecidable at a fixed positive temperature for translation-invariant finite-range classical lattice models with strictly positive rational Boltzmann weights. A computable family on 2304 local states has maximal visible nine-colour Potts magnetization exactly zero or a fixed positive constant, attained in a translation-invariant Gibbs state. Its pressure in a uniform field is uniformly computable, but differentiability at zero field is undecidable with a fixed derivative-jump gap. Rational weights are asserted at zero field.\n\nWe also prove undecidability of exponential decay of one specified thermal spin correlation, in every Gibbs state, on 512 local states. Both constructions couple critical visible spins to cellular-automaton replicas. Surjectivity cancels the collision corrections; nonsurjectivity gives strict subcritical bond domination and exponential decay of the specified correlation uniformly over states. The interaction range depends on the input, and the branches are fine-tuned at their critical or coexistence points. The results transfer to diagonal quantum interactions and survive a prescribed output-reset noise family, the same construction with reduced retention. Nonsurjective full-state uniqueness and exponential clustering of arbitrary local observables remain open.",
+  "keywords": [
+    "statistical mechanics",
+    "undecidability",
+    "Gibbs measures",
+    "Potts model",
+    "phase transitions",
+    "cellular automata"
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "language": "eng",
+  "notes": "Preprint. It has not been peer reviewed. Text: CC BY 4.0. Scripts: MIT or Apache 2.0."
+}

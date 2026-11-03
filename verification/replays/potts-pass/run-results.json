@@ -1,0 +1,87 @@
+[
+  {
+    "script": "exact_checks.py",
+    "exit_code": 0,
+    "seconds": 0.842
+  },
+  {
+    "script": "potts/collision_checks.py",
+    "exit_code": 0,
+    "seconds": 0.935
+  },
+  {
+    "script": "potts/fk_q9_checks.py",
+    "exit_code": 0,
+    "seconds": 203.422
+  },
+  {
+    "script": "potts/exact_q9_checks.py",
+    "exit_code": 0,
+    "seconds": 0.977
+  },
+  {
+    "script": "fk_route/claim2_identities.py",
+    "exit_code": 0,
+    "seconds": 3.166
+  },
+  {
+    "script": "fk_route/counterexample27.py",
+    "exit_code": 0,
+    "seconds": 48.25
+  },
+  {
+    "script": "fk_route/dobrushin_check.py",
+    "exit_code": 0,
+    "seconds": 1.41
+  },
+  {
+    "script": "fk_route/extra_checks.py",
+    "exit_code": 0,
+    "seconds": 8.421
+  },
+  {
+    "script": "fk_route/fkg_tests.py",
+    "exit_code": 0,
+    "seconds": 402.547
+  },
+  {
+    "script": "fk_route/surj_decide_1d.py",
+    "exit_code": 0,
+    "seconds": 0.339
+  },
+  {
+    "script": "magnetic/sec2_checks.py",
+    "exit_code": 0,
+    "seconds": 14.131
+  },
+  {
+    "script": "magnetic/sec3_checks.py",
+    "exit_code": 0,
+    "seconds": 26.559
+  },
+  {
+    "script": "magnetic/sec3_run2.py",
+    "exit_code": 0,
+    "seconds": 530.137
+  },
+  {
+    "script": "magnetic/sec3_torus33.py",
+    "exit_code": 0,
+    "seconds": 74.365
+  },
+  {
+    "script": "magnetic/sec4_boundary_layer.py",
+    "exit_code": 0,
+    "seconds": 0.983
+  },
+  {
+    "script": "magnetic/sec4_checks.py",
+    "exit_code": 0,
+    "seconds": 31.793
+  },
+  {
+    "script": "magnetic/sec44_criticality.py",
+    "exit_code": 0,
+    "seconds": 1.138
+  }
+]

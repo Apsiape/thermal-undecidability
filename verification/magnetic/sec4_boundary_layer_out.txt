@@ -1,0 +1,6 @@
+selector eps=0.9: e at distance 0 from a fixed hidden boundary: min ratio = 0.1900
+selector eps=0.9: e at distance 1 from a fixed hidden boundary: min ratio = 1.0000
+selector eps=0.9: e at distance 2 from a fixed hidden boundary: min ratio = 1.0000
+AND eps=0.9: e at distance 0 from a fixed hidden boundary: min ratio = 0.1900
+AND eps=0.9: e at distance 1 from a fixed hidden boundary: min ratio = 1.2025
+AND eps=0.9: e at distance 2 from a fixed hidden boundary: min ratio = 1.2025

@@ -1,0 +1,80 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1.08in]{geometry}
+\usepackage{booktabs,array,longtable,enumitem,microtype,xcolor,needspace}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\setlength{\emergencystretch}{2em}
+\setlist{nosep}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{theoremA}{Theorem A (thermal spin correlation)}
+\newtheorem*{theoremB}{Theorem B (diagonal quantum interaction)}
+\newtheorem*{theoremC}{Theorem C (output-reset noise)}
+\newtheorem*{theoremD}{Theorem D (no total decay modulus)}
+\newtheorem*{theoremE}{Theorem E (spontaneous magnetization with a fixed gap)}
+\newcounter{pottsresult}
+\renewcommand{\thepottsresult}{E}
+\AddToHook{env/theoremE/begin}{\refstepcounter{pottsresult}}
+\newcounter{mainresult}
+\renewcommand{\themainresult}{\Alph{mainresult}}
+\AddToHook{env/theoremA/begin}{\refstepcounter{mainresult}}
+\AddToHook{env/theoremB/begin}{\refstepcounter{mainresult}}
+\AddToHook{env/theoremC/begin}{\refstepcounter{mainresult}}
+\AddToHook{env/theoremD/begin}{\refstepcounter{mainresult}}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem{question}[theorem]{Question}
+\numberwithin{equation}{section}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Pp}{\mathbb P}
+\newcommand{\G}{\mathcal G}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\TV}{\mathrm{TV}}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\crit}{\mathrm c}
+\newcommand{\conn}{\longleftrightarrow}
+\hypersetup{pdftitle={Spontaneous magnetization and thermal decay are undecidable at positive temperature},pdfauthor={Seth Douglas and Nidhal Mghirbi}}
+\title{Spontaneous magnetization and thermal decay\\ are undecidable at positive temperature}
+\author{Seth Douglas \and Nidhal Mghirbi}
+\date{Version 1.0.0, November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Spontaneous magnetization is undecidable at a fixed positive temperature for translation-invariant finite-range classical lattice models with strictly positive rational Boltzmann weights. A computable family on 2304 local states has maximal visible nine-colour Potts magnetization exactly zero or a fixed positive constant, attained in a translation-invariant Gibbs state. Its pressure in a uniform field is uniformly computable, but differentiability at zero field is undecidable with a fixed derivative-jump gap. Rational weights are asserted at zero field.
+
+We also prove undecidability of exponential decay of one specified thermal spin correlation, in every Gibbs state, on 512 local states. Both constructions couple critical visible spins to cellular-automaton replicas. Surjectivity cancels the collision corrections; nonsurjectivity gives strict subcritical bond domination and exponential decay of the specified correlation uniformly over states. The interaction range depends on the input, and the branches are fine-tuned at their critical or coexistence points. The results transfer to diagonal quantum interactions and survive a prescribed output-reset noise family, the same construction with reduced retention. Nonsurjective full-state uniqueness and exponential clustering of arbitrary local observables remain open.
+\end{abstract}
+\begin{center}\small AI systems assisted with this work. The authors take responsibility for its claims; see ``How this work was done.'' This preprint has not been peer reviewed.\end{center}
+\clearpage
+{\small\tableofcontents}
+\clearpage
+\input{sections/intro}
+\input{sections/construction}
+\input{sections/collision}
+\input{sections/comparison}
+\input{sections/allstates}
+\input{sections/branches}
+\input{sections/dimension}
+\input{sections/quantum}
+\input{sections/corollaries}
+\input{sections/potts}
+\input{sections/estimates}
+\input{sections/open}
+\input{sections/discussion}
+\input{sections/methods}
+\appendix
+\input{sections/reproducibility}
+\begingroup\small
+\bibliographystyle{plain}
+\bibliography{references}
+\endgroup
+\end{document}

@@ -1,0 +1,11 @@
+\section{Auxiliary uniqueness routes}\label{sec:uniqueness}
+Theorems~\ref{thm:main}--\ref{thm:potts-main} do not use this section. As a heuristic, factorization over the overlap graph rewrites $W$ as a hard-core polymer partition function. At sufficiently small activity its logarithm has the form
+\begin{equation}
+ \log W(C)=L(C)+R(C),\qquad
+ L(C)=\sum_{\substack{P\ne\varnothing\\P\ \Gamma\text{-connected}}}
+       z(P)\one_{\{P\subseteq C\}} .
+ \label{eq:LplusR}
+\end{equation}
+Cluster expansions \cite{KP,FP} suggest a quadratic norm bound for $R$. Combining such a bound with a uniform near-critical susceptibility estimate is a possible uniqueness strategy. We give no proof here of the required lattice-uniform spin estimate, the limiting odd-sector gap, or a boundary-compatible response bound; scaling-limit intuition alone does not supply them. No susceptibility exponent or claimed quadratic room is used to establish uniqueness of the actual $L+R$ model.
+
+\input{sections/routeA}

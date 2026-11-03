@@ -1,0 +1,43 @@
+\subsection{What attractiveness does prove for the L-model}
+Write $n_e=1-\omega_e$, and $I_P=\prod_{e\in P}n_e$. The $L$-model means the FK-Ising law multiplied by
+\[
+ \exp\!\left(s\sum_{r=H,V}\sum_{P}z_t(P)I_{P,r}\right),
+ \qquad z_t(P)=t^{|P|}c_P,\quad t=\varepsilon^2,\quad s\ge0.
+\]
+The sum is over nonempty connected center sets and both orientations, with every translate counted once. In particular $t$ is the microscopic parameter, whereas $s$ scales the entire positive interaction. The factor $t^{|P|}$ must be retained: unnormalized powers would destroy the surjective cancellation. At the paper's $\varepsilon$, the activity bound and the connected-set count give
+\[
+ \sup_e\sum_{P,r:\,e\in P_r}|P|z_t(P)<\infty
+\]
+with an exponential tail in $|P|$ and diameter. Indeed there are at most $(m^2)^{2(j-1)}$ connected $j$-sets through a center, and $z_t(P)\le[(q-1)t]^j$; their product has ratio less than one. Thus all boundary energy densities below vanish in growing squares.
+
+\begin{proposition}[$L$-model uniqueness at almost every scale]\label{prop:Lunique}
+For each fixed input and $t=\varepsilon^2$, the $L$-model has a unique bond Gibbs state for every $s\ge0$ outside a countable set. If all collision coefficients vanish, it is the unique critical FK state at every $s$. This proposition concerns the $L$-model only.
+\end{proposition}
+\begin{proof}
+We first prove the needed finite-energy separation lemma. Let $\nu^-\preceq\nu^+$ be Gibbs measures for an attractive binary specification on coordinates $n_e$, with every single-coordinate conditional probability of $n_e=1$ at least $a>0$. For a finite $P$ and $e\in P$, take a monotone coupling and resample the coordinates of $P\setminus\{e\}$ once each by the common-uniform heat bath. Both marginals remain Gibbs and ordered; $n_e$ is unchanged. At each update the lower coordinate becomes one with conditional probability at least $a$. Conditional on the original discrepancy at $e$, the probability that all these lower coordinates finish at one is at least $a^{|P|-1}$. On that event $I_P$ differs by one between the upper and lower configurations. Since $I_P$ is increasing, its difference is never negative. Therefore
+\begin{equation}\label{eq:separation}
+ \nu^+(I_P)-\nu^-(I_P)\ge
+ a^{|P|-1}\bigl[\nu^+(n_e)-\nu^-(n_e)\bigr].
+\end{equation}
+
+The FK lattice condition and all positive all-closed rewards give attractiveness in the closed variables. Their monotone extremal limits $\nu_s^-,\nu_s^+$ sandwich every bond Gibbs state, by the same finite-volume comparison as for FK. The absolutely summable reward tail preserves the sandwich on passage to infinity. Every finite-volume $L$ law is also dominated in open edges by the ordinary wired critical FK law, since closing gains only positive rewards. Its limits have no infinite open cluster by (I2); exterior connections between a fixed core and increasingly distant boundaries therefore have vanishing probability. The usual FK core specification consequently passes to these limits, together with the summable reward tail. Thus the extremal limits are themselves Gibbs states, not just ordered limiting laws. Opening an edge has FK odds at most $2$, and loses rewards; hence its closed conditional probability is at least $a=1/3$, uniformly in boundary partitions.
+
+Let $\mathcal P(s)$ be the limiting pressure per vertex. It exists and is boundary independent: tiling a large square by smaller squares changes the FK cluster count by at most the number of boundary vertices; the summable interaction tail gives a further $o(\text{volume})$ error after first truncating its range. Finite-volume pressures are convex in $s$, hence so is $\mathcal P$. At a differentiability point, their derivatives converge to $\mathcal P'(s)$. To verify this without exchanging derivatives and limits, bound each finite derivative between its two difference quotients at $s\pm h$, pass to the pressure limit, and then send $h\downarrow0$ (at $s=0$ use right derivatives or omit this single point).
+
+For either extremal boundary, that finite derivative is the mean positive pattern density. Translation invariance of the extremal limits, removal of the vanishing boundary density, and the uniformly summable tail identify its limit as
+\[
+ \mathcal P'(s)=
+ \sum_{r=H,V}\sum_{P\ni0}\frac{z_t(P)}{|P|}
+                    \nu_s^\pm(I_{P,r}).
+\]
+All differences between the upper and lower terms are nonnegative. If a positive witness exists, equality of these sums forces equality of its pattern expectation in each orientation. Translates of that witness cover every edge of that orientation. Equation~\eqref{eq:separation} then forces equality of every one-edge marginal of $\nu_s^+$ and $\nu_s^-$. In a monotone coupling every coordinate disagreement has probability zero; countably many coordinates give equality of the measures. The sandwich proves uniqueness. A convex function on an interval has at most countably many nondifferentiability points (the disjoint derivative-jump intervals contain distinct rationals). Add $s=0$ to the possible exceptional set. If no witness exists, $L=0$ and (I2) applies directly.
+\end{proof}
+
+\begin{remark}[Why this does not prove uniqueness in Theorem A]
+The actual collision marginal has $\log W=L+R$, and need not be attractive. For a binary iid input let $F(X)_i=\one_{\{X_i=1,X_{i+e_1}=0\}}$. Its sign output has mean $1/2$, but the sign product at adjacent centers has mean zero: the two output-one events are disjoint. Thus $c_{\{i\}}=1/4$ and $c_{\{i,i+e_1\}}=0$. At $t=\varepsilon^2$,
+\[
+ W(\{i,i+e_1\})-W(\{i\})W(\{i+e_1\})
+       =-\frac{t^2}{16}<0.
+\]
+For example embed those two centers as adjacent horizontal edges on a path. Ordinary FK weights there are products, so they do not repair this failed lattice inequality. Pressure differentiability alone cannot identify Gibbs states without the monotone separation argument. Uniqueness of the $L+R$ model used in Theorem~\ref{thm:main} remains open.
+\end{remark}

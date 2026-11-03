@@ -1,0 +1,76 @@
+\section{The two branches and completion of the magnetic proof}\label{sec:branches}
+
+We use the following external Ising facts, with their exact roles stated.
+\begin{enumerate}[label=(I\arabic*)]
+\item \textbf{Critical curve.} Rectangular nearest-neighbor ferromagnetic Ising is critical when
+\begin{equation}
+ \sinh(2K_H)\sinh(2K_V)=1.
+\end{equation}
+Equivalently \(v_Hv_V=2\), for FK odds \(v_r=e^{2K_r}-1\). The square-lattice specialization of the weighted-planar equation \cite{CDC} is
+\[
+ \tanh K_H+\tanh K_V+\tanh K_H\tanh K_V=1.
+\]
+For $(e^{2K_H},e^{2K_V})=(3,2)$ this reads $1/2+1/3+1/6=1$, explaining the chosen rational critical pair.
+\item \textbf{Critical continuity.} At a critical nondegenerate biperiodic planar Ising model, the plus-state magnetization is zero~\cite[Theorem 1.5]{DCLis}. Ising monotonicity implies uniqueness: in the monotone coupling of plus and minus states, every single-site disagreement has probability zero, and any Gibbs state lies between them. The Edwards--Sokal identification gives
+\[
+ \phi^1_{\crit}(0\conn\infty)=\langle\sigma_0\rangle^+=0
+\]
+\cite[Theorems 4.91 and 5.17]{Grimmett}. Thus critical wired FK has no infinite cluster; its free and wired limits coincide. Indeed, the free Ising state lies between the equal plus and minus states. Sampling bonds independently on equal-spin edges gives the free FK limit from the free Ising state and the wired FK limit from the plus state, so these bond laws agree \cite[Theorem 4.91 and its following free-boundary remark]{Grimmett}. The FK boundary-condition sandwich \cite[Lemma 4.14, Theorem 4.19]{Grimmett} gives uniqueness of the FK state.
+\item \textbf{Sharpness.} Strictly subcritical finite-range Ising two-point functions decay exponentially, and hence so do FK-Ising connectivities~\cite[Theorem 2.1 and Section 2.2, arXiv v3 numbering]{DCT}. At criticality the susceptibility is infinite~\cite[Proposition 2.2]{DCT}; see also the original correlation-inequality argument \cite{Simon80}. These results allow translation-invariant anisotropic couplings. At the displaced point \eqref{eq:subcrit-params}, fix its couplings and vary $\beta$ along their ray. The critical-curve theorem gives $\beta_c>1$; sharpness applies at $\beta=1$. The original sharpness result is due to Aizenman, Barsky and Fern\'andez \cite{ABF}.
+\end{enumerate}
+
+\begin{proposition}[nonsurjective branch]\label{prop:nononto}
+If \(F\) is not onto, there are \(C_F<\infty\), \(a_F>0\), independent of the Gibbs state, such that every \(\mu\in\G(\Phi_F)\) satisfies
+\begin{equation}
+ \mu(\sigma_x)=0,\qquad
+ 0\le\mu(\sigma_x\sigma_y)
+   \le C_F e^{-a_F\|x-y\|_1}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Lemma~\ref{lem:collision} supplies a positive connected witness. Proposition~\ref{prop:allstates} dominates every bond marginal by the same strictly subcritical FK-Ising state. It follows that all its clusters are finite, and (I3) bounds its connection probabilities exponentially. Fair independent cluster signs give
+\begin{equation}
+ \mu(\sigma_x)=0,\qquad
+ \mu(\sigma_x\sigma_y)=\widetilde\mu(x\conn y).
+\end{equation}
+Stochastic domination proves the result with the comparator's constants.
+\end{proof}
+
+\begin{corollary}[the entire visible odd sector]\label{cor:odd}
+Let \(f,g\) be bounded local functions of visible and hidden variables, each odd under simultaneous reversal of all visible spins. If their supports are \(S,T\), respectively, then in the nonsurjective branch
+\begin{equation}
+ \begin{aligned}
+ \mu(f)=\mu(g)&=0,\\
+ |\Cov_\mu(f,g)|
+ &\le \|f\|_\infty\|g\|_\infty\,\widetilde\mu(S\conn T)\\
+ &\le C_F |S||T|\|f\|_\infty\|g\|_\infty
+       e^{-a_F\dist_1(S,T)}.
+ \end{aligned}
+\end{equation}
+\end{corollary}
+\begin{proof}
+Condition on the bonds and hidden variables. All clusters have independent fair signs. Flipping the finite union of clusters that meets \(S\) reverses \(f\), giving conditional mean zero. If no cluster meets both \(S\) and \(T\), the same flip leaves \(g\) unchanged, so the conditional product has mean zero. On the remaining event bound it by the product of the norms. A union bound and the two-point FK estimate give the last inequality.
+\end{proof}
+
+\begin{proposition}[surjective branch]\label{prop:onto}
+If \(F\) is onto, the full Gibbs state is unique. Its visible marginal is exactly critical anisotropic Ising with \(e^{2K_H}=3\) and \(e^{2K_V}=2\). Its magnetic two-point function has no exponential envelope.
+\end{proposition}
+\begin{proof}
+All insertion ratios equal one. First apply the critical comparison in Proposition~\ref{prop:allstates}. By (I2), critical wired FK has no infinite cluster, so neither does the target bond law.
+
+With all clusters finite, Lemma~\ref{lem:signs} makes the factor \(\alpha_\mu\) in \eqref{eq:odds} exactly one when the endpoints are already connected without the tested edge, and exactly \(1/2\) otherwise. These are precisely the ordinary FK-Ising conditional probabilities. Equivalently, conditioning on any finite core induces the standard outside-connectivity boundary partition. All finite conditional configurations have positive probabilities, so the single-edge conditionals identify the finite-core FK specification. For every exterior partition $\xi$ and core $V_n$,
+\[
+ \phi^0_{V_n}\preceq\phi^\xi_{V_n}\preceq\phi^1_{V_n}.
+\]
+The middle law is the conditional bond law given the exterior (domain Markov property). Averaging preserves this sandwich. On every fixed local increasing event the outer laws tend to $\phi^0_{\crit}$ and $\phi^1_{\crit}$ \cite[Lemmas 4.13--4.14, Theorem 4.19]{Grimmett}. They agree by (I2), so the bond marginal is their common, unique critical FK state.
+
+Given the bonds, the cluster signs are uniquely determined in law by fair independent coloring, and the hidden layer is uniquely \(\lambda^{C_H}\otimes\lambda^{C_V}\). This identifies the full extended state and hence the original Gibbs state uniquely. Coloring the critical FK measure gives the ordinary critical Ising marginal. The base odds are \(2\) and \(1\), so \(e^{2K_H}=1+2=3\), \(e^{2K_V}=1+1=2\). Directly,
+\begin{equation}
+ \sinh(\log3)\sinh(\log2)=\frac43\cdot\frac34=1.
+\end{equation}
+
+Finally, (I3) says that the critical susceptibility
+\(\sum_x\mu(\sigma_0\sigma_x)\) is infinite. An exponential envelope would make this sum finite. Thus the required envelope does not exist. Alternatively, exponential decay would make the Duminil-Copin--Tassion finite-set quantity less than one in a large square; continuity would extend that strict inequality past criticality, contradicting their critical-point characterization.
+\end{proof}
+
+These propositions establish the variable-alphabet dichotomy, with zero magnetization in every state. On nonsurjective inputs the constants are uniform over \emph{all} Gibbs states and locations. On surjective inputs the unique state is translation invariant and fails exponential decay. Thus either choice of the state quantifier in Theorem~\ref{thm:main} has the same answer on this family.

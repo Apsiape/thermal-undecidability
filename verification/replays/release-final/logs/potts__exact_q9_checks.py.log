@@ -1,0 +1,5 @@
+PASS exact wired magnetization: 5785/6328 Z = 1537704
+PASS exact BOTH-layer anchor chain (all increasing events), free k=2, kappa=1/4, translates=4
+PASS exact BOTH-layer anchor chain (all increasing events), wired k=2, kappa=1/4, translates=4
+PASS rational-path closure/anchor bounds and actual interior-anchor coverage: 36 H + 36 V edges in a 6x6 interior core of a 9x9 vertex box
+ALL EXACT q=9 CHECKS PASSED

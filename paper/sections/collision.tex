@@ -1,0 +1,89 @@
+\section{Collision identities and surjectivity}\label{sec:collision}
+
+Let \(U,U'\) be independent uniform Bernoulli configurations on \(A^{\Z^2}\), and write \(Y=F(U)\), \(Y'=F(U')\). For finite \(T\subset\Z^2\), set
+\begin{equation}
+ c_T=\E\prod_{i\in T}h(Y_i,Y_i'),\qquad c_\varnothing=1,
+ \qquad z(T)=\varepsilon^{2|T|}c_T.
+ \label{eq:c}
+\end{equation}
+
+\begin{remark}[The balance equivalence \cite{Hedlund,MK76,KT}]\label{lem:balance}
+A CA on \(A^{\Z^2}\) is surjective if and only if it preserves uniform Bernoulli measure.
+\end{remark}
+\begin{proof}
+Let \(u\) be uniform Bernoulli measure and \(\nu=F_*u\). Assume first that \(F\) is onto. Fix a finite support \(P\) and a pattern \(a\in A^P\). In a large square \(\Lambda\), choose translates \(P+x_1,\ldots,P+x_k\) whose input supports \(P+x_j+N\) are pairwise disjoint and contained in \(\Lambda+N\), with \(P+x_j\subset\Lambda\). Choosing their centers on a sufficiently widely spaced fixed grid gives \(k\ge c|\Lambda|+o(|\Lambda|)\), where \(c>0\) depends only on \(P,N\).
+
+There are \(q^{|\Lambda|-k|P|}\) output patterns on \(\Lambda\) that equal the selected translate of \(a\) on every \(P+x_j\). Surjectivity gives a preimage for every such pattern, and different output patterns require different input patterns on \(\Lambda+N\). The number of input patterns satisfying the \(k\) prescribed output constraints is exactly
+\begin{equation}
+ q^{|\Lambda+N|}\nu([a])^k,
+\end{equation}
+because the input supports are disjoint. Hence
+\begin{equation}
+ \bigl(q^{|P|}\nu([a])\bigr)^k
+ \ge q^{-(|\Lambda+N|-|\Lambda|)}.
+\end{equation}
+The exponent on the right is a boundary term. Taking logarithms, dividing by \(k\), and letting \(\Lambda\) grow gives \(\nu([a])\ge q^{-|P|}\). Summing over all patterns \(a\) gives equality for each one. Thus \(\nu=u\).
+
+Conversely, \(F(A^{\Z^2})\) is compact and therefore closed. If \(F_*u=u\), this image contains the support of \(u\), which is the whole full shift. Thus \(F\) is onto.
+\end{proof}
+
+\begin{lemma}[positivity, factorization, and detection]\label{lem:collision}
+For every finite \(T\),
+\begin{equation}
+ 0\le c_T\le(q-1)^{|T|}.
+\end{equation}
+Every \(c_T\) is an effectively computable rational, with denominator dividing \(q^{2|T+N|}\). In particular,
+\begin{equation}
+ c_T>0\ \Longrightarrow\ c_T\ge q^{-2m|T|}.
+ \label{eq:c-lower}
+\end{equation}
+All nonempty \(c_T\) vanish if and only if \(F\) is surjective.
+
+Let \(\Gamma\) be the graph on output centers in which \(i,j\) are adjacent when \((i+N)\cap(j+N)\ne\varnothing\). Its maximum degree plus one is at most \(m^2\). If \(T_1,T_2\) have no \(\Gamma\)-edge between them and are disjoint, then
+\begin{equation}
+ c_{T_1\cup T_2}=c_{T_1}c_{T_2}.
+ \label{eq:factorization}
+\end{equation}
+Consequently, nonsurjectivity has a finite nonempty connected witness \(P\) with \(c_P>0\).
+\end{lemma}
+\begin{proof}
+Choose a real orthonormal basis \(1,\chi_1,\ldots,\chi_{q-1}\) for functions on \(A\), with respect to uniform measure. The completeness identity is
+\begin{equation}
+ h(a,b)=\sum_{\alpha=1}^{q-1}\chi_\alpha(a)\chi_\alpha(b).
+\end{equation}
+Expanding the product and using independence of the two replicas gives
+\begin{equation}
+ c_T=
+ \sum_{\alpha:T\to\{1,\ldots,q-1\}}
+ \left(\E\prod_{i\in T}\chi_{\alpha(i)}(Y_i)\right)^2.
+ \label{eq:squares}
+\end{equation}
+This proves nonnegativity. The pointwise bound \(|h|\le q-1\) proves the upper bound. The direct definition averages an integer-valued function over two independent configurations on the finite input set \(T+N\); it gives the claimed rationality, computability, and denominator bound.
+
+If \(F\) is onto, the balance equivalence makes \(Y\) uniform iid, and every nonempty product in \eqref{eq:squares} has mean zero. Conversely, if every nonempty \(c_T\) vanishes, every squared Fourier coefficient in \eqref{eq:squares} vanishes. Every nonconstant tensor Fourier coefficient of every finite-dimensional distribution of \(Y\) occurs in one of these expressions, with \(T\) its nonconstant-coordinate support. Thus all those distributions are uniform product distributions, and the balance equivalence applies.
+
+The possible differences \(j-i\) for overlapping neighborhoods lie in \(N-N\), whose cardinality is at most \(m^2\). Independence of disjoint input sets proves \eqref{eq:factorization}: the random variables used in the two products depend on disjoint coordinates in both replicas. Factorization over connected components and positivity show that a positive nonempty witness has a positive connected component.
+\end{proof}
+
+
+
+For one orientation, let \(C\) be a finite set of closed-edge centers and integrate its hidden variables against the iid prior:
+\begin{equation}
+ W(C)=\E\prod_{i\in C}w_i.
+\end{equation}
+Expansion gives the fundamental identity
+\begin{equation}
+ \boxed{W(C)=\sum_{T\subseteq C}z(T).}
+ \label{eq:W}
+\end{equation}
+In particular, \(W(C)\ge1\), and \(W\) is increasing under addition of closed edges.
+
+Summing visible spins in a finite graph gives the cluster weight \(2^{K(\omega)}\). With an iid hidden prior on a sufficiently large padded input region, the integrated bond law is
+\begin{equation}
+ \mu(\omega)\ \propto\
+ 2^{K(\omega)}
+ \prod_e p_e^{\omega_e}(1-p_e)^{1-\omega_e}
+ W(C_H(\omega))W(C_V(\omega)).
+ \label{eq:finite-FK}
+\end{equation}
+Free or wired spin counting uses the corresponding cluster count; constants from a wired boundary cluster cancel. Formula \eqref{eq:finite-FK} uses a free hidden boundary: all input variables in the padded region are summed against the iid prior. Fixed hidden boundaries can change insertion ratios near that boundary. Surjectivity also need not make the CA onto on a finite periodic torus: wrap-around constraints can give $W\ne1$. Section~\ref{sec:allstates} proves the infinite-volume result separately. Every thermodynamic subsequential limit of these finite-volume measures is covered by that result.

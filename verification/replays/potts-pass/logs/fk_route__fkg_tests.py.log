@@ -1,0 +1,18 @@
+(0) max |W_direct - dimer formula| on random row subsets: 4.440892098500626e-16
+(1) 4x3 box, eps=0.9: mu(w1 v w2) mu(w1 ^ w2) / [mu(w1) mu(w2)] = 0.980143830240  (<1 => FKG lattice condition fails)
+    FK part of that ratio (cluster counts unchanged): 0.9999999999999997
+(2) eps=0.5: min Cov(edge_e, edge_f) = 1.505e-04;  min Cov(conn, conn) = 1.035e-03
+(3) eps=0.5: max [P_F - P_FK] over single-edge events = -2.263e-03, over connection events = -2.977e-03  (<=0 expected)
+    4-edge marginal: 168 up-sets; min Cov over all up-set pairs = -3.464e-14; max P_F(A)-P_FK(A) = 0.000e+00
+(2) eps=0.9: min Cov(edge_e, edge_f) = 1.280e-04;  min Cov(conn, conn) = 8.381e-04
+(3) eps=0.9: max [P_F - P_FK] over single-edge events = -2.202e-02, over connection events = -2.840e-02  (<=0 expected)
+    4-edge marginal: 168 up-sets; min Cov over all up-set pairs = -8.882e-16; max P_F(A)-P_FK(A) = 0.000e+00
+(2) eps=0.999: min Cov(edge_e, edge_f) = -2.698e-04;  min Cov(conn, conn) = 7.351e-04
+(3) eps=0.999: max [P_F - P_FK] over single-edge events = -3.207e-02, over connection events = -4.099e-02  (<=0 expected)
+    4-edge marginal: 168 up-sets; min Cov over all up-set pairs = -4.599e-05; max P_F(A)-P_FK(A) = 0.000e+00
+(2b) path of three horizontal edges (FK on a tree = product with p_hat = p/(p+2(1-p))):
+    eps=0.5: Cov(w1,w3) = -3.756e-06
+    eps=0.9: Cov(w1,w3) = -3.591e-04
+    eps=0.999: Cov(w1,w3) = -7.661e-04
+(4) 3x3 box eps=0.9: a_min=1.4091e-01, z'=6.5914e-02; min relative Holley slack (>=0 => PF <=st mu2) = -5.587e-16; min relative lattice slack of mu2 (>=0 => monotone) = -7.011e-16
+(4) 3x3 box eps=0.999: a_min=1.9936e-01, z'=9.0894e-02; min relative Holley slack (>=0 => PF <=st mu2) = -7.338e-16; min relative lattice slack of mu2 (>=0 => monotone) = -6.905e-16

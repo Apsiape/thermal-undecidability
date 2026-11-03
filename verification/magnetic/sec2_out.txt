@@ -1,0 +1,229 @@
+====================================================================================================
+2D majority on {0,e1,e2} (q=2)
+ eps=0.50 region |R|=9
+   W engines maxdiff                             0.0
+   min c_T                                       0.0
+   min W                                         1.0
+   factorisation pairs                           297
+   factorisation maxerr                          0.0
+   min W(C+i)-W(C)                               0.0
+   witness P                                     [(0, 0), (1, 0)]
+   k                                             2
+   c_P                                           0.0625
+   |D(P)|                                        10
+   a_P                                           0.0004194304
+   #translates in R                              6
+   min ratio under witness completion            1.0038610038610039
+   1+a_P                                         1.0004194304
+   (5) slack                                     0.0034415734610038218
+   max [W(C) - wmax^|DnC| W(C\D)]                0.0
+   (7) min [ (W/V)(C+i)/(W/V)(C) - 1 ]           0.0
+ eps=0.90 region |R|=9
+   W engines maxdiff                             7.327471962526033e-15
+   min c_T                                       0.0
+   min W                                         1.0
+   factorisation pairs                           297
+   factorisation maxerr                          0.0
+   min W(C+i)-W(C)                               0.0
+   witness P                                     [(0, 0), (1, 0)]
+   k                                             2
+   c_P                                           0.0625
+   |D(P)|                                        10
+   a_P                                           0.00010865865036343523
+   #translates in R                              6
+   min ratio under witness completion            1.03651430574957
+   1+a_P                                         1.0001086586503634
+   (5) slack                                     0.036405647099206684
+   max [W(C) - wmax^|DnC| W(C\D)]                0.0
+   (7) min [ (W/V)(C+i)/(W/V)(C) - 1 ]           0.0
+ FK box 3x3 (12 edges), eps=0.90
+   nE                                            12
+   witness P                                     [(0, 0), (1, 0)]
+   k                                             2
+   g                                             5.432637371994221e-05
+   #translates in box                            3
+   nu_g lattice condition min rel slack          -2.907409303739578e-16
+   Holley(muF<=nu_g) min rel slack               -3.249441276179192e-16
+   max_U [muF-nu_g](U) (networkx, LP)            (3.469446951953614e-16, -0.0)
+   max_U [muF-phi_crit](U) (networkx)            -1.5265566588595902e-16
+   max_U [nu_g-muF](U) (should be >0: strict)    0.05169076259399247
+   engine time s                                 3.5
+   time 3.8s
+====================================================================================================
+selector CA (23), rowwise (q=4)
+ eps=0.50 region |R|=7
+   W engines maxdiff                             0.0
+   min c_T                                       0.0
+   min W                                         1.0
+   factorisation pairs                           161
+   factorisation maxerr                          0.0
+   min W(C+i)-W(C)                               0.0
+   witness P                                     [(0, 0), (1, 0)]
+   k                                             2
+   c_P                                           0.25
+   |D(P)|                                        4
+   a_P                                           0.001665972511453561
+   #translates in R                              6
+   min ratio under witness completion            1.0153846153846153
+   1+a_P                                         1.0016659725114536
+   (5) slack                                     0.013718642873161713
+   max [W(C) - wmax^|DnC| W(C\D)]                0.0
+   (7) min [ (W/V)(C+i)/(W/V)(C) - 1 ]           0.0
+ eps=0.90 region |R|=7
+   W engines maxdiff                             1.7763568394002505e-15
+   min c_T                                       0.0
+   min W                                         1.0
+   factorisation pairs                           161
+   factorisation maxerr                          0.0
+   min W(C+i)-W(C)                               0.0
+   witness P                                     [(0, 0), (1, 0)]
+   k                                             2
+   c_P                                           0.25
+   |D(P)|                                        4
+   a_P                                           0.0011850415183072682
+   #translates in R                              6
+   min ratio under witness completion            1.1409119219948025
+   1+a_P                                         1.0011850415183072
+   (5) slack                                     0.13972688047649529
+   max [W(C) - wmax^|DnC| W(C\D)]                0.0
+   (7) min [ (W/V)(C+i)/(W/V)(C) - 1 ]           0.0
+ FK box 3x3 (12 edges), eps=0.90
+   nE                                            12
+   witness P                                     [(0, 0), (1, 0)]
+   k                                             2
+   g                                             0.0005921699554209131
+   #translates in box                            3
+   nu_g lattice condition min rel slack          -4.359655595324267e-16
+   Holley(muF<=nu_g) min rel slack               -4.649346672363366e-16
+   max_U [muF-nu_g](U) (networkx, LP)            (5.689893001203927e-16, -0.0)
+   max_U [muF-phi_crit](U) (networkx)            -2.0122792321330962e-15
+   max_U [nu_g-muF](U) (should be >0: strict)    0.08706120100372722
+   engine time s                                 1.3
+   time 1.7s
+====================================================================================================
+ECA 232 rowwise (q=2)
+ eps=0.50 region |R|=9
+   W engines maxdiff                             0.0
+   min c_T                                       0.0
+   min W                                         1.0
+   factorisation pairs                           352
+   factorisation maxerr                          0.0
+   min W(C+i)-W(C)                               0.0
+   witness P                                     [(0, 0), (1, 0)]
+   k                                             2
+   c_P                                           0.25
+   |D(P)|                                        6
+   a_P                                           0.004096
+   #translates in R                              8
+   min ratio under witness completion            1.0155642023346303
+   1+a_P                                         1.004096
+   (5) slack                                     0.011468202334630195
+   max [W(C) - wmax^|DnC| W(C\D)]                0.0
+   (7) min [ (W/V)(C+i)/(W/V)(C) - 1 ]           0.0
+ eps=0.90 region |R|=9
+   W engines maxdiff                             4.884981308350689e-15
+   min c_T                                       0.0
+   min W                                         1.0
+   factorisation pairs                           352
+   factorisation maxerr                          0.0
+   min W(C+i)-W(C)                               0.0
+   witness P                                     [(0, 0), (1, 0)]
+   k                                             2
+   c_P                                           0.25
+   |D(P)|                                        6
+   a_P                                           0.0046648598154286226
+   #translates in R                              8
+   min ratio under witness completion            1.1575638955097531
+   1+a_P                                         1.0046648598154286
+   (5) slack                                     0.1528990356943245
+   max [W(C) - wmax^|DnC| W(C\D)]                0.0
+   (7) min [ (W/V)(C+i)/(W/V)(C) - 1 ]           0.0
+ FK box 3x3 (12 edges), eps=0.90
+   nE                                            12
+   witness P                                     [(0, 0), (1, 0)]
+   k                                             2
+   g                                             0.0023270065380723843
+   #translates in box                            3
+   nu_g lattice condition min rel slack          -2.910073398467726e-16
+   Holley(muF<=nu_g) min rel slack               -3.1919670807763427e-16
+   max_U [muF-nu_g](U) (networkx, LP)            (8.326672684688674e-16, -0.0)
+   max_U [muF-phi_crit](U) (networkx)            -1.0269562977782698e-15
+   max_U [nu_g-muF](U) (should be >0: strict)    0.09026556082381804
+   engine time s                                 1.6
+   time 1.9s
+====================================================================================================
+ECA 23 rowwise (q=2)
+ eps=0.50 region |R|=9
+   W engines maxdiff                             0.0
+   min c_T                                       0.0
+   min W                                         1.0
+   factorisation pairs                           352
+   factorisation maxerr                          0.0
+   min W(C+i)-W(C)                               0.0
+   witness P                                     [(0, 0), (1, 0)]
+   k                                             2
+   c_P                                           0.25
+   |D(P)|                                        6
+   a_P                                           0.004096
+   #translates in R                              8
+   min ratio under witness completion            1.0155642023346303
+   1+a_P                                         1.004096
+   (5) slack                                     0.011468202334630195
+   max [W(C) - wmax^|DnC| W(C\D)]                0.0
+   (7) min [ (W/V)(C+i)/(W/V)(C) - 1 ]           0.0
+ eps=0.90 region |R|=9
+   W engines maxdiff                             4.884981308350689e-15
+   min c_T                                       0.0
+   min W                                         1.0
+   factorisation pairs                           352
+   factorisation maxerr                          0.0
+   min W(C+i)-W(C)                               0.0
+   witness P                                     [(0, 0), (1, 0)]
+   k                                             2
+   c_P                                           0.25
+   |D(P)|                                        6
+   a_P                                           0.0046648598154286226
+   #translates in R                              8
+   min ratio under witness completion            1.1575638955097531
+   1+a_P                                         1.0046648598154286
+   (5) slack                                     0.1528990356943245
+   max [W(C) - wmax^|DnC| W(C\D)]                0.0
+   (7) min [ (W/V)(C+i)/(W/V)(C) - 1 ]           0.0
+ FK box 3x3 (12 edges), eps=0.90
+   nE                                            12
+   witness P                                     [(0, 0), (1, 0)]
+   k                                             2
+   g                                             0.0023270065380723843
+   #translates in box                            3
+   nu_g lattice condition min rel slack          -2.910073398467726e-16
+   Holley(muF<=nu_g) min rel slack               -3.1919670807763427e-16
+   max_U [muF-nu_g](U) (networkx, LP)            (8.326672684688674e-16, -0.0)
+   max_U [muF-phi_crit](U) (networkx)            -1.0269562977782698e-15
+   max_U [nu_g-muF](U) (should be >0: strict)    0.09026556082381804
+   engine time s                                 1.5
+   time 1.7s
+====================================================================================================
+XOR (surjective control, q=2)
+ eps=0.50 region |R|=9
+   W engines maxdiff                             0.0
+   min c_T                                       0.0
+   min W                                         1.0
+   factorisation pairs                           1170
+   factorisation maxerr                          0.0
+   min W(C+i)-W(C)                               0.0
+   witness                                       None
+   max |c_T|, T nonempty                         0.0
+ eps=0.90 region |R|=9
+   W engines maxdiff                             5.88418203051333e-15
+   min c_T                                       0.0
+   min W                                         1.0
+   factorisation pairs                           1170
+   factorisation maxerr                          0.0
+   min W(C+i)-W(C)                               0.0
+   witness                                       None
+   max |c_T|, T nonempty                         0.0
+ FK box 3x3 (12 edges), eps=0.90
+   nE                                            12
+   witness                                       None
+   max |muF - phi|                               0.0
+   time 0.0s

@@ -1,0 +1,12 @@
+PASS: collision expansion, positivity, XOR control, factorization
+PASS: witness completion 16 exact cases; a_P = 4/2401
+PASS: comparator FKG, two stochastic dominations, covariance inequality for all 20 upsets
+PASS: false covariance constant refuted; exact violation 10/169
+PASS: independent output-reset scaling
+PASS: both rational counterexample certificates (including the dimer contraction bound)
+PASS: real exact Dobrushin row sums; 72 retention/visible/parameter cases; max = 3240001/10497600000000 ; rigorous bound = 1/810000
+PASS: 2x2 cycle cluster-count FKG, both dominations and anchor covariance on all 168 upsets
+PASS: L+R attractiveness counterexample -t^2/16, t=epsilon^2
+PASS: exhaustive sliding-decoder/residue identity; physical dimension 512
+PASS: 256 finite Gibbs trace algebra sanity identities; not a test of the infinite-volume KMS correspondence
+All exact finite checks passed.

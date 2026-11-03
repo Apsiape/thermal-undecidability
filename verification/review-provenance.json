@@ -1,0 +1,218 @@
+[
+  {
+    "review": "review-thermal-fk-route-2026-11-02",
+    "file": "fk_route/claim2_identities.py",
+    "original_sha256": "80fdbcdde0a6fed9fadad28412a8c01f7f22b9eaa6772d55251e6e25681f2943",
+    "release_sha256": "80fdbcdde0a6fed9fadad28412a8c01f7f22b9eaa6772d55251e6e25681f2943",
+    "unmodified": true,
+    "original_preserved_in": "originals.zip/fk_route/claim2_identities.py",
+    "adaptation": null
+  },
+  {
+    "review": "review-thermal-fk-route-2026-11-02",
+    "file": "fk_route/counterexample27.py",
+    "original_sha256": "c9ccb685c6115f87cb51b91ca189fd923f1522c1a3894caae70f13cbd31e03f6",
+    "release_sha256": "c9ccb685c6115f87cb51b91ca189fd923f1522c1a3894caae70f13cbd31e03f6",
+    "unmodified": true,
+    "original_preserved_in": "originals.zip/fk_route/counterexample27.py",
+    "adaptation": null
+  },
+  {
+    "review": "review-thermal-fk-route-2026-11-02",
+    "file": "fk_route/dobrushin_check.py",
+    "original_sha256": "3ef67550385a7fc266883b6d3782e17783d4e9e15e155a6a23dc12d3608cddca",
+    "release_sha256": "3ef67550385a7fc266883b6d3782e17783d4e9e15e155a6a23dc12d3608cddca",
+    "unmodified": true,
+    "original_preserved_in": "originals.zip/fk_route/dobrushin_check.py",
+    "adaptation": null
+  },
+  {
+    "review": "review-thermal-fk-route-2026-11-02",
+    "file": "fk_route/extra_checks.py",
+    "original_sha256": "e8a6344016422ead539b233e893773455706ddb4d3fdf418529e371eef21e464",
+    "release_sha256": "e8a6344016422ead539b233e893773455706ddb4d3fdf418529e371eef21e464",
+    "unmodified": true,
+    "original_preserved_in": "originals.zip/fk_route/extra_checks.py",
+    "adaptation": null
+  },
+  {
+    "review": "review-thermal-fk-route-2026-11-02",
+    "file": "fk_route/fkg_tests.py",
+    "original_sha256": "2a23f5be20f53a830bece42e43cb024e6c799a97bf8327c8111f2173af370a2a",
+    "release_sha256": "2a23f5be20f53a830bece42e43cb024e6c799a97bf8327c8111f2173af370a2a",
+    "unmodified": true,
+    "original_preserved_in": "originals.zip/fk_route/fkg_tests.py",
+    "adaptation": null
+  },
+  {
+    "review": "review-thermal-fk-route-2026-11-02",
+    "file": "fk_route/surj_decide_1d.py",
+    "original_sha256": "b8a1cefc4ad8891fdb93e77451ce57bd70ff4b13725685cd925840087e82b7d3",
+    "release_sha256": "b8a1cefc4ad8891fdb93e77451ce57bd70ff4b13725685cd925840087e82b7d3",
+    "unmodified": true,
+    "original_preserved_in": "originals.zip/fk_route/surj_decide_1d.py",
+    "adaptation": null
+  },
+  {
+    "review": "review-thermal-magnetic-2026-11-02",
+    "file": "magnetic/common.py",
+    "original_sha256": "99b5f3f95ff295510d0f1d7809ba0f82a811347889b352c7bbeecee40c553017",
+    "release_sha256": "99b5f3f95ff295510d0f1d7809ba0f82a811347889b352c7bbeecee40c553017",
+    "unmodified": true,
+    "original_preserved_in": "originals.zip/magnetic/common.py",
+    "adaptation": null
+  },
+  {
+    "review": "review-thermal-magnetic-2026-11-02",
+    "file": "magnetic/sec2_checks.py",
+    "original_sha256": "ba40615f2f9a7344348a69c69635347bff720945a8d3e487bff62e8b82a6ac61",
+    "release_sha256": "ba40615f2f9a7344348a69c69635347bff720945a8d3e487bff62e8b82a6ac61",
+    "unmodified": true,
+    "original_preserved_in": "originals.zip/magnetic/sec2_checks.py",
+    "adaptation": null
+  },
+  {
+    "review": "review-thermal-magnetic-2026-11-02",
+    "file": "magnetic/sec2_out.txt",
+    "original_sha256": "e9ade39db62639245e57a45c5b64d73ce2c809cd745165007113bc6b1a998d6e",
+    "release_sha256": "e9ade39db62639245e57a45c5b64d73ce2c809cd745165007113bc6b1a998d6e",
+    "unmodified": true,
+    "original_preserved_in": "originals.zip/magnetic/sec2_out.txt",
+    "adaptation": null
+  },
+  {
+    "review": "review-thermal-magnetic-2026-11-02",
+    "file": "magnetic/sec3_checks.py",
+    "original_sha256": "d6c3b7a35dbd7a88c907819611307a414e710787be6735aee41b388f6d4eddea",
+    "release_sha256": "096e97417ae172bc2bd661f682029083db9ca1cba7e9a6d6789f61b6e06b29b3",
+    "unmodified": false,
+    "original_preserved_in": "originals.zip/magnetic/sec3_checks.py",
+    "adaptation": "CLI only: default 3x2; --full-lp retains original grid; sec3_run2.py replays larger cases."
+  },
+  {
+    "review": "review-thermal-magnetic-2026-11-02",
+    "file": "magnetic/sec3_out.txt",
+    "original_sha256": "de04c895be29dfb48f798b4095b23d72b1a1010b81c22dc414116ec827942fed",
+    "release_sha256": "de04c895be29dfb48f798b4095b23d72b1a1010b81c22dc414116ec827942fed",
+    "unmodified": true,
+    "original_preserved_in": "originals.zip/magnetic/sec3_out.txt",
+    "adaptation": null
+  },
+  {
+    "review": "review-thermal-magnetic-2026-11-02",
+    "file": "magnetic/sec3_out_part1_3x2.txt",
+    "original_sha256": "de04c895be29dfb48f798b4095b23d72b1a1010b81c22dc414116ec827942fed",
+    "release_sha256": "de04c895be29dfb48f798b4095b23d72b1a1010b81c22dc414116ec827942fed",
+    "unmodified": true,
+    "original_preserved_in": "originals.zip/magnetic/sec3_out_part1_3x2.txt",
+    "adaptation": null
+  },
+  {
+    "review": "review-thermal-magnetic-2026-11-02",
+    "file": "magnetic/sec3_out_part2.txt",
+    "original_sha256": "6eb2a1a3275b468dbde26f1c95d95d015ca52575f139a32372822d40751e780a",
+    "release_sha256": "6eb2a1a3275b468dbde26f1c95d95d015ca52575f139a32372822d40751e780a",
+    "unmodified": true,
+    "original_preserved_in": "originals.zip/magnetic/sec3_out_part2.txt",
+    "adaptation": null
+  },
+  {
+    "review": "review-thermal-magnetic-2026-11-02",
+    "file": "magnetic/sec3_run2.py",
+    "original_sha256": "b9977023107a610b788c7d84494ed222bf12712cf0f02d2640356e462bbb6585",
+    "release_sha256": "b9977023107a610b788c7d84494ed222bf12712cf0f02d2640356e462bbb6585",
+    "unmodified": true,
+    "original_preserved_in": "originals.zip/magnetic/sec3_run2.py",
+    "adaptation": null
+  },
+  {
+    "review": "review-thermal-magnetic-2026-11-02",
+    "file": "magnetic/sec3_torus33.py",
+    "original_sha256": "d691a0e583f03a190c78bddc3a317bb276b9ee4b4b7457b3e94e7413b7cda044",
+    "release_sha256": "d691a0e583f03a190c78bddc3a317bb276b9ee4b4b7457b3e94e7413b7cda044",
+    "unmodified": true,
+    "original_preserved_in": "originals.zip/magnetic/sec3_torus33.py",
+    "adaptation": null
+  },
+  {
+    "review": "review-thermal-magnetic-2026-11-02",
+    "file": "magnetic/sec3_torus33_out.txt",
+    "original_sha256": "00dafe98200ee1ead157a94843a6db08d71d931168282a0eb1be6cd8661b20ba",
+    "release_sha256": "00dafe98200ee1ead157a94843a6db08d71d931168282a0eb1be6cd8661b20ba",
+    "unmodified": true,
+    "original_preserved_in": "originals.zip/magnetic/sec3_torus33_out.txt",
+    "adaptation": null
+  },
+  {
+    "review": "review-thermal-magnetic-2026-11-02",
+    "file": "magnetic/sec44_criticality.py",
+    "original_sha256": "903bdb58ede2af630ed8f8fde62e4fcc18f2b81e9b2210f04db4f079529421d4",
+    "release_sha256": "903bdb58ede2af630ed8f8fde62e4fcc18f2b81e9b2210f04db4f079529421d4",
+    "unmodified": true,
+    "original_preserved_in": "originals.zip/magnetic/sec44_criticality.py",
+    "adaptation": null
+  },
+  {
+    "review": "review-thermal-magnetic-2026-11-02",
+    "file": "magnetic/sec44_out.txt",
+    "original_sha256": "fb9c5562130ad71fbb6fc264fda44cab6b7954788fdf8151adba34b7637f8a3a",
+    "release_sha256": "fb9c5562130ad71fbb6fc264fda44cab6b7954788fdf8151adba34b7637f8a3a",
+    "unmodified": true,
+    "original_preserved_in": "originals.zip/magnetic/sec44_out.txt",
+    "adaptation": null
+  },
+  {
+    "review": "review-thermal-magnetic-2026-11-02",
+    "file": "magnetic/sec4_boundary_layer.py",
+    "original_sha256": "d7be236732d4bc1f6f87fcdbd3366723f3fae80c1fd089a5f5e98d199ced01ef",
+    "release_sha256": "d7be236732d4bc1f6f87fcdbd3366723f3fae80c1fd089a5f5e98d199ced01ef",
+    "unmodified": true,
+    "original_preserved_in": "originals.zip/magnetic/sec4_boundary_layer.py",
+    "adaptation": null
+  },
+  {
+    "review": "review-thermal-magnetic-2026-11-02",
+    "file": "magnetic/sec4_boundary_layer_out.txt",
+    "original_sha256": "cda5fa401286f2726f337141cfcc00a2675550974cf1877b79179d4f00128fb6",
+    "release_sha256": "cda5fa401286f2726f337141cfcc00a2675550974cf1877b79179d4f00128fb6",
+    "unmodified": true,
+    "original_preserved_in": "originals.zip/magnetic/sec4_boundary_layer_out.txt",
+    "adaptation": null
+  },
+  {
+    "review": "review-thermal-magnetic-2026-11-02",
+    "file": "magnetic/sec4_checks.py",
+    "original_sha256": "98870dbb4fd30c8043a0152911d416a1134895edd262f7250435e4152da00ab0",
+    "release_sha256": "98870dbb4fd30c8043a0152911d416a1134895edd262f7250435e4152da00ab0",
+    "unmodified": true,
+    "original_preserved_in": "originals.zip/magnetic/sec4_checks.py",
+    "adaptation": null
+  },
+  {
+    "review": "review-thermal-magnetic-2026-11-02",
+    "file": "magnetic/sec4_out.txt",
+    "original_sha256": "03c8949d5772509d5d2c229b4499192b9fa77e89f2c21aca2ef806bf9b1a06da",
+    "release_sha256": "03c8949d5772509d5d2c229b4499192b9fa77e89f2c21aca2ef806bf9b1a06da",
+    "unmodified": true,
+    "original_preserved_in": "originals.zip/magnetic/sec4_out.txt",
+    "adaptation": null
+  },
+  {
+    "review": "review-potts-ssb-2026-11-03",
+    "file": "potts/collision_checks.py",
+    "original_sha256": "48c62e817a7dcee124b941eca1bc9976a1056367c510f2de2a66e0ba3b143695",
+    "release_sha256": "48c62e817a7dcee124b941eca1bc9976a1056367c510f2de2a66e0ba3b143695",
+    "unmodified": true,
+    "original_preserved_in": "potts-originals.zip/potts/collision_checks.py",
+    "adaptation": null
+  },
+  {
+    "review": "review-potts-ssb-2026-11-03",
+    "file": "potts/fk_q9_checks.py",
+    "original_sha256": "f041ff413885b315ebe96259e1a6a01e0c66c9a5223376d4f56c80f3da29e716",
+    "release_sha256": "f041ff413885b315ebe96259e1a6a01e0c66c9a5223376d4f56c80f3da29e716",
+    "unmodified": true,
+    "original_preserved_in": "potts-originals.zip/potts/fk_q9_checks.py",
+    "adaptation": null
+  }
+]

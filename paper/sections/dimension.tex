@@ -1,0 +1,75 @@
+\section{Fixing the cellular-automaton alphabet}\label{sec:fixed}
+
+Kari's original surjectivity construction \cite[Theorem 2, p.~179]{Kari} places a tile background and a bit at each site. The background supplies local matching constraints and directed arrows. A local error freezes the affected bit; away from errors the update XORs it with the bit at the neighbor named by the directed tile's arrow (the successor). More precisely, Kari adds a symbol $B$ to the directed-tile coordinate. The bit stays unchanged if either tile-component matching test fails at the cell, or if any site in its $3\times3$ Moore neighborhood has first component $B$. Thus one can view the rule as bits propagating along locally checked directed paths.
+
+The precise full-shift hypothesis used below is
+\[
+ \boxed{\quad G(q,s)=(q,g_q(s))
+ \quad\text{for every }q\in Q^{\Z^2},\ s\in\{0,1\}^{\Z^2}.\quad}
+\]
+Here $Q$ is the finite set of allowed tile pairs; invalid global tilings are included. Kari states: \textquotedblleft The tile components of the states, both d and t, do not change. Only the bits may be altered.\textquotedblright\ \cite[p.~179]{Kari} This is the full-shift property required by the reduction.
+
+\begin{lemma}[fixed-background alphabet reduction]\label{lem:code}
+For a fixed finite alphabet \(B\), let \(G(q,s)=(q,g_q(s))\) be a CA on \((Q\times B)^{\Z^2}\). There is a computable CA \(\widetilde G\) on \((\{0,1\}\times B)^{\Z^2}\), commuting with every lattice translation, such that
+\begin{equation}
+ \widetilde G\text{ is onto}\quad\Longleftrightarrow\quad G\text{ is onto}.
+\end{equation}
+Its neighborhood is allowed to grow.
+\end{lemma}
+\begin{proof}
+Let \(\ell=\max(1,\lceil\log_2|Q|\rceil)\). Choose a computable surjection
+\(d:\{0,1\}^{\ell}\to Q\) and a right inverse \(c:Q\to\{0,1\}^{\ell}\).
+Write \(D_\ell(n_1,n_2)=(\ell n_1,n_2)\). For a binary background \(u\), decode at every site \(x\) by the sliding window
+\begin{equation}
+ \mathcal D(u,x)=d(u_x,u_{x+e_1},\ldots,u_{x+(\ell-1)e_1}).
+\end{equation}
+Suppose the evolving rule of \(G\) is
+\begin{equation}
+ [g_q(s)]_x=f((q_{x+n},s_{x+n})_{n\in N}).
+\end{equation}
+Define
+\begin{equation}
+ [\widetilde G(u,v)]_x=
+ \left(u_x,\,
+ f\bigl((\mathcal D(u,x+D_\ell n),v_{x+D_\ell n})_{n\in N}\bigr)\right).
+ \label{eq:code}
+\end{equation}
+This is one finite local rule applied at every site. Thus it commutes with \emph{all} shifts; it does not select a privileged residue class.
+
+For the proof only, decompose the signal coordinates into the \(\ell\) classes
+\((r,0)+D_\ell\Z^2\), \(0\le r<\ell\), and define
+\begin{equation}
+ q_n^{(r)}=\mathcal D(u,(r,0)+D_\ell n),\qquad
+ v_n^{(r)}=v_{(r,0)+D_\ell n}.
+\end{equation}
+For fixed \(u\), equation \eqref{eq:code} gives
+\begin{equation}
+ [\widetilde G_u(v)]^{(r)}=g_{q^{(r)}}(v^{(r)}).
+\end{equation}
+The decoded backgrounds for different residues can overlap in their use of \(u\); the signal coordinates in different residues do not interact.
+
+Because \(G\) freezes its background, it is onto exactly when \(g_q\) is onto for every \(q\). If this holds, a target \((u,w)\) for \(\widetilde G\) has a preimage obtained by choosing, separately for each of the finitely many residues, a preimage of \(w^{(r)}\) under \(g_{q^{(r)}}\).
+
+Conversely, suppose \(\widetilde G\) is onto. For any target \((q,s)\) for \(G\), place \(c(q_{(n,m)})\) in the disjoint horizontal block
+\(\{(\ell n+j,m):0\le j<\ell\}\) of a binary background \(u\). Then \(q^{(0)}=q\). Choose a signal target \(w\) whose residue-zero component equals \(s\), with arbitrary other components. A preimage under \(\widetilde G\) has the same background \(u\); its residue-zero signal is a preimage of \(s\) under \(g_q\). Thus \(G\) is onto.
+\end{proof}
+
+\begin{corollary}[four CA symbols and 512 physical states]\label{cor:512}
+Surjectivity is undecidable for two-dimensional CAs on the fixed four-symbol alphabet \(A_*=\{0,1\}^2\), with varying finite neighborhoods. Theorem~\ref{thm:main} follows with \(|S_*|=512\).
+\end{corollary}
+\begin{proof}
+Apply Lemma~\ref{lem:code} with \(B=\{0,1\}\) to Kari's hard family. The collision construction applies directly to the resulting four-symbol full-shift CA. There is no need for the decoder to preserve uniform measure: the balance equivalence applies to the resulting CA itself. Propositions~\ref{prop:nononto} and \ref{prop:onto} turn an algorithm deciding \eqref{eq:decision} into an algorithm deciding the complement of surjectivity, and hence surjectivity, a contradiction.
+\end{proof}
+
+For explicit bookkeeping, a Moore-neighborhood presentation of Kari's rule can be padded to \(N=\{-1,0,1\}^2\). The encoded rule can use
+\begin{equation}
+ \widetilde N=
+ \{-\ell,-\ell+1,\ldots,2\ell-1\}\times\{-1,0,1\},
+ \qquad |\widetilde N|=9\ell.
+\end{equation}
+The choice \eqref{eq:epsilon} is then
+\begin{equation}
+ \varepsilon=\frac1{400(9\ell+1)^2}.
+\end{equation}
+Every operation, including writing the finite local weight table, is effective. The four-symbol surjectivity corollary is a routine encoding of Kari's frozen-background rule; we make no separate novelty claim for that CA statement. Its role here is the physical dimension bound.
+

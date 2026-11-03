@@ -1,0 +1,103 @@
+\section{Introduction}\label{sec:intro}
+Can a finite description determine whether a positive-temperature lattice model has spontaneous magnetization? We construct a family for which the answer is undecidable even with a fixed gap in the standard Potts order parameter. The temperature is fixed, the local weights are strictly positive rationals, and the maximal magnetization is either zero or the same positive constant for every ordered input. The pressure as a function of a uniform field is computable, yet its differentiability at zero field is undecidable. Theorem~\ref{thm:potts-main} states this result first; its proof reuses the thermal-decay machinery developed for Theorem~\ref{thm:main}.
+
+Prominent many-body undecidability results concern low-energy properties. These include ground-state observables of Gu, Weedbrook, Perales and Nielsen \cite{GWPN}, the spectral gap of Cubitt, P\'erez-Garc\'ia and Wolf \cite{CPGW} and the phase diagrams of Bausch, Cubitt and Watson \cite{BCW}. Purcell, Li and Cubitt construct a quantum ground-state phase transition at an uncomputable parameter \cite{PLC}. Perales-Eceiza and collaborators ask, \textquotedblleft given a translational invariant Hamiltonian\textquotedblright, whether exponential spatial decay of the associated thermal correlations is decidable\ \cite[Section 5.1.4, arXiv v2 numbering]{review}.
+We resolve a specified-observable formulation of this question: exponential decay of a distinguished visible spin correlation is undecidable; the formulation asking for exponential clustering of all local observables remains open.
+
+The mechanism for both results starts with a cellular automaton whose surjectivity is undecidable. Two independent copies produce collision weights. If the automaton is onto, every nonconstant collision coefficient vanishes and the visible spins remain exactly at the chosen critical point: discontinuous nine-colour Potts for magnetization, or anisotropic Ising for decay. Otherwise a finite positive coefficient changes the bond distribution. A stochastic comparison pushes it strictly into the subcritical regime. Conditional contraction of the hidden variables makes this argument work in every Gibbs state.
+
+An interaction is given by finitely many local weight tables and all their translates. At inverse temperature $\beta=1$, a table $b_X:S^X\to\mathbb Q_{>0}$ represents the energy $\Phi_X=-\log b_X$. Write $\G(\Phi)$ for all DLR Gibbs states. The first coordinate is visible: a Potts colour in Theorem~\ref{thm:potts-main}, and an Ising spin in Theorem~\ref{thm:main}. Distances below use the $\ell^1$ norm.
+
+\begin{theoremE}\label{thm:potts-main}
+There is a computable family of translation-invariant finite-range classical interactions $\Psi_t$ on $\Z^2$, with strictly positive rational local weights at $\beta=1$ and on-site space
+\[
+ S_{\rm P}=\{1,\ldots,9\}\times(\{0,1\}^2)^4,
+ \qquad |S_{\rm P}|=2304,
+\]
+for which existence of spontaneous visible magnetization is undecidable with a fixed gap. More precisely, let
+\[
+ X_x=(9\one_{\{\sigma_x=1\}}-1)/8,\qquad
+ m_9=\phi^1_{3/4,9}(0\conn\infty)>0.
+\]
+The index $t$ specifies a CA $F_t$ from a surjectivity-undecidable family.
+\begin{enumerate}[label=(\roman*)]
+\item If $F_t$ is surjective, a translation-invariant Gibbs state has $\mu(X_0)=m_9$, and $\sup_{\mu\in\G(\Psi_t)}\mu(X_0)=m_9$.
+\item If $F_t$ is nonsurjective, every Gibbs state has only finite clusters in its canonical visible bond extension, with independent uniform cluster colours. Every state is invariant under visible $S_9$ permutations and has $\mu(X_0)=0$. The excess equal-colour correlation decays exponentially, uniformly over states and positions.
+\end{enumerate}
+Thus $\sup_{\mu\in\G(\Psi_t)}\mu(X_0)\in\{0,m_9\}$ exactly, also with the supremum restricted to translation-invariant states. Any fixed rational $m_*\in(0,m_9]$ supplies a promise gap. The interaction range depends on the input.
+\end{theoremE}
+
+Corollary~\ref{cor:potts-pressure} proves the pressure assertion: the one-sided derivatives are exactly $m_9$ and $-m_9/8$ in the surjective branch, and both zero otherwise. The derivative jump is therefore $9m_9/8$ or zero. The field weights need not be rational away from zero. The ordered branch is fine-tuned at coexistence; no arbitrary-perturbation robustness is asserted.
+
+For the separate thermal-decay result, the visible coordinate is $\sigma_x\in\{-1,+1\}$.
+
+\begin{theoremA}\label{thm:main}
+There is a computable family of translation-invariant finite-range interactions $\Phi_t$ on
+\[
+ S_* = \{-1,+1\}\times(\{0,1\}^2)^4,\qquad |S_*|=512,
+\]
+with strictly positive rational local Boltzmann weights at $\beta=1$, for which it is undecidable whether
+\begin{equation}\label{eq:decision}
+ \forall\mu\in\G(\Phi_t)\quad\exists C_\mu<\infty,\ a_\mu>0\quad
+ \forall x\in\Z^2:\quad |\mu(\sigma_0\sigma_x)|\le C_\mu e^{-a_\mu\|x\|_1}.
+\end{equation}
+Every Gibbs state has zero visible magnetization. The family is constructed from a surjectivity-undecidable family of cellular automata, with this dichotomy:
+\begin{enumerate}[label=(\roman*)]
+\item For a nonsurjective input, there are $C_t<\infty$ and $a_t>0$ such that
+\begin{equation}\label{eq:uniform-decay}
+ \forall\mu\in\G(\Phi_t)\ \forall x,y\in\Z^2:\quad
+ 0\le\mu(\sigma_x\sigma_y)\le C_t e^{-a_t\|x-y\|_1}.
+\end{equation}
+\item For a surjective input, the full Gibbs state is unique. Its visible marginal is the critical zero-field anisotropic Ising state with
+\[
+ e^{2K_H}=3,\qquad e^{2K_V}=2.
+\]
+\end{enumerate}
+On this family, \eqref{eq:decision} is equivalent to the version with constants uniform over states and positions, and to either version restricted to translation-invariant Gibbs states. The interaction range depends on the input.
+\end{theoremA}
+The indexing is $t\mapsto F_t\mapsto\widetilde G_t\mapsto\Phi_{\widetilde G_t}=\Phi_t$: Section~\ref{sec:fixed} encodes each hard CA $F_t$ as a four-symbol CA $\widetilde G_t$, to which Section~\ref{sec:model} applies.
+
+The identified critical Ising correlation has no exponential envelope, by infinite critical susceptibility \cite[Proposition 2.2]{DCT}. Zero magnetization makes the displayed correlations equal to connected correlations. We first construct the interaction for an arbitrary CA alphabet $A$, on $\{-1,+1\}\times A^4$. Section~\ref{sec:fixed} reduces the CA alphabet to four symbols.
+
+\begin{theoremB}\label{thm:quantum-main}
+Theorem~\ref{thm:main} holds for the corresponding diagonal interactions on the full quasilocal matrix algebra with on-site space $\mathbb C^{512}$, with Gibbs states replaced by $\beta=1$ KMS states and $\sigma_x$ replaced by $Z_x=\sigma^z_x\otimes I_{256}$.
+\end{theoremB}
+
+The quantum consequence uses the standard diagonal Gibbs--KMS correspondence, recalled with a proof in Section~\ref{sec:quantum}. The Hamiltonian entries are logarithms of rational numbers, as prescribed by the weight-table input convention.
+
+\begin{theoremC}\label{thm:noise-main}
+For every fixed rational $\eta\in(0,1]$, independently resetting each CA output in each replica to a uniform symbol with probability $1-\eta$, before averaging the collision weights, preserves Theorems~\ref{thm:main} and~\ref{thm:quantum-main}. This is exactly the base construction with $\varepsilon\mapsto\eta\varepsilon$; arbitrary-perturbation robustness is not asserted.
+\end{theoremC}
+
+\begin{theoremD}\label{thm:modulus-main}
+There is no total algorithm that returns positive rational $C_t,a_t$ on every input of the constructed family and guarantees \eqref{eq:uniform-decay} on every nonsurjective input. The same holds for effectively described positive computable-real outputs.
+\end{theoremD}
+
+The last statement concerns a procedure required to halt on both branches. A search for a finite collision witness does halt on each nonsurjective input. Section~\ref{sec:corollaries} proves both statements.
+
+\subsection{Prior work}
+Undecidability of PCA ergodicity, due to Kurdyumov and developed by Toom (2000) and Bu\v{s}i\'{c}--Mairesse--Marcovici (2013) \cite{Toom2000,BMM2013}, concerns the long-time dynamics of cellular automata, rather than equilibrium phase transitions of the spatial Gibbs models considered here.
+
+Kari proved undecidability of two-dimensional CA surjectivity \cite{Kari}. The balance equivalence originates with Hedlund in one dimension \cite{Hedlund} and Maruoka--Kimura in higher dimensions \cite{MK76}. The connection between surjectivity, uniform Bernoulli measure and equilibrium measures is developed by Kari and Taati \cite{KT}. The correspondence between probabilistic cellular automata and equilibrium systems goes back to Goldstein, Kuik, Lebowitz and Maes \cite{GKLM} and Lebowitz, Maes and Speer \cite{LMS}. Their space-time representation is useful context; our proof works directly with a spatial interaction on the square lattice.
+
+Marcovici and Taati are the closest neighbor \cite{MT}. Their Theorem~3 shows that, for $d\ge2$, PCA with positive rational local rules admitting a stationary uniform Bernoulli measure and those admitting no stationary Bernoulli measure are computably inseparable; the reduction from Kari perturbs a CA by uniform-replacement noise ($\kappa=1/2$ in their notation). Their rapid-forgetting theorem concerns time evolution. We credit that noisy-CA ingredient here; the collision tilt and its comparison with critical and subcritical spatial Ising correlations supply the additional argument.
+
+Chazottes--Hochman \cite{CH} and Chazottes--Shinoda \cite{CS} construct nonconvergent zero-temperature limits; Gayral, Sablik and Taati study ground-state sets and chaotic zero-temperature limits \cite{GST}. Those limiting questions differ from the fixed positive temperature used here. Fawzi, Fawzi and Scalet give certified algorithms for local equilibrium expectations \cite{FFS}. Computability of a correlation at each fixed distance is compatible with undecidability of an asymptotic decay envelope. Likewise, computability of pressure \cite[Proposition 14]{GST} does not decide its differentiability. The Potts inputs are critical-point sharpness \cite{BDC} and discontinuity for more than four colours \cite{DGHMT}, used separately in Section~\ref{sec:potts-branches}.
+
+The Edwards--Sokal coupling \cite{ES}, Harris and FKG inequalities \cite{Harris,FKG}, Holley's comparison principle \cite{Holley}, and Dobrushin's contraction criterion \cite{Dobrushin,Rebeschini} are established tools. So are the Ising critical-point and sharpness inputs cited in Section~\ref{sec:branches}. The new comparison combines a finite collision witness, a positive closed-pattern reward and a covariance interpolation. The reward acts as an essential diminishment, in the sense motivating \cite{AG,BGK,BBR}; our anchor-covariance interpolation replaces pivotal surgery. It does not require positive association of the actual collision bond measure.
+
+To our knowledge, Theorem~\ref{thm:potts-main} is the first fixed-positive-temperature undecidability result for spontaneous magnetization with strictly positive rational local weights and a fixed order-parameter gap. Theorem~\ref{thm:main} is, to our knowledge, the first undecidability result for exponential decay of a specified thermal spin correlation at a fixed positive temperature with the state quantifier ranging over every Gibbs state. These provisional priority statements rest on the review, the cited neighboring constructions and targeted literature searches.
+
+\subsection{Proof route}
+The load-bearing chain is
+\[
+ \ref{lem:collision}\ \longrightarrow\
+ \ref{lem:completion}\ \longrightarrow\
+ \ref{lem:comparator}\ \longrightarrow\
+ \ref{prop:strict}\ \longrightarrow\
+ \ref{lem:insertion}/\ref{lem:odds}\ \longrightarrow\
+ \ref{prop:allstates}\ \longrightarrow\
+ \ref{prop:nononto}/\ref{prop:onto}\ \longrightarrow\
+ \ref{cor:512}.
+\]
+Lemma~\ref{lem:covariance} supplies the interpolation step, and Lemmas~\ref{lem:hidden} and~\ref{lem:signs} supply the all-state conditional laws. Quantum transfer and the corollaries follow in Sections~\ref{sec:quantum}--\ref{sec:corollaries}. Section~\ref{sec:potts} transfers the collision and hidden-layer lemmas, states each changed $Q$-version, and adds the Potts branches and pressure argument. The later arithmetic upper bound is proved independently; the discussion's algebraic obstruction concerns fixed templates. Neither asserts uniqueness of the nonsurjective collision model.

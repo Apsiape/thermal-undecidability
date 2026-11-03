@@ -1,0 +1,149 @@
+\section{Witness completion and strict stochastic comparison}\label{sec:comparison}
+
+Fix a nonempty witness \(P\), let \(k=|P|\), and put
+\begin{align}
+ D(P)&=\{j:(j+N)\cap(P+N)\ne\varnothing\},&
+ |D(P)|&\le m^2k,\label{eq:D}\\
+ a_P&=\frac{\varepsilon^{2k}c_P}{w_{\max}^{|D(P)|}}>0,&
+ g&=\frac1k\log(1+a_P),\label{eq:g}\\
+ \kappa&=3^{-(k-1)},&
+ \Delta&=\kappa g>0.\label{eq:Delta}
+\end{align}
+Here \(D(P)\) denotes an overlap neighborhood; it is not a Dobrushin matrix.
+
+\begin{lemma}[witness completion]\label{lem:completion}
+Let \(i\in P\), \(i\notin C\), and \(P\setminus\{i\}\subseteq C\). Then
+\begin{equation}
+ \frac{W(C\cup\{i\})}{W(C)}\ge1+a_P.
+ \label{eq:completion}
+\end{equation}
+Without the completion assumption, this ratio is at least one.
+\end{lemma}
+\begin{proof}
+In the positive expansion of \(W(C\cup\{i\})-W(C)\), retain only the subsets \(P\cup S\) with \(S\subseteq C\setminus D(P)\). Their input supports are disjoint between \(P\) and \(S\), so factorization gives
+\begin{equation}
+ W(C\cup\{i\})-W(C)
+ \ge z(P)W(C\setminus D(P)).
+\end{equation}
+Pointwise, at most \(|D(P)|\) factors were removed from the defining product for \(W(C)\), each at most \(w_{\max}\). Therefore
+\begin{equation}
+ W(C)\le w_{\max}^{|D(P)|}W(C\setminus D(P)).
+\end{equation}
+Dividing proves the claim. The unconditional lower bound follows directly from nonnegative coefficients in \eqref{eq:W}.
+\end{proof}
+
+\subsection{An attractive comparator}
+
+Use witness translates only on horizontal edges. In a finite edge set \(E\), let \(\mathcal T_E\) contain translates \(P+t\) all of whose horizontal edges belong to \(E\). Define
+\begin{equation}
+ V_E(C)=\exp\left(g\sum_{t\in\mathcal T_E}
+       \one_{\{P+t\subseteq C\}}\right).
+ \label{eq:V}
+\end{equation}
+For a horizontal edge \(e\notin C\), write \(n_e(C)\) for the number of retained witness translates completed by adding \(e\). Since a translate containing \(e\) is determined by its member of \(P\) mapped to \(e\),
+\(n_e(C)\le k\). Lemma~\ref{lem:completion} consequently gives
+\begin{equation}
+ \frac{W(C\cup\{e\})}{W(C)}
+ \ge e^{g n_e(C)}.
+ \label{eq:ratio-n}
+\end{equation}
+Indeed, if \(n_e=0\) use the unconditional bound; otherwise
+\(e^{g n_e}\le e^{gk}=1+a_P\).
+
+\begin{lemma}[FKG comparator]\label{lem:comparator}
+For any free or wired finite-graph FK boundary condition, let
+\begin{equation}
+ \nu_g(\omega)\propto
+ 2^{K(\omega)}\prod_e p_e^{\omega_e}(1-p_e)^{1-\omega_e}
+ V_E(C_H(\omega)).
+ \label{eq:comparator-density}
+\end{equation}
+This is an FKG measure. The finite law \eqref{eq:finite-FK} satisfies
+\begin{equation}
+ \mu\preceq\nu_g.
+ \label{eq:holley}
+\end{equation}
+\end{lemma}
+\begin{proof}
+The function \(K(\omega)\) is supermodular in the open-edge set, by submodularity of the graphic-matroid rank. Each all-closed indicator is also supermodular: if \(I\) denotes absence of any open edge from a fixed set, then
+\(I(\omega\vee\omega')+I(\omega\wedge\omega')
+\ge I(\omega)+I(\omega')\).
+Thus the density in \eqref{eq:comparator-density} is log-supermodular. The FKG inequality~\cite{FKG} applies.
+
+By \eqref{eq:ratio-n}, \(W(C_H)/V_E(C_H)\) is increasing in closed edges. So is \(W(C_V)\). The density of \(\mu\) relative to \(\nu_g\) is therefore decreasing in open edges. For increasing \(f\), positive association implies that its covariance with this decreasing density is nonpositive. Normalizing gives \(\mu(f)\le\nu_g(f)\). This is also a special case of Holley's comparison principle~\cite{Holley}; see also \cite[Theorems 2.19 and 2.27]{Grimmett}.
+\end{proof}
+
+\subsection{Covariance interpolation}
+
+Fix one member \(p_*\in P\) as the anchor. Each retained translate \(P+t\) has anchor \(e_t\), the horizontal edge centered at \(p_*+t\). Distinct translates have distinct anchors. Let \(\mathcal A_E\) be this anchor set. With log-odds \(\theta_e=\log(p_e/(1-p_e))\), consider
+\begin{equation}
+ \nu_{\theta,s}(\omega)\propto
+ 2^{K(\omega)}
+ \exp\left(\sum_e\theta_e\omega_e+
+       s\sum_{t\in\mathcal T_E}I_t(\omega)\right),
+ \qquad I_t=\one_{\{P+t\text{ closed}\}}.
+ \label{eq:interpolation-family}
+\end{equation}
+It is FKG for \(s\ge0\). Assume every horizontal \(\theta_e\le\log2\).
+
+\begin{lemma}[the anchor covariance inequality]\label{lem:covariance}
+For every increasing \(f\) and every retained translate,
+\begin{equation}
+ \Cov_{\nu_{\theta,s}}(f,I_t)
+ \le -3^{-(k-1)}
+       \Cov_{\nu_{\theta,s}}(f,\omega_{e_t}).
+ \label{eq:covariance}
+\end{equation}
+\end{lemma}
+\begin{proof}
+The event \(I_t=1\) implies \(\omega_{e_t}=0\). Conditional FKG monotonicity gives
+\begin{equation}
+ \nu(f\mid I_t=1)\le\nu(f\mid\omega_{e_t}=0).
+\end{equation}
+Subtracting \(\nu(f)\) and multiplying by \(\nu(I_t)\) yields
+\begin{equation}
+ \Cov_\nu(f,I_t)
+ \le-\frac{\nu(I_t)}{\nu(\omega_{e_t}=0)}
+       \Cov_\nu(f,\omega_{e_t}).
+\end{equation}
+No pivotal modification is involved.
+
+The conditional open odds of a horizontal edge are at most \(e^{\theta_e}\le2\): its FK cluster factor is at most one, and opening an edge can only remove all-closed rewards. Its conditional closed probability is therefore at least \(1/3\). This remains true when only some other edges are conditioned, by averaging. Sequentially closing the other \(k-1\) edges gives
+\begin{equation}
+ \frac{\nu(I_t)}{\nu(\omega_{e_t}=0)}
+ =\nu(I_t\mid\omega_{e_t}=0)\ge3^{-(k-1)}.
+\end{equation}
+The remaining covariance is nonnegative by FKG, proving the displayed inequality.
+\end{proof}
+
+\begin{proposition}[a strictly subcritical ordinary FK upper bound]\label{prop:strict}
+The measure \(\nu_g\) is dominated by the ordinary FK-Ising measure with horizontal log-odds \(\log2-\Delta\) on \(\mathcal A_E\), critical log-odds on the other horizontal edges, and vertical log-odds zero, with the same FK boundary condition.
+\end{proposition}
+\begin{proof}
+Use the path \(0\le s\le g\) with
+\begin{equation}
+ \theta_e(s)=
+ \begin{cases}
+ \log2-\kappa g+\kappa s,&e\in\mathcal A_E,\\
+ \log2,&e\text{ horizontal but not in }\mathcal A_E,\\
+ 0,&e\text{ vertical}.
+ \end{cases}
+\end{equation}
+Finite-volume differentiation and Lemma~\ref{lem:covariance} give
+\begin{equation}
+ \frac d{ds}\nu_{\theta(s),s}(f)
+ =\kappa\sum_{e\in\mathcal A_E}\Cov(f,\omega_e)
+    +\sum_{t\in\mathcal T_E}\Cov(f,I_t)
+ \le0.
+\end{equation}
+The endpoint \(s=g\) is \(\nu_g\), and \(s=0\) is the asserted ordinary FK measure.
+\end{proof}
+
+In the infinite-volume interior, this comparison has the homogeneous parameters
+\begin{equation}
+ v_H'=e^{\theta_H'}=2e^{-\Delta},\qquad v_V'=1,
+ \qquad p_H'=\frac{2e^{-\Delta}}{1+2e^{-\Delta}},\quad p_V'=\frac12.
+ \label{eq:subcrit-params}
+\end{equation}
+The square-lattice FK-Ising critical curve is \(v_Hv_V=2\), equivalently
+\(\sinh(2K_H)\sinh(2K_V)=1\). Thus \eqref{eq:subcrit-params} is strictly subcritical. The precise handling of the unshifted finite boundary strip is included in the all-state proof below.

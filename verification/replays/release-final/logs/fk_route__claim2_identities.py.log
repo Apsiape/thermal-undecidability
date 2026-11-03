@@ -1,0 +1,12 @@
+MISMATCH surj vs W==1 (may be GoE longer than tested sets): 2 True None False
+MISMATCH surj vs W==1 (may be GoE longer than tested sets): 3 True None False
+MISMATCH surj vs W==1 (may be GoE longer than tested sets): 3 True None False
+MISMATCH surj vs W==1 (may be GoE longer than tested sets): 3 True None False
+MISMATCH surj vs W==1 (may be GoE longer than tested sets): 3 True None False
+rules tested: 28
+max |W_direct - collision|, |W_direct - Fourier sum| : 2.5091040356528538e-14
+min c_T over all T computed (should be >= 0): 0.0
+max factorisation error |c_{T1uT2} - c_T1 c_T2|: 1.734723475976807e-17
+rules where (surjective) == (W==1 on tested sets): 23 / 28
+single-site: q * P(Y=Y'|b,b') == 1 + eps^2 (q 1{b=b'} - 1)  [both copies noised]  OK
+2D Moore rule, S = 2 adjacent sites: W_direct = 1.0005592178344724  q^2 sum mu^2 = 1.000559217834473
