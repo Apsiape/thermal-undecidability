@@ -1,7 +1,7 @@
 \section*{How this work was done}\label{sec:methods}
 \addcontentsline{toc}{section}{How this work was done}
 
-The authors selected the questions and proof standards, directed the research, and take responsibility for every claim. AI systems from more than one developer assisted with exploration, derivation, programming and drafting.
+The authors selected the questions and proof standards, directed the research, and take responsibility for every claim. AI systems from more than one developer assisted with exploration, derivation, programming and writing.
 
 The mathematical evidence consists of the proofs in this paper and the explicitly cited external theorems. The ancillary programs provide reproducible finite checks. For this paper, the construction and magnetic comparison were independently checked by a different model family. The accompanying suites include symbolic and exact finite computations as well as floating-point enumerations. A further exact-arithmetic checker tests collision identities, the finite covariance comparison and rational counterexample constants. The Potts extension also received an independent refutation-first check, whose six repairs are incorporated in the stated proofs and citations. Its finite checkers are preserved alongside the added exact Potts checks. The ancillary README gives the commands, outputs, dependencies and limitations of each suite.
 
@@ -9,3 +9,5 @@ These finite checks do not establish infinite-volume comparison, uniqueness, the
 
 
 For the version 1.1.0 uniqueness theorem, the derivation came from one model family and a refutation-first check from a second model family. The latter reported no proof-blocking defect; its substantive exposition and framing repairs are incorporated in the text. The two supplied constant-checking programs have been ported with assertions, and the stated exploration constants are recomputed exactly by two independent implementations. A separate rational certificate checks the optional smaller-$Q$ example. Floating-point values of the correlation-length series are diagnostics, not the basis for strict inequalities. The checks are replayed from a relocated copy into a fresh directory. They verify finite constants and algebra, not the infinite-volume DLR swap, which is proved in the text.
+
+For the version 1.2.0 uniqueness and phase-count upper bounds and the boundary-scale theorem, one model family supplied the derivation and a second model family performed a refutation-first check. The incorporated repairs specify strict positivity and a known-range computable presentation, use the Choquet simplex property in counting phases, distinguish a partial computable scale from a total computable bound, and prove the fixed gap by an all-state sandwich. The revised transition-order conjecture separates these proved statements from the proposed general correspondence.

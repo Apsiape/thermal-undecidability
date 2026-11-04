@@ -23,15 +23,15 @@ For every \(C\subseteq\Z^2\), the hidden specification has a unique Gibbs measur
 Its local distributions are insensitive, exponentially in the separation, to hidden boundary conditions and to changes of closed centers outside a distant region. The corresponding statement also holds conditional on any visible configuration.
 \end{lemma}
 \begin{proof}
-For distinct hidden sites $i,j$, let $n_{ij}$ count factors whose input supports contain both. Changing the variable at $j$ changes the single-site log weight at $i$ by a function of oscillation at most $2n_{ij}\ell_w$. The likelihood-ratio estimate \cite[Proposition 8.8]{Georgii} gives
+For distinct hidden sites $i,j$, let $n_{ij}$ count factors whose input supports contain both. Changing the variable at $j$ changes the single-site log weight at $i$ by a function of oscillation at most $2n_{ij}\ell_w$. The logarithmic-oscillation estimate in the proof of \cite[Proposition 8.8]{Georgii} gives
 \[
- \mathsf D_{ij}\le\tanh(n_{ij}\ell_w/2)\le n_{ij}\ell_w/2.
+ \mathsf D_{ij}\le \frac14(2n_{ij}\ell_w)=n_{ij}\ell_w/2.
 \]
 Each site belongs to at most $m$ factors, each involving at most $m-1$ other sites. Thus $\sum_jn_{ij}\le m(m-1)$, proving \eqref{eq:dob}.
 
 The estimate applies separately to both independent orientation layers. Given visible spins, the factors are \(p_r\delta_{\rm same}+(1-p_r)w_i^r\). Their logarithmic oscillations are no larger than \(\ell_w\), so the same estimate holds.
 
-The Dobrushin uniqueness and comparison theorem~\cite{Dobrushin,Rebeschini} now applies. One may see exponential locality directly from its influence matrix $\mathsf D$: it has row sum at most \(\rho<1\), and each nonzero entry joins sites at separation at most \(\diam N\). The resolvent \(\sum_{n\ge0}\mathsf D^n\) therefore has exponentially small tails in physical distance, with constants allowed to depend on \(N\). It also controls inhomogeneous changes of factors confined outside a distant region.
+The Dobrushin uniqueness and comparison theorem~\cite{Dobrushin} now applies; see also \cite[Corollary 2.6]{Rebeschini}. One may see exponential locality directly from its influence matrix $\mathsf D$: it has row sum at most \(\rho<1\), and each nonzero entry joins sites at separation at most \(\diam N\). The resolvent \(\sum_{n\ge0}\mathsf D^n\) therefore has exponentially small tails in physical distance, with constants allowed to depend on \(N\). It also controls inhomogeneous changes of factors confined outside a distant region.
 \end{proof}
 
 If \(e\notin C\), define the infinite-volume insertion ratio

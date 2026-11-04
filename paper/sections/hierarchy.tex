@@ -1,0 +1,349 @@
+A nearest-neighbour interaction on $\Z^2$ is \emph{computably presented}
+if its finite alphabet is supplied and one algorithm outputs, for each lattice
+edge $\{x,y\}$, the complete table
+$b_{\{x,y\}}:S^2\to\mathbb Q_{>0}$. The tables may depend on absolute position.
+We use this as a promise class: an index is promised to describe a total
+algorithm with positive entries, just as in Proposition~\ref{prop:phase-arith}.
+No decision procedure for validity of arbitrary program indices is asserted.
+All reductions below output uniformly total valid presentations on every input.
+Completeness is under computable many-one reductions within this promise class.
+
+\begin{theorem}[Sharp bounds for position-dependent presentations]\label{thm:cp-sharp}
+For computably presented nearest-neighbour interactions on $\Z^2$ at $\beta=1$:
+\begin{enumerate}[label=(\roman*)]
+\item For a fixed decidable $R$ defining a $\Sigma^0_2$-complete set, there is a
+computable map $e\mapsto\Phi_e$, with $S=\{-1,+1\}$ and edge weights in
+$\{1,16,256\}$, such that
+\[
+ \#\operatorname{Ext}\G(\Phi_e)=
+ \begin{cases}2,&\exists w\,\forall n\,R(e,w,n),\\1,&\text{otherwise}.\end{cases}
+\]
+Thus $\mathsf{NONUNIQUE}$ is $\Sigma^0_2$-complete and $\mathsf{UNIQUE}$ is
+$\Pi^0_2$-complete.
+\item For every fixed $r\ge2$, exactly $r$ extremal Gibbs states is
+$D_2(\Sigma^0_2)$-complete, and at least $r$ is $\Sigma^0_2$-complete,
+already on product-Potts, respectively Potts, nearest-neighbour interactions
+with $r(r+1)$, respectively $r$, on-site states and positive integer weights.
+\item On every unique input of (i), and on every unique input of the family $\Phi_C$ in (iv), the unique Gibbs state satisfies
+\[
+ |\Cov_\mu(f,g)|\le C_0|A_f||A_g|\|f\|_\infty\|g\|_\infty
+ e^{-a_0\,d_1(A_f,A_g)}
+\]
+for all bounded local $f,g$, with fixed $C_0,a_0>0$ independent of $e$.
+Every local $f$ has finite-volume boundary oscillation
+$\Delta_f(L)=\max_\eta\gamma^\eta_{B_L}(f)-\min_\eta\gamma^\eta_{B_L}(f)=0$,
+over all collar configurations $\eta$, for all sufficiently large $L$.
+\item Let $\Phi_C$ be the binary square-boundary family constructed in the
+proof, with $C\subseteq\mathbb N_{\ge1}$ given by a promised total decider.
+Write $m^*=\nu^+(\sigma_0)>0$ for the homogeneous $16$-weight Ising magnetization
+and $f_0=\one_{\{\sigma_0=+1\}}$. For each fixed rational $0<c\le m^*$
+(in particular $c=1/4$), no total computable function bounds
+$\min\{L\ge0:\Delta_{f_0}(L)<c\}$ on all unique inputs.
+On a nonunique input every observable inside the outermost selected square
+has zero Gibbs oscillation, while single-spin indicators sufficiently far
+outside distinguish the two extremal states with oscillation at least $m^*/2$.
+No total computable function bounds the distance from the origin needed to
+find such a spin, even on the family of (i).
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+\emph{The square-boundary selector.}
+Fix an integer $q\ge2$ and an integer $M>1+\sqrt q$. Put
+$B_s=[-s,s]^2\cap\Z^2$, and let $D_s$ be its nearest-neighbour edge boundary.
+For a decidable $C\subseteq\mathbb N_{\ge1}$ use the factors
+\begin{equation}\label{eq:selector-weights}
+ b_{\{x,y\}}(u,v)=
+ \begin{cases}
+ M^{\one_{\{u=1\}}+\one_{\{v=1\}}},&\{x,y\}\in\bigcup_{s\in C}D_s,\\
+ M^{\one_{\{u=v\}}},&\text{otherwise}.
+ \end{cases}
+\end{equation}
+Each edge crosses at most one $D_s$: its smaller endpoint sup norm is the
+only possible $s$. One query to the decider for $C$ therefore computes its
+table. Every weight belongs to $\{1,M,M^2\}$. The first line factors into
+two one-site factors, so it cuts the interaction between its endpoints and
+gives each endpoint the usual colour-$1$ boundary factor on that missing edge.
+The binary version identifies colour $1$ with $+1$.
+
+If $C$ is infinite, all components $V_i$ of the ordinary-edge graph are finite.
+Let $\pi_{V_i}^1$ be the homogeneous Potts law on $V_i$ with colour-$1$
+boundary conditions on every missing edge, including both sides of an annulus.
+The kernel on an entire component is independent of its exterior. The DLR
+equation on any finite union of components consequently forces its law to be
+the corresponding product. Cylinders determine a measure, giving
+\begin{equation}\label{eq:selector-product}
+ \G(\Phi_C)=\left\{\bigotimes_i\pi_{V_i}^1\right\}.
+\end{equation}
+This product is Gibbs: given a finite $\Lambda$, include all components it
+meets in a finite union $U$. Its law is invariant under $\gamma_U$, and
+consistency gives $\gamma_U\gamma_\Lambda=\gamma_U$.
+Thus infinitely many components, regardless of their sizes, leave no
+unspecified cylinder marginal.
+
+If $C$ is finite, only finitely many edge factors change. For the homogeneous
+specification define the positive cylinder function
+\[
+ F_C(\sigma)=\prod_{\{x,y\}\in\bigcup_{s\in C}D_s}
+ M^{\one_{\{\sigma_x=1\}}+\one_{\{\sigma_y=1\}}
+       -\one_{\{\sigma_x=\sigma_y\}}}.
+\]
+For every finite $\Lambda$ the modified conditional expectation is
+$\gamma'_\Lambda(f)=\gamma_\Lambda(fF_C)/\gamma_\Lambda(F_C)$;
+factors outside $\Lambda$ cancel. Hence
+\[
+ T_C\nu=F_C\nu/\nu(F_C)
+\]
+is Gibbs for the modified specification whenever $\nu$ is Gibbs for the
+homogeneous one. Indeed, setting
+$h=\gamma_\Lambda(fF_C)/\gamma_\Lambda(F_C)$, which is exterior measurable,
+gives $\nu(F_Ch)=\nu(\gamma_\Lambda(F_Ch))=\nu(fF_C)$.
+Reweighting by $F_C^{-1}$ is the inverse. Both functions are bounded and
+bounded away from zero. Mutual absolute continuity transfers tail triviality,
+and hence extremality \cite[Theorem 7.7]{Georgii}; this direct proof does not
+require the normalized reweighting to be affine (cf.\ \cite[Section 7.4]{Georgii}).
+Since $M>1+\sqrt q$, that is $\log M>\beta_c(q)=\log(1+\sqrt q)$, the classification of all DLR states of the homogeneous planar Potts model gives exactly $q$ extremal states, its pure phases \cite[Theorem 1.1 and Corollary 1.3]{CDIV2014}.
+For $q=2$ this is the Aizenman--Higuchi classification~\cite{Aizenman1980,Higuchi1981}.
+Thus the selector has exactly $q$ extremal states for finite $C$, and one for
+infinite $C$. The set $C$ is allowed to be empty, giving the homogeneous model.
+Simply deleting the cut edges would already give this hardness construction;
+the positive colour-$1$ factors are included for the clustering assertion below.
+
+\emph{Compiling the quantifiers.}
+For (i) put
+\[
+ h_e(s)=\min\bigl(\{w\le s:\forall n\le s\ R(e,w,n)\}\cup\{s+1\}\bigr),
+ \qquad C_e=\{s\ge1:h_e(s)>h_e(s-1)\}.
+\]
+These are uniformly computable. A refuted candidate never returns, and a newly
+admitted candidate cannot be smaller than the preceding minimum, so $h_e$ is
+nondecreasing. If a successful witness exists, the least one eventually
+survives after all smaller candidates are refuted, so $h_e$ stabilizes.
+Conversely, stabilization at $w$ implies $R(e,w,n)$ for every $n$.
+If there is no witness, every fixed candidate is eventually refuted and
+$h_e(s)\to\infty$. Thus $C_e$ is finite exactly on the stated $\Sigma^0_2$ set.
+Take $q=2$, $M=16$ in the selector. Proposition~\ref{prop:phase-arith} supplies
+the matching upper bounds. No validity promise is needed by this reduction.
+
+\emph{Products and exact counts.}
+For (ii), apply the selector to a $q=r$ layer for an arbitrary
+$A\in\Sigma^0_2$ and a $q=r+1$ layer for an arbitrary $B\in\Sigma^0_2$.
+Choose fixed integers $M_q>1+\sqrt q$ for these two layers. Multiplying their
+edge factors gives positive integer tables on the product alphabet.
+We justify both directions of multiplication of extremal counts.
+
+First, any joint Gibbs law is invariant under the finite-volume kernel
+resampling only one layer: composing that kernel after the product DLR
+kernel leaves the latter unchanged. Testing against arbitrary functions of
+the other layer shows that the conditional law of the first layer given the
+entire second layer is almost surely Gibbs. If the first marginal is extreme,
+these conditional laws have that extreme barycenter and are almost surely
+equal to it, by uniqueness of the extreme decomposition
+\cite[Theorem 7.26]{Georgii}. The joint law is then the product of its marginals.
+An extreme joint law has tail-trivial marginals, since each layer's tail is
+contained in the joint tail; its marginals are Gibbs and extreme
+\cite[Theorem 7.7]{Georgii}. It is therefore a product of extreme marginals.
+
+Conversely, a product of two extreme Gibbs laws is Gibbs. In any convex
+decomposition of that product into joint Gibbs laws, extremality of each
+marginal forces both summands to have the same fixed marginals. The preceding
+conditional-law argument then forces each summand to be the same product.
+The product is extreme. This proves the converse without identifying the
+joint tail with a product of tail sigma-fields.
+The possible counts are consequently $1,r,r+1,r(r+1)$ according as neither,
+only $A$, only $B$, or both predicates hold. The count is exactly $r$ precisely
+on $A\setminus B$, proving $D_2(\Sigma^0_2)$ hardness. A single $q=r$ layer
+proves the at-least-$r$ hardness. Proposition~\ref{prop:phase-arith} supplies
+the upper bounds. At $r=1$ exact count is uniqueness, which is
+$\Pi^0_2$-complete by (i); no sharpness claim for infinitely many states is made.
+
+\emph{Uniform clustering.}
+For the binary model $M=16$ corresponds to Ising coupling $K=\frac12\log16$.
+For any finite $V\subset\Z^2$, including multiply connected sets, the
+plus-boundary law obeys
+\begin{equation}\label{eq:selector-covariance}
+ 0\le\Cov_{\pi_V^+}(\sigma_x,\sigma_y)
+ \le\Cov_{\nu^+}(\sigma_x,\sigma_y)
+ \le C_0e^{-a_0|x-y|_1},
+\end{equation}
+with constants depending only on $K$; see
+\cite[Section 2.3.1, (2.32)--(2.33)]{BCK2003} and the primary decay result
+\cite{CCS1987}. The middle inequality follows from GHS~\cite{GHS1970}:
+in a larger plus-boundary box pin the spins outside $V$ by increasing their
+nonnegative fields to infinity, which decreases truncated two-spin
+correlations; then send the larger box to infinity. On the unique branch,
+\eqref{eq:selector-product} gives zero covariance between different components
+and the same upper bound within a component.
+
+For completeness, the extension to arbitrary real local observables has a
+short FKG proof (compare the association inequalities in~\cite{BulinskiShashkin2007}).
+Let $\delta_x(f)$ be the maximum change in $f$ on flipping only spin $x$, and
+put $L_f=\frac12\sum_x\delta_x(f)\sigma_x$.
+Both $L_f+f$ and $L_f-f$ are increasing. The component laws, and their product,
+are associated. Summing the FKG inequalities for the two opposite-sign pairs
+gives $\Cov(f,g)\le\Cov(L_f,L_g)$; the two same-sign pairs give the reverse
+bound. Therefore
+\[
+ |\Cov(f,g)|\le\frac14\sum_{x,y}\delta_x(f)\delta_y(g)
+                   \Cov(\sigma_x,\sigma_y).
+\]
+Since $\delta_x(f)\le2\|f\|_\infty$, \eqref{eq:selector-covariance} proves
+(iii).
+If $C$ is infinite and $f$ is supported in $B_s$ for a selected $s$, all
+components meeting its support lie inside $B_s$. Thus the explicit forgetting
+radius
+\[
+ s_*(f,C)=\min\{s\in C:\supp f\subseteq B_s\}
+\]
+satisfies $\Delta_f(L)=0$ for every $L\ge s_*(f,C)$. Here volumes are $B_L$
+and maxima and minima range over their full collars.
+
+\emph{No total scale or location bound.}
+For (iv), work on the uniformly decidable family of cut sets, rather than
+assuming an arbitrary fixed relation $R$ contains every halting instance.
+Given a machine $p$, let $C_p=\{s\ge1:p\text{ halts within }s\text{ steps}\}$,
+with the machine convention arranged so a halt takes at least one step.
+This is a uniformly decidable set. If $p$ never halts it is empty and the
+model is homogeneous and nonunique. If $p$ halts at time $t$, it is
+$\{t,t+1,\ldots\}$ and the model is unique. For every $L<t$, the origin kernel
+is still the homogeneous kernel. Its plus/minus boundary indicator
+oscillation is at least $m^*$, by monotonicity of finite-volume plus
+magnetization. For an explicit rational threshold, the elementary Peierls
+contour bound gives
+\[
+ \nu^+(\sigma_0=-1)\le\sum_{\ell\ge4}4\ell(3/16)^\ell<1/4,
+ \qquad m^*>1/2,
+\]
+so $c=1/4$ is valid. The same argument works for every fixed rational
+$0<c\le m^*$. A total upper bound $b(p)$ on the first successful $L$ on unique
+inputs would imply $t\le b(p)$ whenever $p$ halts, and simulation for $b(p)$
+steps would decide halting. This proves the scale obstruction. Quantum
+system-size thresholds beyond computable bounds are a related prior
+phenomenon~\cite{BCLPW2018}; the present forgetting is exact after a finite cut.
+
+If $C$ is finite with last selected radius $s$, every Gibbs law has the same
+marginal on $B_s$. Far from the finite support of $F_C$, exponential clustering
+of the homogeneous plus and minus phases gives
+\[
+ T_C\nu^+(\sigma_x)\longrightarrow m^*,\qquad
+ T_C\nu^-(\sigma_x)\longrightarrow -m^*
+ \quad (|x|_1\to\infty).
+\]
+Indeed the difference from the unmodified expectation is
+$\Cov_{\nu^\pm}(\sigma_x,F_C)/\nu^\pm(F_C)$, which tends to zero by the
+same FKG estimate and spin-flip symmetry. Single-spin indicator oscillations
+therefore tend to $m^*$. When $C$ is empty this holds at every site; the
+statement about an outermost selected square is then vacuous.
+If a total computable radius bounded a site of oscillation at least $m^*/2$
+on every nonunique input of (i), finitely many indicator searches in that
+box, each below $1/4<m^*/2$, would jointly semidecide uniqueness. On unique
+inputs all converge to zero; on nonunique inputs at least one can never pass.
+This contradicts the $\Pi^0_2$ completeness in (i). It also rules out such a
+bound on the larger uniformly decidable-$C$ family.
+\end{proof}
+
+Giving every edge outside one coordinate plane the constant table $1$ embeds these lower bounds in $\Z^d$ for every $d\ge2$: the Gibbs states are the products of those of the plane model with independent uniform spins elsewhere.
+
+The computation in this construction sits in the dependence of the tables on
+absolute position. Each increase of the least surviving candidate places a
+plus-boundary cut at that stage's radius. This is a position-dependent
+construction and supplies no translation-invariant interaction realizing
+the same hierarchy completeness.
+
+\begin{conjecture}\label{conj:ti-sharp}
+$\mathsf{NONUNIQUE}$ is $\Sigma^0_2$-complete on translation-invariant
+finite-range interactions on $\Z^2$ with strictly positive rational weights
+at $\beta=1$.
+\end{conjecture}
+
+\begin{remark}[Restrictions on complete families and on translation invariance]\label{rem:hierarchy}
+For a translation-invariant specification, $\G(\Phi)$ is closed under
+translations, so translating a local observable preserves its Gibbs
+oscillation. Suppose total computable $D(e)$ and $\delta(e)>0$ guarantee,
+on every nonunique input, an observable of diameter at most $D(e)$, sup norm
+at most $1$, and oscillation at least $\delta(e)$. Translate its support into
+$[0,D(e)]^2$. Expanding it in the cylinder indicators of this box gives some
+indicator with gap at least $\delta(e)/|S_e|^{(D(e)+1)^2}$.
+The maximum of their finitely many finite-volume oscillations decreases to
+zero on unique inputs and stays above that computable gap on nonunique ones.
+Remark~\ref{rem:gap-ce} makes uniqueness c.e. Such a pair $(D,\delta)$ cannot
+exist in a $\Sigma^0_2$-complete coexistence family. Only the computable pair is excluded: this argument does not exclude a computable diameter bound with an unspecified positive gap, or a computable gap at unbounded diameter.
+Theorem~\ref{thm:cp-sharp} escapes by location, which translation invariance
+forbids. T\"orm\"a's translation-invariant deterministic sparsification gives
+$\Pi^0_2$-complete unique ergodicity~\cite[Proposition 48, arXiv numbering]{Torma2015};
+an analogue controlling all positive-temperature DLR states remains missing.
+The following further facts distinguish general restrictions from the two
+that specifically use translation invariance.
+
+\emph{(a) Every class: boundary-rate catalogues and certificates.}
+Let $e\mapsto\Phi_e$ be any uniformly computable family in the effective
+finite-alphabet, positive, known-range setting, translation invariant or not,
+whose nonuniqueness set is $\Sigma^0_2$-complete. With a computable range $r_e\ge1$,
+define
+\[
+ V_e(n,t)=\max_{\eta,\zeta}
+ \bigl\|(\gamma_{B_{n+r_e+t}}^\eta)_{B_n}
+        -(\gamma_{B_{n+r_e+t}}^\zeta)_{B_n}\bigr\|_{\TV}.
+\]
+These quantities are computable rationals for rational tables and computable
+reals for computable-real names. For fixed $n$, their limits are the maximum
+TV diameters of Gibbs marginals, by the finite-volume compactness argument
+of Remark~\ref{lem:extrema}. For any total computable catalogue of nonnegative
+bounds $b(e,k,n,t)$ tending to zero in $t$ for each $e,k,n$, the property
+\[
+ \exists k\ \forall n,t:\quad V_e(n,t)\le b(e,k,n,t)
+\]
+is $\Sigma^0_2$ and implies uniqueness. For computable-real quantities, the
+non-strict inequality is a universal predicate on rational approximations;
+its precision variable joins the universal quantifiers. If the catalogue
+covered every unique output, the $\Pi^0_2$-complete uniqueness set would also
+be $\Sigma^0_2$, contradicting the strict arithmetical hierarchy. Likewise,
+a sound c.e. uniqueness-certificate scheme covering every unique output
+would make uniqueness c.e., again impossible. These arguments hold for
+\emph{every class}; neither uses translation invariance.
+
+In particular, a bound $V_e(n,t)\le C_e|B_n|e^{-a_et}$ with arbitrary positive
+constants is covered by the computable catalogue
+$K|B_n|2^{-\lfloor t/K\rfloor}$, $K\ge1$: choose
+$K\ge\max\{1,C_e,\log(2)/a_e\}$, and conversely each catalogue member is an
+exponential envelope. Polynomial prefactors are covered by a further integer parameter: the weak-mixing condition of~\cite{MOS1994} with $\Lambda=B_{n+r_e+t}$ and $\Delta=B_n$ gives $V_e(n,t)\le C|B_n|\,|\partial^+_{r_e}B_{n+r_e+t}|\,e^{-\gamma t}$, which lies below $K|B_n|(n+t+K)^2\,2^{-\lfloor t/K\rfloor}$ for every integer $K\ge\max\{4Cr_e,\,3r_e+1,\,\log(2)/\gamma\}$. Thus some unique outputs fail the
+boundary weak-mixing condition of Martinelli--Olivieri--Schonmann~\cite{MOS1994},
+in its uniform cube form, in every complete family. Uniform infinite-volume
+bulk clustering can nevertheless persist, as Theorem~\ref{thm:cp-sharp}(iii)
+shows. The catalogue statement has quantifiers ``for each catalogue, some
+unique output is missed''; it does not posit one model missed by every
+computable rate. For each individual computable unique model, searching
+finite-volume diameters below any prescribed accuracy supplies a convergence
+modulus, without a uniform total catalogue across all inputs.
+
+\emph{(b) Translation invariance: recoverable alignment.}
+Write $\Omega=S^{\Z^d}$, $(T_z\omega)_x=\omega_{x+z}$ and $T_z\mu=\mu\circ T_z^{-1}$,
+and let $\Gamma\subsetneq\Z^d$ have finite index. No map
+$q:\Omega\to\Z^d/\Gamma$ can satisfy $q(T_z\omega)=q(\omega)+z$ at every
+configuration, since a constant configuration is fixed by every translation.
+Let therefore $\Omega_0\subseteq\Omega$ be measurable and invariant under all
+translations and all finite modifications, and let $q:\Omega_0\to\Z^d/\Gamma$
+be measurable, unchanged by every finite modification inside $\Omega_0$, and
+equivariant, $q(T_z\omega)=q(\omega)+z$ on $\Omega_0$. Then $\Omega_0$ and each
+event $\{q=a\}$ are tail measurable: for each finite region, membership and the
+value of $q$ can be read after replacing that region by a fixed configuration.
+Suppose a translation-covariant specification has a Gibbs state charging
+$\Omega_0$. By the extreme decomposition and tail triviality of extremal states \cite[Theorems 7.26 and 7.7]{Georgii}, some
+extremal state $\mu$ has $\mu(\Omega_0)=1$, and tail triviality makes $q$
+almost surely equal to some $a$. The translates $T_z\mu$ are extremal and give
+probability one to the respective events $\{q=a+z\}$; distinct cosets require
+distinct states, so there are at least $[\Z^d:\Gamma]$ extremal states.
+A unique Gibbs state is translation invariant and tail trivial, so it gives
+$\Omega_0$ probability zero. Thus a translation-invariant unique branch has no
+recoverable alignment on an event of positive probability, even if thermal
+defects leave a decoded alignment well defined.
+
+\emph{(c) Translation invariance: exact finite phase counts.}
+If there are exactly $r$ extremal states, translations permute these $r$
+states. Every permutation of $r$ objects has order dividing
+$\ell_r=\operatorname{lcm}(1,\ldots,r)$. Each generator $T_{e_i}^{\ell_r}$ therefore
+fixes every extremal state; their compositions fix them under all
+$\ell_r\Z^d$ translations. The Gibbs simplex with these finitely many extreme
+points consists of their convex combinations, so every Gibbs state is
+$\ell_r\Z^d$-periodic as well. In particular, an extremal state with infinitely
+many distinct translates precludes every finite exact phase count.
+\end{remark}

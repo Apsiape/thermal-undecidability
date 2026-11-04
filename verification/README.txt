@@ -1,6 +1,6 @@
 Finite verification for
 Spontaneous magnetization and thermal decay are undecidable at positive temperature
-Seth Douglas and Nidhal Mghirbi, Version 1.1.0, November 2026
+Seth Douglas and Nidhal Mghirbi, Version 1.2.0, November 2026
 
 Run every command below from this verification/ directory.
 
@@ -205,3 +205,5 @@ The manuscript build and source archive have also been checked separately.
 Regenerate archive, source manifest and all public checksums after a build:
   python -B package_release.py
 This excludes local build/, runs/ and __pycache__ directories from public hashes.
+
+Version 1.2.0 replay: replays/v1.2-relocated/. All 20 standalone jobs are run in one invocation from a separate relocated copy. The mathematical finite-check programs are unchanged from version 1.1.0.

@@ -126,3 +126,66 @@ For fixed supports the unit balls of real observables are cubes. Bilinearity sho
 \]
 The matrix is decidable, giving $\exists\forall\exists$ and hence $\Sigma^0_3$. Uniform finite-volume clustering over all exterior conditions is a different predicate; no identification with it is used.
 \end{proof}
+
+\begin{proposition}[Uniqueness and phase-count upper bounds]\label{prop:phase-arith}
+For finite-alphabet finite-range interactions on $\Z^d$ with strictly positive rational local weights,
+\[
+ \mathsf{NONUNIQUE}\in\Sigma^0_2,\qquad
+ \mathsf{UNIQUE}\in\Pi^0_2.
+\]
+Writing $\operatorname{Ext}\G(\Phi)$ for the extreme Gibbs states, for each integer $r\ge1$,
+\[
+ \{\#\operatorname{Ext}\G(\Phi)\ge r\}\in\Sigma^0_2,\qquad
+ \{\#\operatorname{Ext}\G(\Phi)=r\}\in D_2(\Sigma^0_2),
+\]
+and $\{\#\operatorname{Ext}\G(\Phi)=\infty\}\in\Pi^0_3$.
+Here $D_2(\Sigma^0_2)$ denotes differences of two $\Sigma^0_2$ sets, and infinity means infinitely many extreme states. Translation invariance is unnecessary: a uniformly computable presentation of the local tables with known finite range suffices. The same upper bounds hold for uniformly computable strictly positive real weights, on the promise that their names describe such an interaction.
+\end{proposition}
+\begin{proof}
+This is a corollary of Remark~\ref{lem:extrema} and the nested-polytope argument of Proposition~\ref{prop:full-arith}. Enumerate all cylinder indicators as $f_j$, and take nested boxes $\Lambda_L$ containing their supports for $L\ge L_0(j)$. Put
+\[
+ \Delta_{j,L}=\max_\eta\gamma_{\Lambda_L}^{\eta}(f_j)
+                 -\min_\eta\gamma_{\Lambda_L}^{\eta}(f_j).
+\]
+The finite collar is effectively known, so these are computable rationals. The tower identity makes the maxima non-increasing and the minima non-decreasing, hence $\Delta_{j,L}$ non-increasing. Remark~\ref{lem:extrema} identifies its limit as
+\[
+ \max_{\mu\in\G(\Phi)}\mu(f_j)-\min_{\nu\in\G(\Phi)}\nu(f_j).
+\]
+Cylinder probabilities determine a state. Thus
+\[
+ \Phi\in\mathsf{NONUNIQUE}
+ \ \Longleftrightarrow\
+ \exists j,m\ \forall L\ge L_0(j):\quad\Delta_{j,L}\ge2^{-m}.
+\]
+This has a decidable rational matrix and is $\Sigma^0_2$; complementation gives the uniqueness bound.
+
+Finite-alphabet compactness makes the Gibbs set nonempty and compact, and the extreme-decomposition theorem makes it a Choquet simplex \cite[Theorem 7.26 and Corollary 7.29]{Georgii}. Consequently it has at least $r$ extreme points if and only if it contains $r$ affinely independent states. Indeed distinct extreme points of a simplex are affinely independent, by uniqueness of their representing measures; if there are fewer than $r$ extreme points their convex hull has affine dimension less than $r-1$. This step would fail for an arbitrary compact convex set.
+
+Affine independence of $r$ probability measures is detected by $r-1$ cylinder indicators $f_{j_1},\ldots,f_{j_{r-1}}$. Let $V_L$ be the finite list of vectors
+\[
+ (\gamma_{\Lambda_L}^{\eta}(f_{j_1}),\ldots,
+       \gamma_{\Lambda_L}^{\eta}(f_{j_{r-1}})),
+\]
+for all collars, and let $P_L=\operatorname{conv}V_L$. The $P_L$ are nested and their intersection consists exactly of the corresponding Gibbs expectation vectors, as in Proposition~\ref{prop:full-arith}. Define
+\[
+ H_L=\max_{v_1,\ldots,v_r\in V_L}
+ \left|\det\begin{pmatrix}1&v_1\\[-2pt]\vdots&\vdots\\1&v_r\end{pmatrix}\right|.
+\]
+The determinant is affine in each row separately. Maximizing its absolute value successively over each $P_L$ therefore reduces to the finite generating list $V_L$, so $H_L$ is a computable rational. Nested compactness gives a non-increasing limit equal to the same maximum over $r$ Gibbs vectors. It is positive precisely when those vectors can be affinely independent. Hence
+\[
+ \#\operatorname{Ext}\G(\Phi)\ge r
+ \ \Longleftrightarrow\
+ \exists j_1,\ldots,j_{r-1},m\ \forall L\ge L_0:\quad H_L\ge2^{-m}.
+\]
+For $r=1$ the determinant is $1$ and the cylinder list is empty. This proves the $\Sigma^0_2$ bound. Exact count $r$ is the difference of the tests for at least $r$ and at least $r+1$; infinitely many is their universal conjunction over $r$, giving $\Pi^0_3$.
+
+For computable-real weights the finite-volume expectations and determinant maxima are uniformly computable reals: strict positivity permits effective division by each positive finite partition function. Replace $\Delta_{j,L}$ and $H_L$ by rational upper approximations with error tending to zero, taking running minima to retain nestedness. They have the same limits, and the displayed threshold formulas, with existential slack in $m$, still apply with decidable rational matrices. No equality test on computable reals is used.
+
+Strict positivity ensures every finite-collar partition function is nonzero and gives a nonempty Gibbs set by compactness. Hard constraints can make the admissible configuration space, and hence the Gibbs set, empty; the present proof and its singleton/complement identification do not cover that setting.
+\end{proof}
+
+\input{sections/hierarchy}
+
+On the family of Theorem~\ref{thm:full}, the lower bounds proved by Kari's reduction are $\mathsf{UNIQUE}$ $\Sigma^0_1$-hard and $\mathsf{NONUNIQUE}$ $\Pi^0_1$-hard. Nonuniqueness is $\Sigma^0_2$-complete on computable position-dependent presentations (Theorem~\ref{thm:cp-sharp}); the translation-invariant case remains open (Conjecture~\ref{conj:ti-sharp}). The computable-gap observation following Theorem~\ref{thm:boundary-scale} explains why the present family does not give that completeness result.
+
+To our knowledge, the general positive-temperature uniqueness and phase-count upper bounds above and their matching finite-count lower bounds for position-dependent presentations have not previously been stated explicitly. The upper bounds follow from effective finite-volume compactness and the Gibbs simplex property; the lower-bound construction is a square-boundary selector. The nearest deterministic analogue is T\"orm\"a's $\Pi^0_2$-completeness of unique ergodicity for one-dimensional cellular automata \cite[Proposition 48, arXiv numbering]{Torma2015}. Gayral--Sablik--Taati give an effective description of positive-temperature shift-invariant equilibrium sets in Proposition~15, a general $\Pi_3$ upper bound for zero-temperature accumulation sets in Proposition~16, and a $\Pi_2$ bound under their uniform-model hypothesis in Theorem~17~\cite{GST}. These are different predicates from uniqueness and the number of extreme points of the full DLR Gibbs set considered here. Gayral--Sablik's hierarchy for Besicovitch stability~\cite[Theorem 5.11 and Section 6]{GS}, Hochman--Meyerovitch's entropy characterization~\cite[Theorem 1.1]{HM}, Chazottes--Hochman's zero-temperature examples~\cite[Theorem 1.2]{CH}, and Purcell--Li--Cubitt's quantum ground-state phase transition~\cite[Theorem 1]{PLC} provide further related context.

@@ -1,0 +1,264 @@
+{
+  "status": "accepted",
+  "finite_modules": 28,
+  "audited_theorems": 177,
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "lean_commit": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+  "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "verification": {
+    "lean": "Lean (version 4.35.0, x86_64-w64-windows-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+    "cap_bytes": 10000000000,
+    "records": [
+      {
+        "step": "Thermal_Core",
+        "exit": 0,
+        "seconds": 12.972,
+        "peak_tree_commit_bytes": 4298526720
+      },
+      {
+        "step": "Thermal_Definitions",
+        "exit": 0,
+        "seconds": 12.607,
+        "peak_tree_commit_bytes": 4505931776
+      },
+      {
+        "step": "Thermal_RuleCoding",
+        "exit": 0,
+        "seconds": 12.307,
+        "peak_tree_commit_bytes": 4505931776
+      },
+      {
+        "step": "Thermal_FiniteCore",
+        "exit": 0,
+        "seconds": 12.567,
+        "peak_tree_commit_bytes": 4505931776
+      },
+      {
+        "step": "Thermal_CollisionBridge",
+        "exit": 0,
+        "seconds": 13.294,
+        "peak_tree_commit_bytes": 4505931776
+      },
+      {
+        "step": "Thermal_MoreCore",
+        "exit": 0,
+        "seconds": 16.223,
+        "peak_tree_commit_bytes": 4505931776
+      },
+      {
+        "step": "Thermal_FiniteReduction",
+        "exit": 0,
+        "seconds": 18.921,
+        "peak_tree_commit_bytes": 4520632320
+      },
+      {
+        "step": "Thermal_RuleEvaluator",
+        "exit": 0,
+        "seconds": 6.908,
+        "peak_tree_commit_bytes": 4520632320
+      },
+      {
+        "step": "Thermal_TableAlgorithm",
+        "exit": 0,
+        "seconds": 6.679,
+        "peak_tree_commit_bytes": 4520632320
+      },
+      {
+        "step": "Thermal_CoefficientAlgorithm",
+        "exit": 0,
+        "seconds": 26.873,
+        "peak_tree_commit_bytes": 4520632320
+      },
+      {
+        "step": "Thermal_CoefficientCorrect",
+        "exit": 0,
+        "seconds": 12.499,
+        "peak_tree_commit_bytes": 4520632320
+      },
+      {
+        "step": "Thermal_CoefficientSum",
+        "exit": 0,
+        "seconds": 12.42,
+        "peak_tree_commit_bytes": 4520632320
+      },
+      {
+        "step": "Thermal_SearchAlgorithm",
+        "exit": 0,
+        "seconds": 7.047,
+        "peak_tree_commit_bytes": 4520632320
+      },
+      {
+        "step": "Thermal_Detection",
+        "exit": 0,
+        "seconds": 13.307,
+        "peak_tree_commit_bytes": 4520632320
+      },
+      {
+        "step": "Thermal_Factorization",
+        "exit": 0,
+        "seconds": 22.571,
+        "peak_tree_commit_bytes": 4520632320
+      },
+      {
+        "step": "Thermal_ConnectedWitness",
+        "exit": 0,
+        "seconds": 12.846,
+        "peak_tree_commit_bytes": 4520632320
+      },
+      {
+        "step": "Thermal_BalanceSource",
+        "exit": 0,
+        "seconds": 14.353,
+        "peak_tree_commit_bytes": 4764917760
+      },
+      {
+        "step": "Thermal_SearchCorrect",
+        "exit": 0,
+        "seconds": 12.873,
+        "peak_tree_commit_bytes": 4764917760
+      },
+      {
+        "step": "Thermal_MinimalSearch",
+        "exit": 0,
+        "seconds": 13.415,
+        "peak_tree_commit_bytes": 4764917760
+      },
+      {
+        "step": "Thermal_WitnessSearch",
+        "exit": 0,
+        "seconds": 12.72,
+        "peak_tree_commit_bytes": 4764917760
+      },
+      {
+        "step": "Thermal_TableProgram",
+        "exit": 0,
+        "seconds": 7.063,
+        "peak_tree_commit_bytes": 4764917760
+      },
+      {
+        "step": "Thermal_TableCorrect",
+        "exit": 0,
+        "seconds": 14.534,
+        "peak_tree_commit_bytes": 4764917760
+      },
+      {
+        "step": "Thermal_TableProof",
+        "exit": 0,
+        "seconds": 15.247,
+        "peak_tree_commit_bytes": 4764917760
+      },
+      {
+        "step": "Thermal_TableEnumeration",
+        "exit": 0,
+        "seconds": 13.035,
+        "peak_tree_commit_bytes": 4764917760
+      },
+      {
+        "step": "Thermal_DigitCoding",
+        "exit": 0,
+        "seconds": 11.933,
+        "peak_tree_commit_bytes": 4764917760
+      },
+      {
+        "step": "Thermal_TableCoding",
+        "exit": 0,
+        "seconds": 12.534,
+        "peak_tree_commit_bytes": 4764917760
+      },
+      {
+        "step": "Thermal_PositiveExpansion",
+        "exit": 0,
+        "seconds": 11.809,
+        "peak_tree_commit_bytes": 4764917760
+      },
+      {
+        "step": "Thermal_FiniteExtras",
+        "exit": 0,
+        "seconds": 12.641,
+        "peak_tree_commit_bytes": 4764917760
+      },
+      {
+        "step": "Challenge",
+        "exit": 0,
+        "seconds": 14.459,
+        "peak_tree_commit_bytes": 4841771008
+      },
+      {
+        "step": "Solution",
+        "exit": 0,
+        "seconds": 14.332,
+        "peak_tree_commit_bytes": 4841771008
+      },
+      {
+        "step": "Thermal_Audit",
+        "exit": 0,
+        "seconds": 13.236,
+        "peak_tree_commit_bytes": 4841771008
+      },
+      {
+        "step": "export_Challenge",
+        "exit": 0,
+        "seconds": 12.728,
+        "peak_tree_commit_bytes": 5025476608
+      },
+      {
+        "step": "export_Solution",
+        "exit": 0,
+        "seconds": 12.863,
+        "peak_tree_commit_bytes": 5025476608
+      },
+      {
+        "step": "comparator",
+        "exit": 0,
+        "seconds": 30.561,
+        "peak_tree_commit_bytes": 5025476608
+      }
+    ],
+    "total_seconds": 497.14906830003486,
+    "peak_tree_commit_bytes": 5025476608,
+    "comparator_attempts": [
+      {
+        "step": "comparator",
+        "exit": 2,
+        "seconds": 0.077,
+        "peak_tree_commit_bytes": 5025476608
+      },
+      {
+        "step": "comparator",
+        "exit": 2,
+        "seconds": 0.12,
+        "peak_tree_commit_bytes": 5025476608
+      },
+      {
+        "step": "comparator",
+        "exit": 0,
+        "seconds": 30.561,
+        "peak_tree_commit_bytes": 5025476608
+      }
+    ],
+    "comparator_mode": "trusted local exports; --inadvisably-no-sandbox required by Windows platform gate; Unix lookup helpers on PATH, no git invocation"
+  },
+  "preflight": {
+    "statements_unchanged_modulo_whitespace": {
+      "witness_search": true,
+      "weight_table_computable": true
+    },
+    "restored_mathlib_files": [
+      {
+        "path": "lean\\vendor\\mathlib\\Mathlib\\MeasureTheory\\VectorMeasure\\Decomposition\\Jordan.lean",
+        "sha256": "498fbbe317d536b67feefddc702d31d5192c55ef81194dea4556e385129392bb",
+        "matches_saved_stock": true
+      },
+      {
+        "path": "lean\\vendor\\mathlib\\Mathlib\\MeasureTheory\\VectorMeasure\\Decomposition\\Lebesgue.lean",
+        "sha256": "c8ea713339cc57005822aeacea086887a460be0a5093c1d81dc59499ee3a73cc",
+        "matches_saved_stock": true
+      }
+    ]
+  },
+  "comparator_output": "WARNING: Sandbox disabled, this run is not trustworthy.\nRunning Lean default kernel on solution\nLean default kernel accepts the solution\nYour solution is okay!\n"
+}

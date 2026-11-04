@@ -1,0 +1,122 @@
+[
+  {
+    "script": "exact_checks.py",
+    "exit_code": 0,
+    "seconds": 0.785,
+    "source_sha256": "7f8e8b4410159486fb81470a2ca6182dd450707a4661b04082697e57f1824b9e"
+  },
+  {
+    "script": "uniqueness/check_constants.py",
+    "exit_code": 0,
+    "seconds": 3.633,
+    "source_sha256": "94248c0fa8ac12cb98ed1fdf463acfc06216dca489307be2ffd76544dd46b293"
+  },
+  {
+    "script": "uniqueness/check_lw.py",
+    "exit_code": 0,
+    "seconds": 3.215,
+    "source_sha256": "47aedbaa2d6fc4a295692452f118285425fccdf9444a9080352dd560df410459"
+  },
+  {
+    "script": "uniqueness/check_q1681.py",
+    "exit_code": 0,
+    "seconds": 0.094,
+    "source_sha256": "7d3e7f1b28788964ae7140ccd568fdb37d4f4cc712662a2a8c127f7bbacb7d39"
+  },
+  {
+    "script": "potts/collision_checks.py",
+    "exit_code": 0,
+    "seconds": 0.842,
+    "source_sha256": "48c62e817a7dcee124b941eca1bc9976a1056367c510f2de2a66e0ba3b143695"
+  },
+  {
+    "script": "potts/fk_q9_checks.py",
+    "exit_code": 0,
+    "seconds": 183.567,
+    "source_sha256": "f041ff413885b315ebe96259e1a6a01e0c66c9a5223376d4f56c80f3da29e716"
+  },
+  {
+    "script": "potts/exact_q9_checks.py",
+    "exit_code": 0,
+    "seconds": 0.779,
+    "source_sha256": "0478ad8531be4d65021276c97a80a00e39453dfc1a1424c278352f14c5e59798"
+  },
+  {
+    "script": "fk_route/claim2_identities.py",
+    "exit_code": 0,
+    "seconds": 2.999,
+    "source_sha256": "80fdbcdde0a6fed9fadad28412a8c01f7f22b9eaa6772d55251e6e25681f2943"
+  },
+  {
+    "script": "fk_route/counterexample27.py",
+    "exit_code": 0,
+    "seconds": 44.33,
+    "source_sha256": "c9ccb685c6115f87cb51b91ca189fd923f1522c1a3894caae70f13cbd31e03f6"
+  },
+  {
+    "script": "fk_route/dobrushin_check.py",
+    "exit_code": 0,
+    "seconds": 1.334,
+    "source_sha256": "3ef67550385a7fc266883b6d3782e17783d4e9e15e155a6a23dc12d3608cddca"
+  },
+  {
+    "script": "fk_route/extra_checks.py",
+    "exit_code": 0,
+    "seconds": 8.771,
+    "source_sha256": "e8a6344016422ead539b233e893773455706ddb4d3fdf418529e371eef21e464"
+  },
+  {
+    "script": "fk_route/fkg_tests.py",
+    "exit_code": 0,
+    "seconds": 362.578,
+    "source_sha256": "2a23f5be20f53a830bece42e43cb024e6c799a97bf8327c8111f2173af370a2a"
+  },
+  {
+    "script": "fk_route/surj_decide_1d.py",
+    "exit_code": 0,
+    "seconds": 0.333,
+    "source_sha256": "b8a1cefc4ad8891fdb93e77451ce57bd70ff4b13725685cd925840087e82b7d3"
+  },
+  {
+    "script": "magnetic/sec2_checks.py",
+    "exit_code": 0,
+    "seconds": 14.731,
+    "source_sha256": "ba40615f2f9a7344348a69c69635347bff720945a8d3e487bff62e8b82a6ac61"
+  },
+  {
+    "script": "magnetic/sec3_checks.py",
+    "exit_code": 0,
+    "seconds": 24.456,
+    "source_sha256": "b68073bfc4a766ff5507cdb120dd90d71f555feea9dfed3a5393cb2acff640fd"
+  },
+  {
+    "script": "magnetic/sec3_run2.py",
+    "exit_code": 0,
+    "seconds": 495.595,
+    "source_sha256": "b9977023107a610b788c7d84494ed222bf12712cf0f02d2640356e462bbb6585"
+  },
+  {
+    "script": "magnetic/sec3_torus33.py",
+    "exit_code": 0,
+    "seconds": 70.714,
+    "source_sha256": "d691a0e583f03a190c78bddc3a317bb276b9ee4b4b7457b3e94e7413b7cda044"
+  },
+  {
+    "script": "magnetic/sec4_boundary_layer.py",
+    "exit_code": 0,
+    "seconds": 0.976,
+    "source_sha256": "d7be236732d4bc1f6f87fcdbd3366723f3fae80c1fd089a5f5e98d199ced01ef"
+  },
+  {
+    "script": "magnetic/sec4_checks.py",
+    "exit_code": 0,
+    "seconds": 32.496,
+    "source_sha256": "8c5495aadc271e2351f2b1d388e40d08d6548cb0ccd851597260f18b56e75166"
+  },
+  {
+    "script": "magnetic/sec44_criticality.py",
+    "exit_code": 0,
+    "seconds": 1.165,
+    "source_sha256": "903bdb58ede2af630ed8f8fde62e4fcc18f2b81e9b2210f04db4f079529421d4"
+  }
+]

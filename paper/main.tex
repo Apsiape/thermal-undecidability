@@ -13,6 +13,7 @@
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem*{theoremA}{Theorem A (thermal spin correlation)}
 \newtheorem*{theoremB}{Theorem B (diagonal quantum interaction)}
 \newtheorem*{theoremC}{Theorem C (output-reset noise)}
@@ -28,7 +29,8 @@
 \AddToHook{env/theoremC/begin}{\refstepcounter{mainresult}}
 \AddToHook{env/theoremD/begin}{\refstepcounter{mainresult}}
 \theoremstyle{remark}
-\newtheorem*{remark}{Remark}
+\newtheorem{remark}{Remark}[section]
+\renewcommand{\theremark}{\thesection.\Alph{remark}}
 \newtheorem{question}[theorem]{Question}
 \numberwithin{equation}{section}
 \newcommand{\Z}{\mathbb Z}
@@ -47,17 +49,18 @@
 \hypersetup{pdftitle={Spontaneous magnetization and thermal decay are undecidable at positive temperature},pdfauthor={Seth Douglas and Nidhal Mghirbi}}
 \title{Spontaneous magnetization and thermal decay\\ are undecidable at positive temperature}
 \author{Seth Douglas \and Nidhal Mghirbi}
-\date{Version 1.1.0, November 2026}
+\date{Version 1.2.0, November 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
 Spontaneous magnetization is undecidable at a fixed positive temperature for translation-invariant finite-range classical lattice models with strictly positive rational Boltzmann weights. A computable family on 2304 local states has maximal visible nine-colour Potts magnetization exactly zero or a fixed positive constant, attained in a translation-invariant Gibbs state. Its pressure in a uniform field is uniformly computable, but differentiability at zero field is undecidable with a fixed derivative-jump gap. Rational weights are asserted at zero field.
 
 We also prove undecidability of exponential decay of one specified thermal spin correlation, in every Gibbs state, on 512 local states. Both constructions couple critical visible spins to cellular-automaton replicas. Surjectivity cancels the collision corrections; nonsurjectivity gives strict subcritical bond domination and exponential decay of the specified correlation uniformly over states. The interaction range depends on the input, and the branches are fine-tuned at their critical or coexistence points. The results transfer to diagonal quantum interactions and survive a prescribed output-reset noise family, the same construction with reduced retention. A larger Potts family on 16,908,544 local states makes Gibbs uniqueness undecidable: nonsurjective inputs have a unique state with uniform exponential clustering of all local observables; surjective inputs have at least 66,050 states, including a disordered state with the same bound. Uniqueness for the 512- and 2304-state families remains open.
+For finite-alphabet, strictly positive finite-range interactions given by rational tables or computable-real names with a known range, we give arithmetic upper bounds for uniqueness and phase counts, sharp for position-dependent computable presentations at each fixed finite phase count; in our large Potts family uniform bulk clustering coexists with a boundary scale having no total computable bound.
 \end{abstract}
 \begin{center}\small AI systems assisted with this work. The authors take responsibility for its claims; see ``How this work was done.'' This preprint has not been peer reviewed.\end{center}
 \medskip\noindent\small
-\textbf{Changes in version 1.1.0.} Section~\ref{sec:full} proves undecidability of Gibbs uniqueness for a larger fixed Potts alphabet, with full clustering in the unique nonsurjective state and in the surjective disordered state. The nine-colour and Ising theorems are unchanged. Section~\ref{sec:open} records the remaining cases and general clustering facts. The new constants have portable exact verification scripts.
+\textbf{Changes in version 1.2.0.} Section~\ref{sec:open} adds general uniqueness and phase-count upper bounds; Theorem~\ref{thm:cp-sharp} proves matching finite-phase-count lower bounds for position-dependent presentations, with uniform bulk clustering on the unique inputs, a forgetting scale on those inputs with no total computable bound, and a distinguishing location on the nonunique inputs with no total computable bound, and the translation-invariant case is stated as Conjecture~\ref{conj:ti-sharp}, followed by restrictions on complete families. Section~\ref{sec:full} proves that uniform bulk clustering can coexist with a boundary scale having no total computable bound. Section~\ref{sec:discussion} restates the transition-order conjecture and corrects the pressure-jump wording of versions 1.0.0 and 1.1.0 to a jump in the first field derivative of the pressure. The earlier Ising and nine-colour results are unchanged. Lean checks the finite rational collision core and the positive local weights and coded entry programs for the three specified models, relative to the $\Z^2$ full-shift specialization of Kari and Taati's Corollary 21 (arXiv:1311.2319v3; Corollary 4 in the journal version~\cite{KT}). It does not certify the paper's thermal or undecidability conclusions.
 \normalsize
 \clearpage
 {\small\tableofcontents}

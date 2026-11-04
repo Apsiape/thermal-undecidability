@@ -1,6 +1,6 @@
 Spontaneous magnetization and thermal decay are undecidable at positive temperature
 Seth Douglas and Nidhal Mghirbi
-Version 1.1.0, November 2026
+Version 1.2.0, November 2026
 
 Build: python build.py
 Requires Python 3.13 and a standard TeX distribution with pdfLaTeX and BibTeX.
@@ -8,6 +8,8 @@ The build uses -no-shell-escape and rejects final warnings and overfull or under
 main.tex loads one file per section. references.bib uses plain bibliography style.
 abstract.txt is the plain-text abstract.
 The accompanying ../verification/ directory contains finite checks and instructions.
+The ../lean/ directory ships the finite collision and positive-weight core,
+with its scope, published balance dependency, license and verifier in its README.
 No publication or submission is performed by the build.
 
 Release 1.0.0 full replay: ../verification/replays/release-final/ (logs, run-results.json, versions.json).

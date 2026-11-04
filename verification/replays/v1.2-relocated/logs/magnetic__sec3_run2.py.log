@@ -1,0 +1,38 @@
+----------------------------------------------------------------------------------------------------
+triple in a row: torus 4x2, nE=16, P=[(0, 0), (1, 0), (2, 0)], k=3, kappa=3^-(k-1)=0.1111  (setup 0.2s)
+  theta=+0.693 s=0.00 | max cond P(open H)=0.6667 (<=2/3? True) | max_U[(12) functional]=2.91e-14 | kappa*=0.1915 (>= kappa? True) | event-family min ratio=0.2135 over 344 events
+  theta=+0.693 s=0.50 | max cond P(open H)=0.6667 (<=2/3? True) | max_U[(12) functional]=-3.08e-13 | kappa*=0.4869 (>= kappa? True) | event-family min ratio=0.5264 over 344 events
+  theta=+0.693 s=3.00 | max cond P(open H)=0.6667 (<=2/3? True) | max_U[(12) functional]=5.51e-16 | kappa*=1.0002 (>= kappa? True) | event-family min ratio=1.0005 over 344 events
+  theta=+0.393 s=1.00 | max cond P(open H)=0.5970 (<=2/3? True) | max_U[(12) functional]=-1.81e-13 | kappa*=0.8992 (>= kappa? True) | event-family min ratio=0.9510 over 344 events
+  negative control (kappa=1.0 at theta=log2,s=1): max_U = 2.212e-02  -> REFUTED (machinery has teeth)
+  (13) g=0.20: Delta=kappa*g=0.0222  max_U[nu_{log2,g}-phi_{log2-Delta}](U)=-2.23e-15  (<=0? True) | best Delta*=0.0478 (ratio Delta*/g=0.239)
+  (13) g=1.00: Delta=kappa*g=0.1111  max_U[nu_{log2,g}-phi_{log2-Delta}](U)=-3.11e-14  (<=0? True) | best Delta*=0.6352 (ratio Delta*/g=0.635)
+  (13) g=3.00: Delta=kappa*g=0.3333  max_U[nu_{log2,g}-phi_{log2-Delta}](U)=3.11e-13  (<=0? True) | best Delta*=3.0031 (ratio Delta*/g=1.001)
+  total 190.4s
+----------------------------------------------------------------------------------------------------
+L-shape triple: torus 4x2, nE=16, P=[(0, 0), (1, 0), (0, 1)], k=3, kappa=3^-(k-1)=0.1111  (setup 0.3s)
+  theta=+0.693 s=0.00 | max cond P(open H)=0.6667 (<=2/3? True) | max_U[(12) functional]=-3.92e-14 | kappa*=0.1959 (>= kappa? True) | event-family min ratio=0.2185 over 344 events
+  theta=+0.693 s=0.50 | max cond P(open H)=0.6667 (<=2/3? True) | max_U[(12) functional]=4.90e-14 | kappa*=0.4552 (>= kappa? True) | event-family min ratio=0.4920 over 344 events
+  theta=+0.693 s=3.00 | max cond P(open H)=0.6667 (<=2/3? True) | max_U[(12) functional]=4.55e-15 | kappa*=1.3569 (>= kappa? True) | event-family min ratio=1.0432 over 344 events
+  theta=+0.393 s=1.00 | max cond P(open H)=0.5970 (<=2/3? True) | max_U[(12) functional]=1.19e-13 | kappa*=0.8996 (>= kappa? True) | event-family min ratio=0.9459 over 344 events
+  negative control (kappa=1.0 at theta=log2,s=1): max_U = 3.890e-03  -> REFUTED (machinery has teeth)
+  (13) g=0.20: Delta=kappa*g=0.0222  max_U[nu_{log2,g}-phi_{log2-Delta}](U)=1.16e-14  (<=0? True) | best Delta*=0.0477 (ratio Delta*/g=0.239)
+  (13) g=1.00: Delta=kappa*g=0.1111  max_U[nu_{log2,g}-phi_{log2-Delta}](U)=2.65e-13  (<=0? True) | best Delta*=0.6196 (ratio Delta*/g=0.620)
+  (13) g=3.00: Delta=kappa*g=0.3333  max_U[nu_{log2,g}-phi_{log2-Delta}](U)=2.05e-14  (<=0? True) | best Delta*=4.8915 (ratio Delta*/g=1.631)
+  total 193.4s
+----------------------------------------------------------------------------------------------------
+wired box 5x4 (boundary identified), nE=17, P=[(0, 0), (1, 0)], #anchors=6 of 8 horizontal edges
+  thetaA=+0.693 s=0.00: max cond P(open H)=0.6667, max_U[d_s + kappa d_thetaA]=0.00e+00
+  thetaA=+0.693 s=0.70: max cond P(open H)=0.6667, max_U[d_s + kappa d_thetaA]=0.00e+00
+  thetaA=+0.693 s=3.00: max cond P(open H)=0.6667, max_U[d_s + kappa d_thetaA]=0.00e+00
+  thetaA=+0.293 s=0.00: max cond P(open H)=0.6667, max_U[d_s + kappa d_thetaA]=0.00e+00
+  thetaA=+0.293 s=0.70: max cond P(open H)=0.6667, max_U[d_s + kappa d_thetaA]=0.00e+00
+  thetaA=+0.293 s=3.00: max cond P(open H)=0.6667, max_U[d_s + kappa d_thetaA]=-9.26e-15
+  thetaA=-0.500 s=0.00: max cond P(open H)=0.6667, max_U[d_s + kappa d_thetaA]=-3.32e-15
+  thetaA=-0.500 s=0.70: max cond P(open H)=0.6667, max_U[d_s + kappa d_thetaA]=3.82e-15
+  thetaA=-0.500 s=3.00: max cond P(open H)=0.6667, max_U[d_s + kappa d_thetaA]=-5.74e-15
+  box (13) g=0.50: max_U[nu - phi(anchors at log2-kappa g, others log2)] = -1.06e-16
+  box (13) g=2.00: max_U[nu - phi(anchors at log2-kappa g, others log2)] = 1.94e-16
+  total 10.0s
+  box (13) g=0.5 exact (networkx) max_U = -3.64e-14  [52s]
+  box (13) g=2.0 exact (networkx) max_U = 1.13e-13  [46s]

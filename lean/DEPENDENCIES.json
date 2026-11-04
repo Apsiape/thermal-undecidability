@@ -1,0 +1,10 @@
+{
+  "lean": "leanprover/lean4:v4.35.0",
+  "lean_commit": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+  "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "mathlib_source_overlay": false,
+  "published_hypothesis": "PublishedCA.KariTaati_Corollary21",
+  "published_source": "https://arxiv.org/pdf/1311.2319v3#page=20",
+  "scope": "This package checks the finite rational collision reduction for cellular automata on the two-dimensional infinite full shift: finite-law normalization and restriction, exact integer numerators and denominator bounds, coefficient nonnegativity and detection, disjoint-support factorization, connected positive witnesses, W as the positive-coefficient expansion, and the rational positive local weights and complete finite table coverage for the three specified models. Uniform primitive-recursive programs evaluate every coded table entry and exhaustively test finite candidates, returning only nonempty positive witnesses with no smaller nonempty positive subset; every returned witness is connected, and every nonsurjective coded CA has a successful stage. The programs' equality, soundness, and this existence-completeness property are proved. The onto-to-uniform direction is relative to the explicitly supplied, model-independent hypothesis PublishedCA.KariTaati_Corollary21, whose measure is the actual uniform Bernoulli product measure. The published theorem is not proved here. This package proves no finite-volume stochastic comparison, infinite-volume thermal theorem, pressure differentiability result, Gibbs uniqueness theorem, or undecidability theorem; it does not certify the paper's selected main results."
+}
+

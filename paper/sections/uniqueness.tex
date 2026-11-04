@@ -54,7 +54,7 @@ In the fully wired core, disconnected endpoints include a finite full-lattice cl
 The remaining $Q$ dependence is explicit: comparator opening odds are at most $\sqrt Q$, so conditional closing probabilities are at least $(1+\sqrt Q)^{-1}$. The anchor covariance bound uses
 $\theta_{Q,P}=(1+\sqrt Q)^{-(k-1)}$. Interpolating anchor log odds from $\log\sqrt Q-\theta_{Q,P}g$ to $\log\sqrt Q$ while turning on rewards gives ordinary FK odds $\sqrt Qe^{-\theta_{Q,P}g}<\sqrt Q$ as the upper law. Anchors cover both orientations away from a fixed-width strip. Conditioning that strip and using domain Markov with complete wiring on a smaller core yields the homogeneous subcritical upper limit. These are precisely the steps of Proposition~\ref{prop:potts-allstates}; no lower bound on $g$ uniform in $F$ is used.
 
-Beffara--Duminil-Copin give the critical point, subcritical sharpness and equality of free and wired subcritical limits~\cite{BDC}. Monotonicity in $p$~\cite[Chapter 3]{Grimmett} then gives, for every nonsurjective input and every Gibbs state,
+Beffara--Duminil-Copin give the critical point, subcritical sharpness and equality of free and wired subcritical limits~\cite[Theorems 1 and 2]{BDC}. Monotonicity in $p$~\cite[Theorem 3.21]{Grimmett} then gives, for every nonsurjective input and every Gibbs state,
 \begin{equation}\label{eq:full-domination}
  \mu_{\rm bond}\preceq\phi_{p_F,Q}^1
  =\phi_{p_F,Q}^0\preceq\phi_{p_c(Q),Q}^0,
@@ -243,7 +243,55 @@ Here $\nu(h_L)=\nu(f)$ and $\rho(h_L)=\rho(f)$ by their own DLR equations. The l
 \end{proof}
 
 \begin{remark}[What is, and is not, decided]
-On this family the undecidable bit is survival of the ordered phases. The disordered state has the same uniform quantitative bound on both branches. No undecidability of ``every extremal Gibbs state clusters'' follows. The specified-correlation decay result remains Theorem~\ref{thm:main}; the new result is Gibbs uniqueness with full clustering of the unique nonsurjective state. The local numerical inequality $\chi<1$ holds on both branches and is not a decidable mixing certificate: its all-state domination hypothesis is obtained only after a witness is found. Uniqueness implies convergence of finite-volume local expectations uniformly over boundary conditions for each fixed model, by compactness, but this proof supplies no computable a priori boundary-forgetting scale.
+On this family the undecidable bit is survival of the ordered phases. The disordered state has the same uniform quantitative bound on both branches. No undecidability of ``every extremal Gibbs state clusters'' follows. The specified-correlation decay result remains Theorem~\ref{thm:main}; the new result is Gibbs uniqueness with full clustering of the unique nonsurjective state. The local numerical inequality $\chi<1$ holds on both branches and is not a decidable mixing certificate: its all-state domination hypothesis is obtained only after a witness is found. Uniqueness implies convergence of finite-volume local expectations uniformly over boundary conditions for each fixed model, by compactness, but no total computable boundary-forgetting scale exists, as the following theorem makes precise.
+\end{remark}
+
+\begin{theorem}[Uniform bulk clustering and an unbounded boundary scale]\label{thm:boundary-scale}
+Fix $Q=257^2$, the family $\Psi_F^{\rm u}$ above, $f=\one_{\{\sigma_0=1\}}$ and $\Lambda_L=[-L,L]^2\cap\Z^2$. Define
+\[
+ \Delta_F(L)=\max_\eta\gamma_{\Lambda_L}^{\eta}(f)
+                    -\min_\eta\gamma_{\Lambda_L}^{\eta}(f),\qquad
+ \theta_Q=\phi^1_{p_c(Q),Q}(0\conn\infty)>0,
+\]
+where $\eta$ ranges over the full interaction collar, including all hidden coordinates. The following also holds on the 16,908,544-state subfamily.
+\begin{enumerate}[label=(\arabic*)]
+\item $\Delta_F(L)$ is rational, uniformly computable in $(F,L)$, and non-increasing in $L$.
+\item Its limit is $0$ when $F$ is nonsurjective, and $\theta_Q$ when $F$ is surjective.
+\item For every fixed rational $c\in(0,\theta_Q)$,
+\[
+ \tau_c(F)=\min\{L\ge0:\Delta_F(L)<c\}
+\]
+is finite exactly when $F$ is nonsurjective, and is a partial computable function with precisely that domain.
+\item There is no total computable function $b$ such that $b(F)\ge\tau_c(F)$ for every nonsurjective $F$. In particular, no total computable choice of positive constants $(C_F,a_F)$ guarantees
+\[
+ \Delta_F(L)\le C_F e^{-a_FL}\quad\hbox{for every }L
+\]
+on every nonsurjective input, whether the constants are rational or effectively described computable reals.
+\item Nevertheless the unique nonsurjective state obeys
+\[
+ |\Cov_{\mu_F}(g,h)|\le
+ 3\min\{|A_g|,|A_h|\}\|g\|_\infty\|h\|_\infty
+ 2^{-d_1(A_g,A_h)}
+\]
+for all bounded local $g,h$, with constants independent of $F$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+Finite-collar enumeration computes the rational extrema. By the tower identity each larger-volume expectation is an average of smaller-volume conditional expectations. The maxima decrease and minima increase, proving (1). Remark~\ref{lem:extrema} identifies the limit with the Gibbs oscillation of $f$; uniqueness proves the nonsurjective case of (2).
+
+For the other case, Proposition~\ref{prop:potts-allstates} dominates the canonical bond marginal of \emph{every} Gibbs state by critical wired FK. Lemma~\ref{lem:potts-colours} makes the colour on every finite cluster uniform. If $t_\mu$ is the probability that the origin lies in an infinite cluster, then $t_\mu\le\theta_Q$ and
+\[
+ \frac{1-\theta_Q}{Q}\le\frac{1-t_\mu}{Q}
+ \le\mu(f)\le\frac1Q+\left(1-\frac1Q\right)t_\mu
+ \le\frac1Q+\left(1-\frac1Q\right)\theta_Q.
+\]
+The ordered states $\mu_F^2$ and $\mu_F^1$ constructed with monochromatic visible boundary attain the two outer endpoints, respectively: on the surjective branch their bond marginals are critical wired FK, with the infinite cluster given the boundary colour. These are the general-$Q$ versions of the states in Proposition~\ref{prop:potts-branches}, used in the proof of Theorem~\ref{thm:full}. Positivity of $\theta_Q$ follows from discontinuity~\cite[Theorems 1.1(2) and 1.2(2)]{DGHMT}. Subtracting the endpoints gives exactly $\theta_Q$, proving (2).
+
+Searching the exact rational inequalities $\Delta_F(L)<c$ proves (3). If a total bound $b$ as in (4) existed, the single rational test $\Delta_F(b(F))<c$ would decide nonsurjectivity: monotonicity makes it true on that branch, and the positive limiting gap makes it false on the other. This contradicts Kari's theorem, also after the four-symbol encoding. A total positive exponential envelope would yield such a bound by searching for an integer $L$ with $C_Fe^{-a_FL}<c$. Strict comparison is semidecidable for computable-real constants and the search terminates for all positive outputs. Finally (5) is \eqref{eq:full-bound}.
+\end{proof}
+
+\begin{remark}[A computable gap makes uniqueness computably enumerable]\label{rem:gap-ce}
+More generally, consider a computable family of finite-alphabet, strictly positive finite-range specifications with known range, a uniformly computable local observable, and uniformly computable finite-volume oscillations. Suppose every nonunique input $e$ has limiting oscillation at least a known computable $\delta_e>0$. Search for an oscillation smaller than $\delta_e/2$. This strict test is semidecidable even with computable-real data, and it terminates exactly on the unique inputs. Thus a family with a computable gap has $\mathsf{UNIQUE}$ c.e. If its uniqueness problem is undecidable, the same bounded-search argument shows that the first successful volume has no total computable bound. This is the finite-volume version of the certificate obstruction in Remark~\ref{rem:certificate}. In particular such gap families cannot realize $\Sigma^0_2$-complete nonuniqueness under computable many-one reductions. The scale in Theorem~\ref{thm:boundary-scale} is partial computable, not bounded by any total computable function.
 \end{remark}
 
 \begin{remark}[Why the hidden-dimer example is excluded]

@@ -77,7 +77,7 @@ For the input interaction \(\Phi_F\), compute the finite-collar extrema in the f
 
 This proves Theorem~\ref{thm:modulus-main}. Positivity and totality on \emph{every} input are essential. It does not rule out an algorithm which first searches for a collision witness and returns moduli only after finding one; nor does it rule out a total rate description allowed to be zero on surjective inputs.
 
-\begin{corollary}[semidecidability and explicit witnesses]
+\begin{corollary}[semidecidability and explicit witnesses]\label{cor:semidecide}
 The positive answer to \eqref{eq:decision}, on this constructed family, is computably enumerable. Given a witness, a strictly positive comparison displacement is explicitly computable.
 \end{corollary}
 \begin{proof}
@@ -135,5 +135,5 @@ For a literal arithmetic formula on input codes, let the universal variable also
 \end{proof}
 
 \begin{remark}[Decidable special cases]
-In one dimension, positive finite-range weights yield a primitive block transfer matrix \cite[Corollary 6.41]{FV}. All connected correlations decay exponentially; raw decay of a real on-site $f$ is equivalent to zero Gibbs mean. With rational weights this mean is algebraic, so equality to zero is decidable by real algebraic arithmetic. For square-lattice nearest-neighbor zero-field ferromagnetic Ising and the spin observable, with rational $u=e^{2K_H}>1$, $v=e^{2K_V}>1$, raw all-state exponential decay holds exactly when $(u-1)(v-1)<2$, by (I1)--(I3) and positive magnetization above criticality \cite{CDC,DCT}. Equality is critical and fails. This is a rational comparison. These remarks do not assert decidability for general higher-dimensional models.
+In one dimension, positive finite-range weights give a unique Gibbs state \cite[Corollary 6.41]{FV}. In a block transfer-matrix representation the matrix is primitive: a sufficiently long allowed-overlap path connects every pair of blocks, and every corresponding weight is positive. Perron--Frobenius theory then gives exponential decay of connected correlations, so raw decay of a real on-site $f$ is equivalent to zero Gibbs mean. With rational weights this mean is algebraic, so equality to zero is decidable by real algebraic arithmetic. For square-lattice nearest-neighbor zero-field ferromagnetic Ising and the spin observable, with rational $u=e^{2K_H}>1$, $v=e^{2K_V}>1$, raw all-state exponential decay holds exactly when $(u-1)(v-1)<2$, by (I1)--(I3) and positive magnetization above criticality \cite{CDC,DCT}. Equality is critical and fails. This is a rational comparison. These remarks do not assert decidability for general higher-dimensional models.
 \end{remark}
